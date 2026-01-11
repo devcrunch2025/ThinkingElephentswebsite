@@ -4469,9 +4469,14 @@ Create a box behind the image
         }
 
         .footer-section .logo { /*-------Footer logo-----------------*/
-            width: clamp(50pt,15vw,70pt);
-            padding-bottom: 10pt;
-            object-fit: cover;
+            width: clamp(80pt,25vw,120pt);
+            padding: 8px 12px;
+            object-fit: contain;
+            background: #f7d64a;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto 10pt auto;
         }
 
     @media screen and (min-width: 768px) {
