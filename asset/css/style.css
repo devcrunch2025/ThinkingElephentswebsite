@@ -768,6 +768,156 @@ html {
                       text-wrap: pretty;
 }
 
+/* Count icons styling with animation */
+.about-section .count-icon {
+                      font-size: clamp(24pt,4vw,36pt);
+                     text-align: center;
+                       display: block;
+                    margin-bottom: 10px;
+                     animation: iconBounce 2s ease-in-out infinite;
+                    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.about-section .col:nth-child(1) .count-icon {
+    background: linear-gradient(135deg, #FF5252 0%, #FF9100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #FF5252;
+    font-weight: 900;
+}
+
+.about-section .col:nth-child(2) .count-icon {
+    background: linear-gradient(135deg, #42A5F5 0%, #00BCD4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #42A5F5;
+    font-weight: 900;
+}
+
+.about-section .col:nth-child(3) .count-icon {
+    background: linear-gradient(135deg, #66BB6A 0%, #1DE9B6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #66BB6A;
+    font-weight: 900;
+}
+
+/* We Listen Louder Section - Creative Header Styling */
+.listen-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.listen-header i {
+    font-size: 28px;
+    color: #FF5252;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.listen-header h4 {
+    margin: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #FF5252 0%, #FF1744 50%, #FF9100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900 !important;
+    font-size: clamp(10pt, 2vw, 14pt);
+}
+
+/* Creative Badges Section */
+.creative-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+    animation: slideInUp 0.8s ease-out;
+}
+
+.badge-creative {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, rgba(66, 165, 245, 0.15), rgba(156, 39, 176, 0.15));
+    border: 2px solid;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+}
+
+.badge-creative:nth-child(1) {
+    border-color: #FF5252;
+    color: #FF5252;
+}
+
+.badge-creative:nth-child(1) i {
+    color: #FF5252;
+}
+
+.badge-creative:nth-child(2) {
+    border-color: #42A5F5;
+    color: #42A5F5;
+}
+
+.badge-creative:nth-child(2) i {
+    color: #42A5F5;
+}
+
+.badge-creative:nth-child(3) {
+    border-color: #66BB6A;
+    color: #66BB6A;
+}
+
+.badge-creative:nth-child(3) i {
+    color: #66BB6A;
+}
+
+.badge-creative:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.badge-creative:nth-child(1):hover {
+    background: rgba(255, 82, 82, 0.1);
+    border-color: #FF1744;
+}
+
+.badge-creative:nth-child(2):hover {
+    background: rgba(66, 165, 245, 0.1);
+    border-color: #1976D2;
+}
+
+.badge-creative:nth-child(3):hover {
+    background: rgba(102, 187, 106, 0.1);
+    border-color: #388E3C;
+}
+
+.badge-creative i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.badge-creative:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
 
 
 /*-----------------------------------------------
@@ -801,13 +951,17 @@ html {
 
   .offer-section .section-title1 { /*-----Section Title1-------------*/
                   text-transform: uppercase;  
-                           color: #3369e7;    
-                     font-weight: normal;
+                           color: #FFFFFF;    
+                     font-weight: 900;
                        font-size: clamp(10pt,2vw,11pt);
                      font-family: "Montserrat", sans-serif;
                        text-wrap: pretty;
-                          
-     
+                 background-color: rgba(0, 0, 0, 0.3);
+                        padding: 12px 24px;
+                   border-radius: 50px;
+                    display: inline-block;
+                     letter-spacing: 2px;
+                   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
   
   .offer-section .section-title2 { /*-----section Title2-------------*/
@@ -832,7 +986,7 @@ html {
   .offer-section .section-text { /*-----Section text-------------*/
                      font-weight: normal;
                        font-size: clamp(9pt,2vw,10pt);  
-                           color: #6a737b; 
+                           color: #FFFFFF; 
                   padding-bottom: 1vw;
                        text-wrap: pretty;
   }
@@ -898,7 +1052,84 @@ html {
                        position: absolute;
                           inset: 10px;
                   border-radius: 10px;
-               background-color: #0748A7;           
+                     transition: all 0.4s ease;
+  }
+
+  .offer-section .col-12:nth-child(1) .card {
+    background: linear-gradient(135deg, #FF5252 0%, #FF1744 100%);
+    border: 3px solid #FF1744 !important;
+  }
+
+  .offer-section .col-12:nth-child(2) .card {
+    background: linear-gradient(135deg, #FF9100 0%, #FF6F00 100%);
+    border: 3px solid #FF6F00 !important;
+  }
+
+  .offer-section .col-12:nth-child(3) .card {
+    background: linear-gradient(135deg, #26C6DA 0%, #00BCD4 100%);
+    border: 3px solid #00BCD4 !important;
+  }
+
+  .offer-section .col-12:nth-child(4) .card {
+    background: linear-gradient(135deg, #1DE9B6 0%, #00C853 100%);
+    border: 3px solid #00C853 !important;
+  }
+
+  .offer-section .col-12:nth-child(5) .card {
+    background: linear-gradient(135deg, #FF5252 0%, #FF1744 100%);
+    border: 3px solid #FF1744 !important;
+  }
+
+  .offer-section .col-12:nth-child(6) .card {
+    background: linear-gradient(135deg, #AB47BC 0%, #7E57C2 100%);
+    border: 3px solid #7E57C2 !important;
+  }
+
+  .offer-section .col-12:nth-child(7) .card {
+    background: linear-gradient(135deg, #EC407A 0%, #E91E63 100%);
+    border: 3px solid #E91E63 !important;
+  }
+
+  .offer-section .col-12:nth-child(8) .card {
+    background: linear-gradient(135deg, #42A5F5 0%, #1976D2 100%);
+    border: 3px solid #1976D2 !important;
+  }
+
+  .offer-section .col-12:hover .card {
+                       transform: translateY(-15px) scale(1.03);
+                      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+
+  .offer-section .col-12:nth-child(1):hover .card {
+    box-shadow: 0 20px 50px rgba(255, 23, 68, 0.5), 0 0 30px rgba(255, 23, 68, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(2):hover .card {
+    box-shadow: 0 20px 50px rgba(255, 111, 0, 0.5), 0 0 30px rgba(255, 111, 0, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(3):hover .card {
+    box-shadow: 0 20px 50px rgba(0, 188, 212, 0.5), 0 0 30px rgba(0, 188, 212, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(4):hover .card {
+    box-shadow: 0 20px 50px rgba(0, 200, 83, 0.5), 0 0 30px rgba(0, 200, 83, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(5):hover .card {
+    box-shadow: 0 20px 50px rgba(255, 23, 68, 0.5), 0 0 30px rgba(255, 23, 68, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(6):hover .card {
+    box-shadow: 0 20px 50px rgba(126, 87, 194, 0.5), 0 0 30px rgba(126, 87, 194, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(7):hover .card {
+    box-shadow: 0 20px 50px rgba(233, 30, 99, 0.5), 0 0 30px rgba(233, 30, 99, 0.3) !important;
+  }
+
+  .offer-section .col-12:nth-child(8):hover .card {
+    box-shadow: 0 20px 50px rgba(25, 118, 210, 0.5), 0 0 30px rgba(25, 118, 210, 0.3) !important;
   }
   
   
@@ -917,7 +1148,39 @@ html {
      border-bottom-right-radius: 50%;
                          height: 140px;
                           width: 140px;   
-               background-color: #F2707E;      
+               background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .offer-section .col-12:nth-child(1) .icon-box {
+    background-color: rgba(255, 23, 68, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(2) .icon-box {
+    background-color: rgba(255, 111, 0, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(3) .icon-box {
+    background-color: rgba(0, 188, 212, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(4) .icon-box {
+    background-color: rgba(0, 200, 83, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(5) .icon-box {
+    background-color: rgba(255, 23, 68, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(6) .icon-box {
+    background-color: rgba(126, 87, 194, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(7) .icon-box {
+    background-color: rgba(233, 30, 99, 0.3);
+  }
+
+  .offer-section .col-12:nth-child(8) .icon-box {
+    background-color: rgba(25, 118, 210, 0.3);
   }
 
 
@@ -931,11 +1194,10 @@ html {
                           width: 30px;
          border-top-left-radius: 30px;
                      background: transparent;
-                     box-shadow: -5px -5px 0 5px #F2707E;
+                     box-shadow: -5px -5px 0 5px rgba(255, 255, 255, 0.1);
       
   }
   
-
   
   
   .offer-section .icon-box::after { /*-----After Card Icon---------*/
@@ -947,7 +1209,7 @@ html {
                           width: 30px;
          border-top-left-radius: 30px;
                      background: transparent;
-                     box-shadow: -5px -5px 0 5px #F2707E;
+                     box-shadow: -5px -5px 0 5px rgba(255, 255, 255, 0.1);
       
   }
   
@@ -972,9 +1234,16 @@ html {
                 justify-content: center;
                     align-items: center;
                       font-size: clamp(42pt,3vw,60pt);
-                     transition: 1s;
-               background-color: #0748A7;
-                          color: #F2707E; 
+                     transition: all 0.5s ease;
+               background-color: rgba(255, 255, 255, 0.15);
+                          color: #FFFFFF;
+                      animation: floatIcon 3s ease-in-out infinite;
+           text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
   
   
@@ -986,8 +1255,11 @@ html {
   ----------------------------------------------------------------*/
   
   .offer-section .card :hover .icon {/*-----Col1  Icon holder when hover---------*/
-                background-color: #F2707E;
-                           color: #ffffff;
+                background-color: rgba(255, 255, 255, 0.25);
+                           color: #FFFFFF;
+                       transform: scale(1.2) rotate(10deg);
+                      box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+                       animation: none;
   }
   
   
@@ -1011,15 +1283,18 @@ html {
   
   .offer-section .card-title {
                       font-size: clamp(12pt,2vw,14pt);  
-                    font-weight: bolder;
+                    font-weight: 900;
                  letter-spacing: 2px;
                  text-transform: uppercase;
-  
+                     color: #FFFFFF;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   .offer-section .card-text {
                        font-size: clamp(8pt,2vw,10pt);
-                           color:#0dd3ff;
+                           color: #FFFFFF;
                        text-wrap: pretty;
+                    font-weight: 600;
+                       line-height: 1.5;
   }
   
   
@@ -1163,6 +1438,23 @@ html {
                  display: block;
                   margin: auto;
               box-shadow: 0px 0px 25px 3px rgba(255, 235, 255, 0.8);
+              transition: all 0.3s ease;
+               animation: playPulse 2s infinite;
+                  cursor: pointer;
+    }
+
+    .presentation-section .play-btn:hover {
+        transform: scale(1.15);
+        box-shadow: 0px 0px 40px 8px rgba(242, 112, 126, 1);
+    }
+
+    @keyframes playPulse {
+        0%, 100% {
+            box-shadow: 0px 0px 25px 3px rgba(255, 235, 255, 0.8);
+        }
+        50% {
+            box-shadow: 0px 0px 40px 10px rgba(242, 112, 126, 0.9);
+        }
     }
 
         .presentation-section .play-btn::after { /* create triangle */
@@ -1261,11 +1553,17 @@ html {
 
     .team-section .section-title1 { /*-----Section Title1-------------*/
         text-transform: uppercase;
-        color: #1A8DFF;
-        font-weight: normal;
+        color: #FFFFFF;
+        font-weight: 900;
         font-size: clamp(10pt,2vw,11pt);
         font-family: "Montserrat", sans-serif;
         text-wrap: pretty;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 12px 24px;
+        border-radius: 50px;
+        display: inline-block;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .team-section .section-title2 { /*-----section Title2-------------*/
@@ -1314,6 +1612,13 @@ html {
         background-color: #0045A6;
         overflow: hidden;
         padding: 10pt 5pt;
+        transition: all 0.4s ease;
+    }
+
+    .team-section .g-0:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        border-color: #13B2D4;
     }
 
         .team-section .g-0 .col-lg-12 {
@@ -1326,6 +1631,14 @@ html {
         height: 150pt;
         object-fit: cover; /*--------Photo adjust height and width-------------*/
         border-radius: 50%;
+        transition: all 0.4s ease;
+        border: 5px solid #13B2D4;
+    }
+
+    .team-section .g-0:hover img {
+        transform: scale(1.1) rotate(5deg);
+        border-color: #F27280;
+        box-shadow: 0 0 20px rgba(19, 178, 212, 0.6);
     }
 
 
@@ -1360,8 +1673,142 @@ html {
         padding: 0.5vw;
     }
 
+    /* Process Card Styling - From Trunk to Tail */
+    .team-section .process-card {
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid;
+        color: #ffffff;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
 
+    /* Elephant-themed borders for each step */
+    .team-section .ear-card {
+        border-color: #FF1744;
+        background: linear-gradient(135deg, #FF5252 0%, #FF1744 100%);
+    }
 
+    .team-section .trunk-card {
+        border-color: #FF6F00;
+        background: linear-gradient(135deg, #FF9100 0%, #FF6F00 100%);
+    }
+
+    .team-section .craft-card {
+        border-color: #00BCD4;
+        background: linear-gradient(135deg, #26C6DA 0%, #00BCD4 100%);
+    }
+
+    .team-section .tail-card {
+        border-color: #00C853;
+        background: linear-gradient(135deg, #1DE9B6 0%, #00C853 100%);
+    }
+
+    /* Process step number with icon */
+    .team-section .process-step-number {
+        font-size: 60px;
+        margin-bottom: 20px;
+        transition: all 0.4s ease;
+        animation: iconFloat 3s ease-in-out infinite;
+        color: #ffffff;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    @keyframes iconFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .team-section .process-card:hover .process-step-number {
+        transform: scale(1.2) rotate(10deg);
+        filter: drop-shadow(0 0 15px currentColor);
+    }
+
+    /* Process step label */
+    .team-section .process-step {
+        text-transform: uppercase;
+        font-size: clamp(10pt, 2vw, 12pt);
+        letter-spacing: 3px;
+        font-weight: 900;
+        margin-bottom: 10px;
+        opacity: 1;
+    }
+
+    .team-section .process-card.ear-card .process-step {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(255, 23, 68, 0.5);
+    }
+
+    .team-section .process-card.trunk-card .process-step {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(255, 111, 0, 0.5);
+    }
+
+    .team-section .process-card.craft-card .process-step {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 188, 212, 0.5);
+    }
+
+    .team-section .process-card.tail-card .process-step {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 200, 83, 0.5);
+    }
+
+    /* Process card title */
+    .team-section .process-card .card-title {
+        font-size: clamp(18pt, 2.5vw, 24pt);
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Process card content */
+    .team-section .process-content {
+        width: 100%;
+    }
+
+    .team-section .process-card .card-text {
+        font-size: clamp(9pt, 1.8vw, 11pt);
+        color: #ffffff;
+        text-wrap: pretty;
+        padding: 15px 0;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    /* Hover effects */
+    .team-section .process-card:hover {
+        transform: translateY(-20px) scale(1.05);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        border-width: 4px;
+    }
+
+    .team-section .ear-card:hover {
+        box-shadow: 0 30px 60px rgba(255, 23, 68, 0.6), 0 0 30px rgba(255, 23, 68, 0.4);
+    }
+
+    .team-section .trunk-card:hover {
+        box-shadow: 0 30px 60px rgba(255, 111, 0, 0.6), 0 0 30px rgba(255, 111, 0, 0.4);
+    }
+
+    .team-section .craft-card:hover {
+        box-shadow: 0 30px 60px rgba(0, 188, 212, 0.6), 0 0 30px rgba(0, 188, 212, 0.4);
+    }
+
+    .team-section .tail-card:hover {
+        box-shadow: 0 30px 60px rgba(0, 200, 83, 0.6), 0 0 30px rgba(0, 200, 83, 0.4);
+    }
 
     .team-section .btn { /*-----Team member 'See Profile' Button---------*/
         margin-top: 1vw;
@@ -1402,11 +1849,17 @@ html {
 
         .testimonial-section .section-title1 { /*-----Section Title1-------------*/
             text-transform: uppercase;
-            color: #1A8DFF;
-            font-weight: normal;
+            color: #FFFFFF;
+            font-weight: 900;
             font-size: clamp(8pt,2vw,10pt);
             font-family: "Montserrat", sans-serif;
             text-wrap: pretty;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         /*------------Column  left side Title2 (What our client say)----------------------*/
@@ -1783,10 +2236,16 @@ html {
 
     .pricing-section .section-title1 { /*-----Section Title1 || Top center title1----------- --*/
         text-transform: uppercase;
-        color: #1A8DFF;
-        font-weight: normal;
+        color: #FFFFFF;
+        font-weight: 900;
         font-size: clamp(10pt,2vw,11pt);
         font-family: "Montserrat", sans-serif;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 12px 24px;
+        border-radius: 50px;
+        display: inline-block;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .pricing-section .section-title2 { /*-----section Title2 || Top center title2-------------*/
@@ -2267,11 +2726,17 @@ html {
 ----------------------------------------------------------------*/
     .goal-section .section-title1 { /*-----Section Title1-------------*/
         text-transform: uppercase;
-        color: #3369e7;
-        font-weight: normal;
+        color: #FFFFFF;
+        font-weight: 900;
         font-size: clamp(10pt,2vw,11pt);
         font-family: "Montserrat", sans-serif;
         text-wrap: pretty;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 12px 24px;
+        border-radius: 50px;
+        display: inline-block;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .goal-section .section-title2 { /*-----section Title2-------------*/
