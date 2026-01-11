@@ -69,14 +69,7 @@
                 <!--Menu -->
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown">about</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="about.html">about us</a></li>
-                            <li><a class="dropdown-item" href="team.html">our team</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
                     <li class="nav-item"><a class="nav-link active" href="portfolio.html">portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="social.html">social</a></li>
@@ -100,264 +93,244 @@
 
 
     <!-- Hero Section -->
-    <div class="other-hero-section "><!--Hero section-->
-        <div class="img-bg"><!--Background Image of Hero section-->
+    <div class="other-hero-section portfolio-hero">
+        <div class="img-bg">
             <img src="asset/img/portfolio-bg.jpg" alt="portfolio bg">
         </div>
 
+        <div class="section-title">
+            <h1 data-aos="zoom-in">Our Work</h1>
+            <p class="hero-subtitle" data-aos="zoom-in">Films that don't just look good—they perform.</p>
+            <p class="hero-description" data-aos="fade-up">From brand launches to viral campaigns, every project is crafted to drive results. Explore our portfolio of high-impact video content that moves audiences and moves metrics.</p>
+        </div>
+    </div>
 
-        <div class="section-title ">
-            <h1 data-aos="zoom-in">portfolio</h1>
-            <p data-aos="zoom-in">A parent company is a company that owns enough voting stock in another firm to control management and operations by influencing or electing its board of directors; the second company being deemed a subsidiary of the parent company. </p>
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+        <div class="container">
+            <!-- Stats Section -->
+            <div class="portfolio-stats" data-aos="fade-up">
+                <div class="stat-card">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>350+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>120+</h3>
+                    <p>Brands Served</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>2M+</h3>
+                    <p>Views Generated</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>15+</h3>
+                    <p>Industry Awards</p>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filters filter-button-group" data-aos="fade-up">
+                <ul>
+                    <li class="active"><button type="button" class="filter-btn" data-filter="*">All Projects</button></li>
+                    <li><button type="button" class="filter-btn" data-filter="ad-film">TV & Digital Ads</button></li>
+                    <li><button type="button" class="filter-btn" data-filter="short-film">Brand Films</button></li>
+                    <li><button type="button" class="filter-btn" data-filter="event">Events</button></li>
+                    <li><button type="button" class="filter-btn" data-filter="youtube">Social Content</button></li>
+                </ul>
+            </div>
         </div>
 
-
-
-    </div><!--End of Hero section-->
-
-
-
-
-    <!-- portfolio section -->
-
-
-
-    <div class="portfolio-section"><!--portfolio section-->
-
-
-
-        <div class="filters filter-button-group">
-            <ul>
-                <li class="active"><button type="button" class="filter-btn" data-filter="*">All</button></li>
-                <li><button type="button" class="filter-btn" data-filter="ad-film">Ad Film</button></li>
-                <li><button type="button" class="filter-btn" data-filter="short-film">Short Film</button></li>
-                <li><button type="button" class="filter-btn" data-filter="event">Event</button></li>
-                <li><button type="button" class="filter-btn" data-filter="youtube">YouTube</button></li>
-            </ul>
-        </div>
-        <div id="container" class="isotope grid" data-aos="zoom-out"><!--Container-->
+        <!-- Portfolio Grid -->
+        <!-- Portfolio Grid -->
+        <div id="container" class="isotope grid" data-aos="zoom-out">
 
             <div class="grid-item" data-filter="ad-film">
-                <a class="popup-link" href="asset/img/gallery1.jpg" aria-label="Open image - Ad Film 1">
-                    <img src="asset/img/gallery1.jpg" alt="Ad Film 1">
+                <a class="popup-link" href="asset/img/gallery1.jpg" aria-label="Product Launch Campaign">
+                    <img src="asset/img/gallery1.jpg" alt="Product Launch Ad">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Ad Film — Product Launch</h4>
-                            <p>Short description of the ad film project. Replace with your caption.</p>
+                            <h4>Product Launch Campaign</h4>
+                            <p>60-second TVC driving 300% increase in product awareness</p>
                         </div>
                         <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item1-->
+            </div>
 
             <div class="grid-item" data-filter="short-film">
-                <a class="popup-link" href="asset/img/gallery2.jpg" aria-label="Open image - Short Film 1">
-                    <img src="asset/img/gallery2.jpg" alt="Short Film 1">
+                <a class="popup-link" href="asset/img/gallery2.jpg" aria-label="Brand Story Film">
+                    <img src="asset/img/gallery2.jpg" alt="Brand Story">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Short Film — Drama Piece</h4>
-                            <p>Quick synopsis and credits placeholder.</p>
+                            <h4>Corporate Brand Story</h4>
+                            <p>Founder's journey film for enterprise client</p>
                         </div>
                         <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item2-->
-
-
+            </div>
 
             <div class="grid-item" data-filter="youtube">
-                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID" aria-label="Open YouTube video - Sample Video">
-                    <img src="asset/img/gallery3.jpg" alt="YouTube video thumbnail">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID" aria-label="Viral Social Campaign">
+                    <img src="asset/img/gallery3.jpg" alt="YouTube Campaign">
                     <div class="overlay">
                         <div class="text">
-                            <h4>YouTube — Campaign Highlight</h4>
-                            <p>Sample YouTube video embed — replace with your video link (VIDEO_ID).</p>
+                            <h4>Viral Social Campaign</h4>
+                            <p>Instagram Reels series — 2M+ organic views</p>
                         </div>
                         <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item3-->
+            </div>
 
             <div class="grid-item" data-filter="event">
-                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID2" aria-label="Open YouTube video - Event Highlight">
-                    <img src="asset/img/gallery4.jpg" alt="Event video thumbnail">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID2" aria-label="Conference Highlight Reel">
+                    <img src="asset/img/gallery4.jpg" alt="Event Coverage">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Event — Highlights</h4>
-                            <p>Event highlight reel — replace with your event video ID.</p>
+                            <h4>Conference Highlight Reel</h4>
+                            <p>3-day event condensed into compelling 5-minute story</p>
                         </div>
                         <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item4-->
-
+            </div>
 
             <div class="grid-item" data-filter="ad-film">
-                <a class="popup-link" href="asset/img/gallery5.jpg" aria-label="Open image - Ad Film 2">
-                    <img src="asset/img/gallery5.jpg" alt="Ad Film 2">
+                <a class="popup-link" href="asset/img/gallery5.jpg" aria-label="Festival Campaign">
+                    <img src="asset/img/gallery5.jpg" alt="Festival Ad">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Ad Film — Brand Story</h4>
-                            <p>Replace with production details.</p>
+                            <h4>Festival Campaign TVC</h4>
+                            <p>Emotional storytelling for seasonal campaign</p>
                         </div>
                         <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item5-->
+            </div>
 
             <div class="grid-item" data-filter="short-film">
-                <a class="popup-link" href="asset/img/gallery6.jpg" aria-label="Open image - Short Film 2">
-                    <img src="asset/img/gallery6.jpg" alt="Short Film 2">
+                <a class="popup-link" href="asset/img/gallery6.jpg" aria-label="Product Demo Film">
+                    <img src="asset/img/gallery6.jpg" alt="Product Demo">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Short Film — Experimental</h4>
-                            <p>Caption placeholder.</p>
+                            <h4>Product Demo Film</h4>
+                            <p>E-commerce explainer driving 40% conversion lift</p>
                         </div>
                         <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item6-->
+            </div>
 
             <div class="grid-item" data-filter="youtube">
-                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID3" aria-label="Open YouTube video - Behind The Scenes">
-                    <img src="asset/img/gallery7.jpg" alt="BTS video thumbnail">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID3" aria-label="Behind The Scenes">
+                    <img src="asset/img/gallery7.jpg" alt="BTS Content">
                     <div class="overlay">
                         <div class="text">
-                            <h4>YouTube — Behind The Scenes</h4>
-                            <p>BTS for our productions — replace with your ID.</p>
+                            <h4>Behind The Scenes Series</h4>
+                            <p>Authentic BTS content for brand transparency</p>
                         </div>
                         <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item7-->
-
+            </div>
 
             <div class="grid-item" data-filter="event">
-                <a class="popup-link" href="asset/img/gallery8.jpg" aria-label="Open image - Event Photo">
-                    <img src="asset/img/gallery8.jpg" alt="Event Photo">
+                <a class="popup-link" href="asset/img/gallery8.jpg" aria-label="Product Launch Event">
+                    <img src="asset/img/gallery8.jpg" alt="Launch Event">
                     <div class="overlay">
                         <div class="text">
-                            <h4>Event Photo — Conference</h4>
-                            <p>Replace with event-specific details.</p>
+                            <h4>Product Launch Event</h4>
+                            <p>Live event coverage with multi-camera setup</p>
                         </div>
                         <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
                     </div>
                 </a>
-            </div><!--end of Grid Item8-->
+            </div>
 
+            <div class="grid-item" data-filter="ad-film">
+                <a class="popup-link" href="asset/img/gallery9.jpg" aria-label="Brand Awareness Campaign">
+                    <img src="asset/img/gallery9.jpg" alt="Brand Campaign">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Brand Awareness Campaign</h4>
+                            <p>Multi-platform campaign reaching 5M+ audience</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
-            <div class="grid-item" data-filter="latest"><!--Grid Item9-->
-                <img src="asset/img/gallery9.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-9</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item9-->
+            <div class="grid-item" data-filter="youtube">
+                <a class="popup-link" href="asset/img/gallery10.jpg" aria-label="Influencer Collaboration">
+                    <img src="asset/img/gallery10.jpg" alt="Influencer Content">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Influencer Collaboration</h4>
+                            <p>Creator partnerships for authentic brand storytelling</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
+            <div class="grid-item" data-filter="short-film">
+                <a class="popup-link" href="asset/img/gallery11.jpg" aria-label="Company Vision Film">
+                    <img src="asset/img/gallery11.jpg" alt="Vision Film">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Company Vision Film</h4>
+                            <p>Corporate messaging for investor presentations</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
-            <div class="grid-item" data-filter="best"><!--Grid Item10-->
-                <img src="asset/img/gallery10.jpg" alt="gallery">
-                <div class="overlay"> <!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-10</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item10-->
+            <div class="grid-item" data-filter="ad-film">
+                <a class="popup-link" href="asset/img/gallery12.jpg" aria-label="Performance Ad Campaign">
+                    <img src="asset/img/gallery12.jpg" alt="Performance Ad">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Performance Ad Campaign</h4>
+                            <p>Data-driven creative optimized for conversions</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
-            <div class="grid-item" data-filter="best"><!--Grid Item11-->
-                <img src="asset/img/gallery11.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-11</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item11-->
+            <div class="grid-item" data-filter="youtube">
+                <a class="popup-link" href="asset/img/gallery13.jpg" aria-label="Meme Marketing Campaign">
+                    <img src="asset/img/gallery13.jpg" alt="Meme Content">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Meme Marketing Campaign</h4>
+                            <p>Trend-jacking content for Gen Z audience</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
-
-            <div class="grid-item" data-filter="popular"><!--Grid Item12-->
-                <img src="asset/img/gallery12.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-12</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item12-->
-
-            <div class="grid-item" data-filter="latest"><!--Grid Item13-->
-                <img src="asset/img/gallery13.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-13</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item13-->
-
-
-            <div class="grid-item" data-filter="best"><!--Grid Item14-->
-                <img src="asset/img/gallery14.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-14</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item14-->
-
-
-            <div class="grid-item" data-filter="popular"><!--Grid Item15-->
-                <img src="asset/img/gallery15.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text">
-                        <!--Text-->
-                        <h4>item-15</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item15-->
-
-            <div class="grid-item" data-filter="latest"><!--Grid Item16-->
-                <img src="asset/img/gallery16.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-16</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item16-->
-
-
-            <div class="grid-item" data-filter="popular"><!--Grid Item17-->
-                <img src="asset/img/gallery17.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-17</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item17-->
-
-            <div class="grid-item" data-filter="latest"><!--Grid Item18-->
-                <img src="asset/img/gallery18.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-18</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
-            </div><!--end of Grid Item18-->
-
-
-
+            <div class="grid-item" data-filter="event">
+                <a class="popup-link" href="asset/img/gallery14.jpg" aria-label="Awards Ceremony">
+                    <img src="asset/img/gallery14.jpg" alt="Awards Event">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Awards Ceremony Coverage</h4>
+                            <p>Full-scale event documentation and highlights</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
 
         </div><!--End of Container-->
-
-        <div class="isotope-pager" style="padding-top: 15px; text-align:center;"></div>
 
         <!-- Init Magnific Popup for mixed content -->
         <script>
@@ -466,10 +439,9 @@
                     <h3 class="footer-title">Useful Links</h3>
                     <ul class="nav flex-column ">
                         <li class="nav-item"><a class="nav-link" href="index.html"> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html"> about</a></li>
                         <li class="nav-item"><a class="nav-link" href="portfolio.html"> portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="service.html"> services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="social.html"> social</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html"> contact</a></li>
                     </ul>
                 </div><!--end of Col2 | Useful Links-->
 
