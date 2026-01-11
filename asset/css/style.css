@@ -4341,7 +4341,15 @@ Create a box behind the image
         min-height: 500px;
     }
 
-    /* Floating WhatsApp bounce animation */
+    /* Floating WhatsApp button styles */
+    .floating-whatsapp {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
     .floating-whatsapp img.whatsapp-bounce {
         animation: whatsappBounce 6s ease-in-out infinite;
         will-change: transform;
@@ -4352,6 +4360,16 @@ Create a box behind the image
         25% { transform: translateY(-6px) scale(1.02); }
         50% { transform: translateY(0) scale(1); }
         75% { transform: translateY(-4px) scale(1.01); }
+    }
+
+    /* Mobile: raise button above footer */
+    @media screen and (max-width: 768px) {
+        .floating-whatsapp {
+            bottom: 80px !important;
+            right: 15px !important;
+            width: 48px !important;
+            height: 48px !important;
+        }
     }
 
     /* Favicon fly-by animation */
