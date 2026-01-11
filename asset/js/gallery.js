@@ -136,12 +136,19 @@ $(document).ready( function() {
 
  $(document).ready( function() {   
 	
-// filter items on button click
-$('.portfolio-section .filter-button-group').on( 'click', 'li', function() {
-  var filterValue = $(this).attr('data-filter');
-  $('.portfolio-section .grid').isotope({ filter: filterValue });
+// filter items on button click (supports clicking li, inner anchor or button)
+$('.portfolio-section .filter-button-group').on( 'click', 'li, li a, li button', function(e) {
+  e.preventDefault();
+  var $li = $(this).closest('li');
+  var $control = $li.find('[data-filter]').first();
+  var filterValue = $control.attr('data-filter') || $li.attr('data-filter');
+  if (!filterValue) return;
+  var selector = (filterValue === '*') ? '*' : '[data-filter="' + filterValue + '"]';
+  $('.portfolio-section .grid').isotope({ filter: selector });
   $('.portfolio-section .filter-button-group li').removeClass('active');
-  $(this).addClass('active');
+  $('.portfolio-section .filter-button-group [data-filter]').removeClass('active');
+  $li.addClass('active');
+  $control.addClass('active');
 });
     })
 	

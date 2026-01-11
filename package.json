@@ -1,0 +1,17 @@
+{
+  "name": "thinking-elephents-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Thinking Elephents Ad Fims website - local dev helper scripts",
+  "scripts": {
+    "dev": "npx http-server -c-1 -p 8000",
+    "dev:local": "http-server -c-1 -p 8000",
+    "dev:live": "npx live-server --port=8000 --open=./index.html"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "puppeteer": "^24.34.0"
+  }
+}

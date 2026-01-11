@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ARSD-a business website template</title>
+    <title>Thinking Elephents Ad Fims — Ad films, short films & event video production</title>
     <link rel="shortcut icon" type="image/png" href="asset/img/favicon.png">
     <meta charset="utf-8">
+    <meta name="description" content="Thinking Elephents Ad Fims — Ad film & video production agency. We film ad films, short films, weddings, and events, and provide end-to-end post-production services.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Thinking Elephents Ad Fims",
+      "description": "Ad film & video production: ad films, short films, event filming, and post-production.",
+      "logo": "asset/img/logo.png",
+      "telephone": "+91 90598 70455",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No. 407, Rd Number 81, Phase III, Jubilee Hills",
+        "addressLocality": "Hyderabad",
+        "postalCode": "500096",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293"
+      ]
+    }
+    </script>
 
     <!-- Latest compiled and minified CSS  Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -99,16 +122,18 @@
                     <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social.html">social</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
             <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle" href=""><i class="fa-brands fa-x-twitter"></i></a>
-                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square rounded-circle" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </nav>
@@ -156,16 +181,61 @@
         font-size: 18px;
         margin: 15px auto;
         max-width: 700px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: block;
     }
 
     .btn1 a,
     .btn2 a {
-        color: #fff;
         text-decoration: none;
     }
 
     .btn1, .btn2 {
         margin-top: 15px;
+    }
+
+    .hero-video-section .btn1,
+    .hero-video-section .btn1:focus,
+    .hero-video-section .btn1:hover,
+    .hero-video-section .btn1:active {
+        background: #f7d64a;
+        color: #0E0E57;
+        border: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .hero-video-section .btn1:hover {
+        background: #f5cd34;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-video-section .btn1 a {
+        color: inherit;
+    }
+
+    .hero-video-section .btn2,
+    .hero-video-section .btn2:focus,
+    .hero-video-section .btn2:hover,
+    .hero-video-section .btn2:active {
+        background: #0E0E57;
+        color: #f7d64a;
+        border: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .hero-video-section .btn2:hover {
+        background: #0c0c48;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-video-section .btn2 a {
+        color: inherit;
     }
 </style>
 
@@ -181,20 +251,16 @@
 
     <!-- Text Content (same as your slider text) -->
     <div class="text-box">
-        <h4 data-aos="zoom-out">static and interactive</h4>
-        <h1 data-aos="zoom-in">welcome to ARSD</h1>
-        <p data-aos="zoom-in">
-            Websites are typically dedicated to a particular topic or purpose,
-            such as news, education, commerce, entertainment, or social media.
-            Hyperlinking between web pages guides the navigation of the site.
-        </p>
+        <h4 data-aos="zoom-out">Ad films · Short films · Event filming</h4>
+        <h1 data-aos="zoom-in">Thinking Elephents Ad Fims</h1>
+        <p data-aos="zoom-in">We craft cinematic ad films, short films, and event videos (weddings, birthdays) with full production and post-production services from concept to delivery.</p>
 
         <span class="btn btn-lg btn1 me-2">
-            <a href="#">view all</a>
+            <a href="portfolio.html">our work</a>
         </span>
 
         <span class="btn btn-lg btn2">
-            <a href="#">search</a>
+            <a href="contact.html">request a quote</a>
         </span>
     </div>
 
@@ -216,9 +282,9 @@
 
 
                     <div class="col-lg-6 col-12"><!--Col-2-->
-                        <h4 data-aos="fade-down">Who Are We?</h4>
-                        <h1 data-aos="fade-left">power of creative strategy.</h1>
-                        <p data-aos="flip-left">Web pages each have a URL or address, which is how a page is found, and is different for every page. When a webpage is part of a larger group of pages managed by a company, person, or organization, it is part of a website. </p>
+                        <h4 data-aos="fade-down">Who We Are</h4>
+                        <h1 data-aos="fade-left">We make films that move audiences.</h1>
+                        <p data-aos="flip-left">Thinking Elephents Ad Fims is a full-service video production agency specializing in ad films, short films, and event coverage — from concept and production to editing and delivery.</p>
                         <a href="about.html" class="btn btn-lg " data-aos="fade-up"> read more</a>
 
                         <div class="row count-number pt-3" data-aos="slide-up"><!--Count row-->
@@ -266,12 +332,12 @@
                         <div class=" card"><!--Card-->
                             <div class="icon-box"><!--Icon-box-->
                                 <div class="icon"><!--Icon-->
-                                    <i class="fa-solid fa-solar-panel"></i>
+                                    <i class="fa-solid fa-film"></i>
                                 </div><!--End of Icon-box-->
                             </div><!--End of Icon-->
                             <div class="card-body"><!--Card-body-->
-                                <h2 class="card-title">Quality services</h2>
-                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <h2 class="card-title">Ad Films</h2>
+                                <p class="card-text">Full-service production of ad films — concept, shoot, and post-production to deliver compelling brand stories.</p>
                                 <a href="service.html">Read More</a>
                             </div><!--end of Card-body-->
                         </div><!--end of Card-->
@@ -297,12 +363,12 @@
                         <div class="card"><!--Card--> 
                             <div class="icon-box"><!--Icon-box-->
                                 <div class="icon"><!--Icon-->
-                                    <i class="fa-solid fa-rocket"></i>
+                                    <i class="fa-solid fa-camera"></i>
                                 </div><!--End of Icon-->
                             </div><!--End of Icon-box-->
                             <div class="card-body"><!--Card-body-->
-                                <h2 class="card-title">suitable offer</h2>
-                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <h2 class="card-title">Event Filming</h2>
+                                <p class="card-text">Capture weddings, birthdays, and live events with experienced crews and cinematic style.</p>
                                 <a href="service.html">Read More</a>
                             </div><!--end of Card-body-->
                         </div><!--end of Card-->
@@ -312,12 +378,12 @@
                         <div class="card"><!--Card--> 
                             <div class="icon-box"><!--Icon-box-->
                                 <div class="icon"><!--Icon-->
-                                    <i class="fa-solid fa-sack-dollar"></i>
+                                    <i class="fa-solid fa-edit"></i>
                                 </div><!--End of Icon-->
                             </div><!--End of Icon-box-->
                             <div class="card-body"><!--Card-body-->
-                                <h2 class="card-title">cheap rate</h2>
-                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <h2 class="card-title">Post-production</h2>
+                                <p class="card-text">Professional editing, color grading, motion graphics and sound design to finish your project perfectly.</p>
                                 <a href="service.html">Read More</a>
                             </div><!--end of Card-body-->
                         </div><!--end of Card-->
@@ -335,7 +401,7 @@
             <!--presentation-section-->
            
             <video class="w-100 video" autoplay loop muted>
-                <source src="asset/video/arsd.mp4" type="video/mp4" />           
+                <source src="home.mp4" type="video/mp4" />           
               </video>
 
             <div class="container ">
@@ -822,12 +888,12 @@
 
                         <div class="d-inline-flex "><!--address-->
                             <div><span class="badge"><i class="fa-solid fa-location-dot"></i></span></div><!--Icon-->
-                            <div class="text">A108 Adam Street New York, NY 535022 United States</div><!--Text-->
+                            <div class="text"><a href="https://www.google.com/maps/search/?api=1&query=plot+no+407+Rd+Number+81+Phase+III+Jubilee+Hills+Hyderabad+Telangana+500096" target="_blank" rel="noopener">Plot No. 407, Rd Number 81, Phase III, Jubilee Hills, Hyderabad, Telangana 500096, India</a></div><!--Text--> 
                         </div><!--end of address-->
 
                         <div class="d-inline-flex "><!--phone-->
                             <div><span class="badge"><i class="fa-solid fa-mobile-retro"></i></span></div><!--Icon-->
-                            <div class="text">+8801564564</div><!--Text-->
+                            <div class="text"><a href="tel:+919059870455">+91 90598 70455</a></div><!--Text-->
                         </div><!--end of phone-->
                         <div class="d-inline-flex "><!--e-mail-->
                             <div><span class="badge"><i class="fa-regular fa-paper-plane"></i></span></div><!--Icon-->
@@ -853,11 +919,11 @@
                         
                         <!--Social Link-->
                         <div class="social-links mt-4 d-inline-flex align-items-center"><!--Social Link-->
-                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-facebook-f "></i></a>
-                            <a class="btn btn-square rounded-circle  " href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-instagram"></i></a>
-                        </div><!--End of Social Link-->
+                            <a class="btn btn-square rounded-circle" href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle" href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle" href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square rounded-circle" href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        </div><!--End of Social Link--> 
 
                     </div><!--end of Col4|Subscribe-->
 
@@ -896,7 +962,7 @@
 
         <div class="copyright"><!--Copyright-->
             <div class="container" ><!--Container-->
-                <p>&copy; Copyright <strong><span>ARSD</span></strong>. All Rights Reserved</p>
+                <p>&copy; Copyright <strong><span>Thinking Elephents Ad Fims</span></strong>. All Rights Reserved</p>
             </div><!--End of Container-->
         </div><!--End of Copyright-->
 
@@ -914,10 +980,10 @@
           );
         </script>     
 
-       
+        <script src="asset/js/nav-video-transition.js"></script>
 
     </body>
-</html>
+</html> 
 
 
 

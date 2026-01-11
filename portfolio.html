@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ARSD-a business website template</title>
+    <title>Thinking Elephents Ad Fims — Portfolio</title>
     <link rel="shortcut icon" type="image/png" href="asset/img/favicon.png">
     <meta charset="utf-8">
+    <meta name="description" content="Portfolio — selected ad films, short films, and event highlights from Thinking Elephents Ad Fims.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Latest compiled and minified CSS  Bootstrap -->
@@ -78,7 +79,7 @@
                     <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
                     <li class="nav-item"><a class="nav-link active" href="portfolio.html">portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social.html">social</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div><!--End of Menu -->
@@ -86,10 +87,12 @@
 
             <div class="h-100 d-lg-inline-flex align-items-center d-none" data-aos="slide-left">
                 <!--Social button -->
-                <a class="btn btn-square rounded-circle  " href=""><i class="fab fa-facebook-f "></i></a>
-                <a class="btn btn-square rounded-circle  " href=""><i class="fa-brands fa-x-twitter"></i></a>
-                <a class="btn btn-square rounded-circle  " href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square rounded-circle  " href=""><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f "></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://twitter.com/" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square rounded-circle  " href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div><!--end of Social button -->
         </div><!--End of navbar-collapse -->
     </nav>
@@ -125,96 +128,121 @@
 
         <div class="filters filter-button-group">
             <ul>
-                <li class="active"><a href="javascript:void(0);" data-filter="*">All</a></li>
-                <li><a href="javascript:void(0);" data-filter="popular">popular</a></li>
-                <li><a href="javascript:void(0);" data-filter="latest">latest</a></li>
-                <li><a href="javascript:void(0);" data-filter="best">best</a></li>
+                <li class="active"><button type="button" class="filter-btn" data-filter="*">All</button></li>
+                <li><button type="button" class="filter-btn" data-filter="ad-film">Ad Film</button></li>
+                <li><button type="button" class="filter-btn" data-filter="short-film">Short Film</button></li>
+                <li><button type="button" class="filter-btn" data-filter="event">Event</button></li>
+                <li><button type="button" class="filter-btn" data-filter="youtube">YouTube</button></li>
             </ul>
         </div>
-        <div id="container" class="isotope " data-aos="zoom-out"><!--Container-->
+        <div id="container" class="isotope grid" data-aos="zoom-out"><!--Container-->
 
-            <div class="grid-item" data-filter="popular"> <!--Grid Item1-->
-                <img src="asset/img/gallery1.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-1</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="ad-film">
+                <a class="popup-link" href="asset/img/gallery1.jpg" aria-label="Open image - Ad Film 1">
+                    <img src="asset/img/gallery1.jpg" alt="Ad Film 1">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Ad Film — Product Launch</h4>
+                            <p>Short description of the ad film project. Replace with your caption.</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item1-->
 
-            <div class="grid-item" data-filter="best"><!--Grid Item2-->
-                <img src="asset/img/gallery2.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-2</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="short-film">
+                <a class="popup-link" href="asset/img/gallery2.jpg" aria-label="Open image - Short Film 1">
+                    <img src="asset/img/gallery2.jpg" alt="Short Film 1">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Short Film — Drama Piece</h4>
+                            <p>Quick synopsis and credits placeholder.</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item2-->
 
 
 
-            <div class="grid-item" data-filter="popular"> <!--Grid Item3-->
-                <img src="asset/img/gallery3.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-3</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="youtube">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID" aria-label="Open YouTube video - Sample Video">
+                    <img src="asset/img/gallery3.jpg" alt="YouTube video thumbnail">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>YouTube — Campaign Highlight</h4>
+                            <p>Sample YouTube video embed — replace with your video link (VIDEO_ID).</p>
+                        </div>
+                        <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item3-->
 
-            <div class="grid-item" data-filter="best"><!--Grid Item4-->
-                <img src="asset/img/gallery4.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-4</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="event">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID2" aria-label="Open YouTube video - Event Highlight">
+                    <img src="asset/img/gallery4.jpg" alt="Event video thumbnail">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Event — Highlights</h4>
+                            <p>Event highlight reel — replace with your event video ID.</p>
+                        </div>
+                        <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item4-->
 
 
-            <div class="grid-item" data-filter="popular"><!--Grid Item5-->
-                <img src="asset/img/gallery5.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-5</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="ad-film">
+                <a class="popup-link" href="asset/img/gallery5.jpg" aria-label="Open image - Ad Film 2">
+                    <img src="asset/img/gallery5.jpg" alt="Ad Film 2">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Ad Film — Brand Story</h4>
+                            <p>Replace with production details.</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item5-->
 
-            <div class="grid-item" data-filter="latest"><!--Grid Item6-->
-                <img src="asset/img/gallery6.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-6</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="short-film">
+                <a class="popup-link" href="asset/img/gallery6.jpg" aria-label="Open image - Short Film 2">
+                    <img src="asset/img/gallery6.jpg" alt="Short Film 2">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Short Film — Experimental</h4>
+                            <p>Caption placeholder.</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item6-->
 
-            <div class="grid-item" data-filter="latest"> <!--Grid Item7-->
-                <img src="asset/img/gallery7.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-7</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="youtube">
+                <a class="popup-link" href="https://www.youtube.com/watch?v=VIDEO_ID3" aria-label="Open YouTube video - Behind The Scenes">
+                    <img src="asset/img/gallery7.jpg" alt="BTS video thumbnail">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>YouTube — Behind The Scenes</h4>
+                            <p>BTS for our productions — replace with your ID.</p>
+                        </div>
+                        <span class="icon play"><i class="fa fa-play" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item7-->
 
 
-            <div class="grid-item" data-filter="best"><!--Grid Item8-->
-                <img src="asset/img/gallery8.jpg" alt="gallery">
-                <div class="overlay"><!--overlay-->
-                    <div class="text"><!--Text-->
-                        <h4>item-8</h4>
-                        <p>Begin your influencer marketing proposal by introducing yourself, your brand, and your audience. Then, demonstrate your understanding of the target brand's needs and how your content and audience can help service those needs.</p>
-                    </div><!--End of Text-->
-                </div><!--End of overlay-->
+            <div class="grid-item" data-filter="event">
+                <a class="popup-link" href="asset/img/gallery8.jpg" aria-label="Open image - Event Photo">
+                    <img src="asset/img/gallery8.jpg" alt="Event Photo">
+                    <div class="overlay">
+                        <div class="text">
+                            <h4>Event Photo — Conference</h4>
+                            <p>Replace with event-specific details.</p>
+                        </div>
+                        <span class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                    </div>
+                </a>
             </div><!--end of Grid Item8-->
 
 
@@ -331,6 +359,75 @@
 
         <div class="isotope-pager" style="padding-top: 15px; text-align:center;"></div>
 
+        <!-- Init Magnific Popup for mixed content -->
+        <script>
+            (function($){
+                $(function(){
+                    $('#container').magnificPopup({
+                        delegate: 'a.popup-link',
+                        gallery: { enabled: true },
+                        callbacks: {
+                            elementParse: function(item) {
+                                var href = item.el.attr('href');
+                                if (href.indexOf('youtube.com') !== -1 || href.indexOf('vimeo.com') !== -1) {
+                                    item.type = 'iframe';
+                                } else {
+                                    item.type = 'image';
+                                }
+                            }
+                        }
+                    });
+                });
+            })(jQuery);
+        </script>
+
+        <style>
+            /* Color variables and button centering */
+            .portfolio-section { --logo-color: #0d6efd; --selected-color: #ff7a59; }
+            .filters.filter-button-group { margin-bottom: 22px; }
+            .filters.filter-button-group ul { list-style:none; margin:0; padding:0; display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; }
+            .filters.filter-button-group li { display:inline-block; }
+            /* Default button uses a subtle tint of the logo color; active uses a contrasting selected color */
+            .filters.filter-button-group .filter-btn { cursor:pointer; border-radius:24px; padding:6px 14px; background: rgba(13,110,253,0.08); color: var(--logo-color); border:1px solid rgba(13,110,253,0.12); transition: background .18s ease, color .18s ease, transform .08s ease; }
+            .filters.filter-button-group .filter-btn:hover { transform: translateY(-1px); background: rgba(13,110,253,0.12); }
+            .filters.filter-button-group .filter-btn.active { background: var(--selected-color); color:#fff; border-color:transparent; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+
+            /* Portfolio hover behaviour: show icon only until hover/focus, reveal text on hover */
+            .portfolio-section .grid-item { position: relative; overflow: hidden; border-radius:4px; }
+            .portfolio-section .grid-item img { width:100%; height:auto; display:block; border:0; border-radius:4px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: transform .35s ease; }
+            .portfolio-section .grid-item:focus-within img,
+            .portfolio-section .grid-item:hover img { transform: scale(1.02); }
+
+            /* Centered overlay with subtle background; default state shows icon only */
+            .portfolio-section .overlay { position:absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center; padding:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.12) 100%); color:#fff; transition: background .25s ease; }
+
+            /* Icon is always visible (small, centered) */
+            .portfolio-section .overlay .icon { position:relative; right:auto; top:auto; font-size:20px; background:rgba(0,0,0,0.6); padding:10px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:2; transition: transform .2s ease, background .2s ease; }
+            .portfolio-section .overlay .icon.play { background:rgba(255,0,0,0.9); color:#fff; }
+
+            /* Text hidden by default; revealed on hover/focus */
+            .portfolio-section .overlay .text { position:absolute; bottom:14px; left:14px; right:14px; opacity:0; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; pointer-events:none; color:#fff; }
+            .portfolio-section .overlay .text h4 { margin:0 0 6px 0; }
+
+            /* Reveal on hover or keyboard focus */
+            .portfolio-section .grid-item:hover .overlay,
+            .portfolio-section .grid-item:focus-within .overlay { background:linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.6) 100%); }
+            .portfolio-section .grid-item:hover .overlay .text,
+            .portfolio-section .grid-item:focus-within .overlay .text { opacity:1; transform: translateY(0); pointer-events:auto; }
+            .portfolio-section .grid-item:hover .overlay .icon,
+            .portfolio-section .grid-item:focus-within .overlay .icon { transform: scale(1.06); background:rgba(0,0,0,0.85); }
+
+            /* Make anchors focus-friendly (keyboard users) */
+            .portfolio-section .grid-item a { color:inherit; text-decoration:none; display:block; outline: none; }
+            .portfolio-section .grid-item a:focus .overlay .icon { box-shadow: 0 0 0 4px rgba(0,123,255,0.12); }
+
+            /* Small responsive tweak */
+            @media (max-width: 576px) {
+                .portfolio-section .overlay .text { font-size: 14px; bottom:8px; left:8px; right:8px; }
+                .portfolio-section .overlay .icon { padding:8px; font-size:18px; }
+            }
+        </style>
+
 
 
 
@@ -372,6 +469,7 @@
                         <li class="nav-item"><a class="nav-link" href="about.html"> about</a></li>
                         <li class="nav-item"><a class="nav-link" href="portfolio.html"> portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="service.html"> services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="social.html"> social</a></li>
                     </ul>
                 </div><!--end of Col2 | Useful Links-->
 
@@ -382,13 +480,13 @@
                     <div class="d-inline-flex ">
                         <!--address-->
                         <div><span class="badge"><i class="fa-solid fa-location-dot"></i></span></div><!--Icon-->
-                        <div class="text">A108 Adam Street New York, NY 535022 United States</div><!--Text-->
+                        <div class="text"><a href="https://www.google.com/maps/search/?api=1&query=plot+no+407+Rd+Number+81+Phase+III+Jubilee+Hills+Hyderabad+Telangana+500096" target="_blank" rel="noopener">Plot No. 407, Rd Number 81, Phase III, Jubilee Hills, Hyderabad, Telangana 500096, India</a></div><!--Text--> 
                     </div><!--end of address-->
 
                     <div class="d-inline-flex ">
                         <!--phone-->
                         <div><span class="badge"><i class="fa-solid fa-mobile-retro"></i></span></div><!--Icon-->
-                        <div class="text">+8801564564</div><!--Text-->
+                        <div class="text"><a href="tel:+919059870455">+91 90598 70455</a></div><!--Text-->
                     </div><!--end of phone-->
                     <div class="d-inline-flex ">
                         <!--e-mail-->
@@ -417,12 +515,14 @@
                     </div><!--End of Form-->
                     <!--Social Link-->
                     <div class="social-links mt-4 d-inline-flex align-items-center">
-                        <!--Social Link-->
-                        <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-facebook-f "></i></a>
-                        <a class="btn btn-square rounded-circle  " href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-instagram"></i></a>
-                    </div><!--End of Social Link-->
+                        <a class="btn btn-square rounded-circle" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://www.instagram.com/thinkingelephants/reels/" target="_blank" rel="noopener" aria-label="Instagram Reels"><i class="fa-solid fa-film"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square rounded-circle" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div><!--End of Social Link-->  
 
                 </div><!--end of Col4|Subscribe-->
 
@@ -460,7 +560,7 @@
         <!--Copyright-->
         <div class="container">
             <!--Container-->
-            <p>&copy; Copyright <strong><span>ARSD</span></strong>. All Rights Reserved</p>
+            <p>&copy; Copyright <strong><span>Thinking Elephents Ad Fims</span></strong>. All Rights Reserved</p>
         </div><!--End of Container-->
     </div><!--End of Copyright-->
 
@@ -478,7 +578,7 @@
         );
     </script>
 
-
+    <script src="asset/js/nav-video-transition.js"></script>
 
 </body>
-</html>
+</html> 

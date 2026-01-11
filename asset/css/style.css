@@ -1,7 +1,7 @@
 
 /*------------------------
 
-Theme Name: ARSD Buis
+Theme Name: Thinking Elephents Ad Fims
    version: 1.0
 
 -----------------------------*/
@@ -74,7 +74,7 @@ html {
 .navbar,  /*--Menu Background Color--*/
 .navbar .dropdown-menu, /*--dropdown menu Background---*/
 .navbar .dropdown-menu a:hover { /*---dropdown Menu item background color when hover -----*/
-        background-color: transparent !important; /*----Menu Background Color(on Big Screen)-----------*/
+    background-color: rgba(14,14,87,0.9) !important; /*----Menu Background Color (default)-----------*/
 }
 
 
@@ -96,8 +96,10 @@ html {
 @media screen and (min-width: 768px){ /*-----Media Quary Start-------*/
 
              .navbar { /*----Menu  (on big Screen)-----------*/
-                padding: 1.5vw 0pt; /*------Menu Top and Bottom Height (on Big Screen)-------*/
-          border-bottom: 1px solid rgba(255,255,255,0.2); /*------Menu  Bottom  Border (on Big Screen)-------*/
+            padding: 0.8vw 0pt; /* reduced vertical padding to lower header height on desktop */
+        border-bottom: 1px solid rgba(255,255,255,0.2); /*------Menu  Bottom  Border (on Big Screen)-------*/
+        background: rgba(14,14,87,0.9); /* solid header background on desktop */
+        box-shadow: 0 6px 24px rgba(0,0,0,0.18);
                 }
 
              .navbar .dropdown-menu {
@@ -133,7 +135,7 @@ html {
 						            top: 0;/*----on small screen menu will be fixed on Top-----*/
 					         text-align: center; /*--On small screen menu item will be in center position--*/
 			           background-color: #0E0E57 !important; /*----On small screen menu Background Color-----*/
-			                    padding: 3vw; /*-----On Small screen menu top and bottom extra width-----*/
+                            padding: 2vw; /* reduced padding to lower header height on mobile */
                           margin-bottom: 5vw;  
 						  }
 
@@ -166,10 +168,24 @@ html {
 
 -------------------------------------------*/
 
-             .navbar  img{ 
-                         width:clamp(50pt,15vw,70pt); /*---------Logo width in different device-----------*/
-			              object-fit:cover; /*--Logo size resize---*/
-			            }
+                         .navbar  img{ 
+                                     height:clamp(46px,8vw,64px); /* fill the existing header height without expanding it */
+                                     max-height:64px; /* guardrail to avoid growing the header */
+                                     width:auto; /* let width follow aspect ratio */
+            			              object-fit:contain; /* keep proportions without cropping */
+                                    display:block;
+            			            }
+
+                         /* add a soft background behind the logo so it stays visible */
+                         .navbar .navbar-brand {
+                                     display:flex;
+                                     align-items:center;
+                                     justify-content:center;
+                                     background: #f7d64a; /* logo yellow */
+                                     padding: 6px 10px;
+                                     border-radius: 12px;
+                                     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+                         }
 
 
 
@@ -181,21 +197,36 @@ html {
 
 .navbar a,
 .navbar .dropdown .show {
-                font-size: clamp(10pt,2vw,11pt); /*----Menu font size-----*/
-                    color: #ffffff; /*----Menu Font color----*/
-           text-transform: capitalize; /*----Ment font style----*/
-              font-weight: normal; /*----Menu Font width-----*/
-           letter-spacing: 0.5pt; /*---Menu font letter spacing----*/
+                     font-size: clamp(10pt,2vw,11pt); /*----Menu font size-----*/
+                          color: #ffffff; /* default text color */
+              text-transform: capitalize; /*----Menu font style----*/
+                  font-weight: 700; /* bolder for visibility */
+              letter-spacing: 0.5pt; /*---Menu font letter spacing----*/
+              padding: 10px 16px; /* button-like padding */
+              border-radius: 999px; /* pill shape */
+              background: transparent; /* default: no fill */
+              box-shadow: none;
+              transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
          }
+
+/* add breathing room between menu buttons */
+.navbar .navbar-nav .nav-item {
+    margin: 0 6px;
+}
 
     .navbar a:hover,
     .navbar a:focus {
-                    color: #F2707E; /*-----Menu Font when hover----*/
+                color: #ffffff;
+                background: rgba(247,214,74,0.25); /* subtle logo yellow tint on hover */
+                box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+                transform: translateY(-1px);
            }
 
 
 .navbar .active:not(.dropdown-toggle) {
-                    color: #F2707E; /*-----Menu Font when active----*/
+                    color: #0E0E57; /* dark text on yellow */
+                    background: #f7d64a; /* logo yellow when selected */
+                    box-shadow: 0 10px 24px rgba(247,214,74,0.35);
                     }
 
 
@@ -262,8 +293,8 @@ html {
 
 
 .navbar .btn-square { 
-                        border: 2px solid #ffffff; /*-----Social Icon border------*/
-			             color: #ffffff; /*----Social Icon Color--------*/
+                border: 2px solid rgba(255,255,255,0.6); /* softer border */
+			             color: #ffffff; /* default fallback */
                     transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) ;/*-------Social button transform on click animation---------*/
                        display: flex;
                justify-content: center;
@@ -274,14 +305,22 @@ html {
 						 }
 						 
     .navbar .btn-square:hover {
-                    background-color: #ffffff; /*-----Social button background color on hover------*/
-			                   color: #013ca6;/*------Social icon color on hover------------*/
+              background-color: rgba(255,255,255,0.15); /* subtle hover */
+			                   color: inherit;/* keep brand color */
 						 }						 
 
 
               .navbar .btn-square i{ 
                            font-size: clamp(8pt,1vw,9pt);/*-------Social Icon font size---------*/
                      }
+
+    /* brand colors for header social icons */
+    .navbar .btn-square .fa-facebook-f { color:#1877F2; }
+    .navbar .btn-square .fa-x-twitter { color:#000000; }
+    .navbar .btn-square .fa-linkedin-in { color:#0A66C2; }
+    .navbar .btn-square .fa-instagram { color:#E1306C; }
+    .navbar .btn-square .fa-youtube { color:#FF0000; }
+    .navbar .btn-square .fa-tiktok { color:#000000; }
 
 
 
@@ -360,7 +399,11 @@ html {
              transform: translate(-50%,-50%); 
      -webkit-transform: translate(-50%,-50%); 
                  width: 100%; 
-                }
+            padding: 18px 24px;
+            background: rgba(255,0,0,0.65); /* red translucent background layer */
+              border-radius: 12px;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
 
 
                               /*--------------------------------
@@ -400,6 +443,16 @@ html {
              letter-spacing: 2pt;
                   text-wrap: pretty;
  }
+
+/* Hero video banner brand highlight */
+.hero-video-section .text-box h1 {
+    display: inline-block;
+    background: rgba(247,214,74,0.9); /* logo yellow with slight opacity */
+    color: #0E0E57;
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
 
 
                               /*--------------------------------
@@ -3990,4 +4043,78 @@ Create a box behind the image
 
         .copyright span {
             color: #F87381; /*-----Copyright highlighted Text-----*/
+        }
+
+        /* Navigation video overlay */
+        .nav-video-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center; /* vertical center */
+          justify-content: center; /* horizontal center */
+          height: 100vh; /* ensure overlay fills viewport vertically */
+          width: 100vw;
+          padding: 0;
+          background: rgba(0,0,0,1); /* black background */
+          z-index: 2147483647; /* very high to outrank other fixed elements */
+          pointer-events: auto;
+          box-sizing: border-box;
+        }
+        .nav-video-overlay[aria-hidden="true"] { display: none; }
+        /* absolutely center the video so it's always in the middle of the viewport */
+        .nav-video-overlay .nav-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          max-width: 500px; /* increased to 500px as requested */
+          width: auto; /* preserve aspect ratio */
+          height: auto;
+          max-height: 80vh;
+          box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+          border-radius: 8px;
+        }
+        /* Ensure the video remains responsive on small screens */
+        @media (max-width: 767px) {
+          .nav-video-overlay .nav-video { max-width: 90vw; }
+        }
+
+        /* Skip button no longer participates in flex flow so it won't offset the video */
+        .nav-video-overlay .nav-video-skip {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          z-index: 2147483648;
+          background: rgba(255,255,255,0.06);
+          border: none;
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        /* prevent background scrolling while nav video overlay is open */
+        body.nav-video-open { overflow: hidden; }
+        
+        .nav-video-skip {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          background: rgba(255,255,255,0.95);
+          color: #111;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 600;
+          z-index: 10000;
+        }
+        .nav-video-skip:focus { outline: 2px solid #fff; outline-offset: 3px; }
+
+        @media (max-width: 767px) {
+          .nav-video-overlay { display: none !important; }
         }
