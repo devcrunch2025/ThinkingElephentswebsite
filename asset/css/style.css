@@ -525,6 +525,7 @@ html {
 
 .about-section {                 
                 overflow: hidden; /*-----Not item can exit this section ( Left or right margin) ----------*/
+   background-color: #A1C2FA; /* Google Blue 50% lighter */
    }
 
 
@@ -573,7 +574,7 @@ html {
 
 .about-section h4:not(.count-number) {   /*-----Title1-------------*/
           text-transform: uppercase;  
-                   color: #3369e7;    
+                   color: #ffffff;    
              font-weight: normal;
                font-size: clamp(10pt,2vw,11pt);
              font-family: "Montserrat", sans-serif;
@@ -584,7 +585,7 @@ html {
 .about-section h1:not(.count-number) {  /*-----Title2-------------*/
                font-size: clamp(21pt,3vw,36pt);  
           text-transform: capitalize;  
-                   color: #000000;    
+                   color: #ffffff;    
              font-weight: bolder;
           padding-bottom: 1vw;
                text-wrap: pretty;
@@ -594,7 +595,7 @@ html {
 .about-section  p:not(.count-number) {  /*-----Text-------------*/    
              font-weight: normal;
                font-size: clamp(8pt,2vw,10pt);  
-                   color: #6a737b;
+                   color: #f0f0f0;
                text-wrap: pretty;
 
                }
@@ -740,7 +741,7 @@ html {
 .about-section .count-number .count {
                       font-size: clamp(16pt,3vw,21pt);
                      text-align: center;
-                          color: #0647A6;
+                          color: #ffffff;
                     font-weight: bolder;
                     
 }
@@ -762,7 +763,7 @@ html {
                       font-size: clamp(8pt,2vw,10pt);
                  text-transform: capitalize;
                      text-align: center;
-                          color: #3796D9;
+                          color: #f0f0f0;
                     font-family: "Montserrat", sans-serif;
                       text-wrap: pretty;
 }
@@ -777,6 +778,7 @@ html {
 
    .offer-section {
                       overflow: hidden; /*------Section Item Cant exit left and right Margin------------*/
+         background-color: #F5A19A; /* Google Red 50% lighter */
          }
   
 
@@ -1057,7 +1059,7 @@ html {
          background-attachment: fixed; 
              background-repeat: no-repeat; 
                background-size: cover; 
-              background-color: rgba(51, 82, 56,0.55); 
+              background-color: #FDDE82; /* Google Yellow 50% lighter */
          background-blend-mode: multiply;
                     object-fit: cover;    
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -1217,6 +1219,7 @@ html {
     .team-section {
         padding: 2vw 0pt; /*---------Team Section Top and Bottom have some padding-----------------*/
         overflow: hidden;
+        background-color: #9AD4A9; /* Google Green 50% lighter */
     }
 
     @media screen and (min-width: 768px) {
@@ -1383,6 +1386,7 @@ html {
     .testimonial-section {
         padding-top: 10pt;
         overflow: hidden; /*----No item can exit this section-----*/
+        background-color: #A1C2FA; /* Google Blue 50% lighter */
     }
 
         .testimonial-section .row { /*-----testimonial section main Row---------*/
@@ -2096,6 +2100,7 @@ html {
 
     .sponsor-section {
         padding: 2vw 0pt;
+        background-color: #F5A19A; /* Google Red 50% lighter */
     }
 
 
