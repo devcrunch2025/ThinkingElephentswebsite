@@ -3902,10 +3902,11 @@ Create a box behind the image
 
 --------------------------------------------------------------*/
     .contact-section {
-        margin: 10vw 0pt 15vw 0pt;
-        background: linear-gradient(135deg, rgba(161, 194, 250, 0.05) 0%, rgba(149, 212, 169, 0.05) 100%);
-        padding: 6vw 2vw;
-        border-radius: 0 0 40px 40px;
+        /* Remove large top gap and make background more visible */
+        margin: 0 0 10vw 0;
+        background: linear-gradient(135deg, rgba(161, 194, 250, 0.18) 0%, rgba(149, 212, 169, 0.18) 100%);
+        padding: 4vw 0; /* edge-to-edge section background */
+        border-radius: 0; /* full-bleed background without rounded edges */
     }
 
 
@@ -4093,37 +4094,35 @@ Create a box behind the image
 
     /* Contact Page - New Styling */
     .contact-info-wrapper {
-        background: linear-gradient(135deg, rgba(255, 82, 82, 0.12) 0%, rgba(255, 145, 0, 0.1) 100%);
-        padding: 3vw;
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        border-left: 5px solid #FF5252;
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e5e7eb;
+        border-top: 4px solid #FF5252;
     }
 
     .contact-form-wrapper {
-        background: linear-gradient(135deg, rgba(76, 175, 80, 0.12) 0%, rgba(149, 212, 169, 0.1) 100%);
-        padding: 3vw;
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        border-left: 5px solid #4CAF50;
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e5e7eb;
+        border-top: 4px solid #4CAF50;
     }
 
     .contact-info-wrapper .section-title1 {
-        background: linear-gradient(135deg, #FF5252 0%, #FF9100 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1.5vw;
+        color: #1f2937;
+        margin-bottom: 1.2rem;
         font-size: clamp(18pt, 3vw, 24pt);
+        font-weight: 800;
     }
 
     .contact-form-wrapper .section-title1 {
-        background: linear-gradient(135deg, #4CAF50 0%, #9AD4A9 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1.5vw;
+        color: #1f2937;
+        margin-bottom: 1.2rem;
         font-size: clamp(18pt, 3vw, 24pt);
+        font-weight: 800;
     }
 
     .contact-info-item {
@@ -4320,13 +4319,13 @@ Create a box behind the image
     }
 
     .contact-section .map {
-        background: linear-gradient(135deg, rgba(33, 150, 243, 0.12) 0%, rgba(100, 181, 246, 0.08) 100%);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        padding: 2vw;
-        border-radius: 20px;
+        background: #ffffff;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
         overflow: hidden;
-        border: 2px solid rgba(33, 150, 243, 0.3);
-        margin-top: 4vw;
+        margin-top: 30px; /* avoid overlap under fixed header */
         min-height: 500px;
     }
 
@@ -4340,6 +4339,46 @@ Create a box behind the image
     .contact-section .map .ratio {
         aspect-ratio: 16 / 9;
         min-height: 500px;
+    }
+
+    /* Floating WhatsApp bounce animation */
+    .floating-whatsapp img.whatsapp-bounce {
+        animation: whatsappBounce 6s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    @keyframes whatsappBounce {
+        0%, 100% { transform: translateY(0) scale(1); }
+        25% { transform: translateY(-6px) scale(1.02); }
+        50% { transform: translateY(0) scale(1); }
+        75% { transform: translateY(-4px) scale(1.01); }
+    }
+
+    /* Favicon fly-by animation */
+    .favicon-fly {
+        position: fixed;
+        bottom: 20px;
+        left: -64px;
+        width: 48px;
+        height: 48px;
+        z-index: 9999;
+        pointer-events: none;
+        filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+        animation: faviconFly 9s ease-out forwards;
+    }
+
+    @keyframes faviconFly {
+        0% { transform: translateX(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        50% { transform: translateX(50vw) rotate(6deg); opacity: 1; }
+        100% { transform: translateX(calc(100vw + 96px)) rotate(0deg); opacity: 0; }
+    }
+
+    /* Divider under full-width map */
+    .contact-divider {
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        margin: 0;
     }
 
     @media (max-width: 768px) {
