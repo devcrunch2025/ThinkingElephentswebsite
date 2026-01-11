@@ -1,0 +1,3993 @@
+
+/*------------------------
+
+Theme Name: ARSD Buis
+   version: 1.0
+
+-----------------------------*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+/*------------------------------------------
+            
+			
+		+++++ Basic settings+++++
+			  
+			 
+-------------------------------------------*/
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+          body {
+                font-family: 'Open Sans', sans-serif; /*---Basic Font family------*/              
+               }
+
+
+            h1, h2, h3, h4, h5, h6 {
+                    font-family: "Noto Sans", sans-serif; /*---Basic Title Font family------*/
+               }
+
+
+                              a, a:hover {
+                                     text-decoration: none; /*---Link underline remove------*/
+                                      }
+
+
+/*----------------------------------------
+
+    ++++Fix the Container Width+++
+
+-----------------------------------------*/
+
+     .container {
+               min-width: 70%; /*----Container minimum width that will be mantain---*/
+               max-width: 80%; /*----Container maximum width that will be mantain---*/
+       }
+
+
+
+/*------------------------------------------
+            
+			
+		    +++++ Menu Background +++++
+                   Top Menu
+			  
+			 
+-------------------------------------------*/
+
+                                            /*------------------------------------------------------------------------
+                                                   ***Menu Background, Dropdown menu Background,Dropdow Item Background
+                                                       will be Affected only for Big Screen ( minimum 768px )
+                                                   ***This Background Color will be changed  after Scroll      
+                                            ------------------------------------------------------------------------*/
+.navbar,  /*--Menu Background Color--*/
+.navbar .dropdown-menu, /*--dropdown menu Background---*/
+.navbar .dropdown-menu a:hover { /*---dropdown Menu item background color when hover -----*/
+        background-color: transparent !important; /*----Menu Background Color(on Big Screen)-----------*/
+}
+
+
+/*---------------------------------------------------------------
+            
+			
+		+++++ Menu Background  only for big screen  +++++
+			  
+			 
+-----------------------------------------------------------------*/
+
+                                               /*------------------------------------------------------------------------
+                                                   ***for Menu Background only for Big Screen ( minimum 768px )
+                                                           add some padding and Bottom Border
+                                                   ***for Dropdown Menu only for Big Screen ( minimum 768px )  
+                                                                 remove all Border
+                                               ------------------------------------------------------------------------*/
+
+@media screen and (min-width: 768px){ /*-----Media Quary Start-------*/
+
+             .navbar { /*----Menu  (on big Screen)-----------*/
+                padding: 1.5vw 0pt; /*------Menu Top and Bottom Height (on Big Screen)-------*/
+          border-bottom: 1px solid rgba(255,255,255,0.2); /*------Menu  Bottom  Border (on Big Screen)-------*/
+                }
+
+             .navbar .dropdown-menu {
+                      border: none; /*------Remove dropdown menu border-------*/
+                         }
+
+}/*-----Media Quary End-------*/
+
+
+
+/*---------------------------------------------------------------
+            
+			
+		+++++ Menu Background  only for small screen  +++++
+			  
+			 
+-----------------------------------------------------------------*/
+
+                                            /*------------------------------------------------------------------------
+                                                   ***Menu  only for small Screen ( maximum 992px )
+                                                           i)Menu will be fixed in top
+                                                          ii)Menu Item will stay in center
+                                                         iii)Menu Background Color will be like after scroll Backround Color 
+                                                          iv)Add some padding and margin
+                                               ------------------------------------------------------------------------*/
+
+
+@media screen and (max-width: 992px) {  /*-----Media Quary Start-------*/
+
+             .navbar {        /*----Menu  (on Small Screen)-----------*/      
+                               position: absolute; /*---on small sreen menu will be fixed on top position-----*/ 
+                                  width: 100%; /*-----On Small screen menu will take full width ------*/
+						            top: 0;/*----on small screen menu will be fixed on Top-----*/
+					         text-align: center; /*--On small screen menu item will be in center position--*/
+			           background-color: #0E0E57 !important; /*----On small screen menu Background Color-----*/
+			                    padding: 3vw; /*-----On Small screen menu top and bottom extra width-----*/
+                          margin-bottom: 5vw;  
+						  }
+
+            }/*-----Media Quary End-------*/
+
+/*---------------------------------------------------------------
+            
+			
+		+++++ Menu Background  when scrolled and  
+            available for only  big screen  +++++
+			  
+			 
+-----------------------------------------------------------------*/
+
+
+
+
+              .navbar:is(.scrolled),           /*----Menu Background color when scrolled |scrolled  class is defined in j-query -----------*/ 
+              .navbar:is(.scrolled) .dropdown-menu, /*---- dropdown Menu Background and border when scroll-----------*/ 
+              .navbar:is(.scrolled) .dropdown-menu a:hover {
+                                      background-color:#0E0E57 !important; /*-----on scrolled background color---*/
+                                                border:none; /*----on scrolled remove border ------*/
+                                }             
+						  
+
+
+/*------------------------------------------
+
+          ++++ Menu   Logo +++
+
+-------------------------------------------*/
+
+             .navbar  img{ 
+                         width:clamp(50pt,15vw,70pt); /*---------Logo width in different device-----------*/
+			              object-fit:cover; /*--Logo size resize---*/
+			            }
+
+
+
+/*------------------------------------------
+
+          +++ Menu Item +++
+
+-------------------------------------------*/
+
+.navbar a,
+.navbar .dropdown .show {
+                font-size: clamp(10pt,2vw,11pt); /*----Menu font size-----*/
+                    color: #ffffff; /*----Menu Font color----*/
+           text-transform: capitalize; /*----Ment font style----*/
+              font-weight: normal; /*----Menu Font width-----*/
+           letter-spacing: 0.5pt; /*---Menu font letter spacing----*/
+         }
+
+    .navbar a:hover,
+    .navbar a:focus {
+                    color: #F2707E; /*-----Menu Font when hover----*/
+           }
+
+
+.navbar .active:not(.dropdown-toggle) {
+                    color: #F2707E; /*-----Menu Font when active----*/
+                    }
+
+
+/*-------------------------------------------------------------------
+
+          ++++ Dropdown Menu only available for small screen +++
+
+-------------------------------------------------------------------*/
+
+@media screen and (max-width: 992px) {  /*-----Media Quary Start-------*/
+        .navbar .dropdown-menu a{ /*-----Dropdown menu on small screen------*/
+               text-align: center;/*--------on small screen dropdown menu item will be on center-------*/
+            }
+
+.navbar .dropdown-menu{ 
+                   border: none; /*---Remove border On small screen dropdown menu----*/
+         }
+  }/*-----Media Quary End-------*/
+
+
+
+
+/*--------------------------------------------------------------
+
+       Small Screen Button | Button to show menu | 
+          button only available in small screen
+
+---------------------------------------------------------------*/
+
+                                              /*------------------------------------------------------------------------
+                                                        ***Ham berger  Button ( maximum 768px )***
+                                                           i)Remove Button Border,Remove shadow
+                                                          ii)'X' button will be available after clicking Hamberger Button
+                                                        
+                                               ------------------------------------------------------------------------*/
+
+.navbar .navbar-toggler {
+                        border: none; /*--on small screen collapse button border remove---*/
+					}
+     .navbar  .navbar-toggler i{
+                                 color: #F2707E !important; /*----On small screen collapse button color-----*/
+				             font-size: 18pt; /*------On small screen Collapse button size------*/
+				           }
+
+          .navbar .navbar-toggler .close {
+                                  display: none; /*----On small screen 'X' button is invisible | after clicking 'Hamburger' button 'X' button will be displayed-------*/
+                              }
+    .navbar .navbar-toggler:focus {
+                       outline: none !important; /*------remove outline of Collapse button On small screen  ---------*/
+                    box-shadow: none !important;/*----remove shadow of collapse button on small screen-----*/
+                   }
+
+
+/*-----------------------------------------
+
+             Menu Social Icon 
+
+------------------------------------------*/ 
+
+                                      /*------------------------------------------
+                                          Right Side Social media is only 
+                                             available in Big Screen
+                                      --------------------------------------------*/
+
+
+.navbar .btn-square { 
+                        border: 2px solid #ffffff; /*-----Social Icon border------*/
+			             color: #ffffff; /*----Social Icon Color--------*/
+                    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) ;/*-------Social button transform on click animation---------*/
+                       display: flex;
+               justify-content: center;
+                   align-items: center;
+                         width: 25pt;
+                        height: 25pt;
+                  margin-right: 5pt;
+						 }
+						 
+    .navbar .btn-square:hover {
+                    background-color: #ffffff; /*-----Social button background color on hover------*/
+			                   color: #013ca6;/*------Social icon color on hover------------*/
+						 }						 
+
+
+              .navbar .btn-square i{ 
+                           font-size: clamp(8pt,1vw,9pt);/*-------Social Icon font size---------*/
+                     }
+
+
+
+/*---------------------------------------------
+
+          +++Hero Section ( Front Page )+++
+
+-----------------------------------------------*/ 
+
+
+                       
+                              /*----------------------------
+                                  Fix the slide position
+                              -----------------------------*/
+                         
+.HeroSection .carousel-item {        /*----adjust Slide Height and Width-----*/  
+                transition: opacity ease-out 0.5s;  /*----slide image change with opacity-----*/ 
+                    height: clamp(250pt,60vw,550pt); /*---- Slide Height -----*/ 
+                     width: 100%; /*--Slide Full Width---*/
+                  position: relative; 
+                text-align: center; 
+                 isolation: isolate; 
+                   z-index: 1;
+}
+
+                               /*--------------------------------
+                                    fix slide Image position
+                              -----------------------------------*/
+
+
+  .HeroSection  img{ /*---- Slide Image||  every image act like a background iamge-----*/ 
+                     width: 100%; /*----Slide Image  full width-----*/
+                    height: 100%; /*----Slide image take full width-----*/
+                  position: absolute;/*-----Slide Image take absolute position----------*/
+                       top: 0;
+                      left: 0;
+                object-fit: cover;
+ 
+               }
+
+
+                             /*--------------------------------
+                                    Change slide Image Color
+                              -----------------------------------*/
+               
+   .HeroSection .slide-bg::after{ /*-----------Backround over slide image || Slide bg is the div that contain slide image---------------*/
+                   content: '';
+                     width: 100%; 
+                    height: 100%;
+                  position: absolute;
+                       top: 0;
+                      left: 0;
+          background-color: rgba(0, 0, 0,0.5);     
+     background-blend-mode: multiply; 
+
+            }
+
+
+
+/*-------------------------------------------------------------
+
+          +++  Slide  Text ( Hero Section--Front Page )+++
+
+--------------------------------------------------------------*/
+
+                              /*--------------------------------
+                                        Text Holder
+                                    fix slide Text position
+                              -----------------------------------*/                
+                       
+
+    .HeroSection  .text-box {  /*----Slide Text Holder----*/
+              position: absolute;
+                   top: 55%; 
+                  left: 50%; 
+             transform: translate(-50%,-50%); 
+     -webkit-transform: translate(-50%,-50%); 
+                 width: 100%; 
+                }
+
+
+                              /*--------------------------------
+                                         Slide Title-1
+                              -----------------------------------*/     
+
+ .HeroSection  h4{ /*-----Section title-1 -------*/ 
+                  font-size: clamp(8pt,2vw,11pt);  
+                font-family: "Montserrat", sans-serif;     
+             text-transform: capitalize;      
+                font-weight: normal;
+                 text-align: center;
+                      color: #0dd3ff;
+                      width: clamp(156pt,65%,700pt);
+                    display: block;
+                     margin: 5pt auto; 
+             letter-spacing: 2pt;
+                  text-wrap: pretty;
+      }
+
+
+                              /*--------------------------------
+                                         Slide Title-2
+                              -----------------------------------*/   
+                              
+
+.HeroSection  h1{ /*-----Section title-2 -------*/ 
+                  font-size: clamp(12pt,5vw,42pt);       
+             text-transform: uppercase;      
+                font-weight: bolder;
+             padding-bottom: 0.5vw; 
+                 text-align: center;
+                      color: #ffffff;
+                      width: clamp(156pt,65%,700pt);
+                    display: block;
+                     margin: auto; 
+             letter-spacing: 2pt;
+                  text-wrap: pretty;
+ }
+
+
+                              /*--------------------------------
+                                         Slide Text
+                              -----------------------------------*/     
+ .HeroSection  p{  /*-----Section text-------*/      
+               font-weight: normal;
+                 font-size: clamp(6pt,2vw,10pt); 
+                     color: #cccccc; 
+                     width: clamp(212pt,65%,800pt);
+                   display: block;
+                    margin: auto; 
+            padding-bottom: 2vw; 
+                 text-wrap: balance;
+       
+     
+}
+
+
+
+
+.HeroSection .btn { /*-----Section Button---------*/
+
+              font-size: clamp(6pt,2vw,12pt);
+                padding: clamp(4pt,1vw,10pt) clamp(15pt,3vw,30pt);
+                 border: none;
+          border-radius: 30px;
+         text-transform: uppercase;
+            font-weight: bolder;
+             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+
+}
+
+.HeroSection .btn1 ,
+.HeroSection .btn1:hover,
+.HeroSection .btn1:active{ /*-----hero section Button 1 ---------*/
+                 border: none;    
+       background-color: #ffffff;                 
+             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+    
+}
+
+    .HeroSection .btn1 a,
+    .HeroSection .btn1 a :hover { /*-----hero section Button 1  when hover---------*/
+                  color: #F2707E;
+    }
+
+
+.HeroSection .btn2,
+.HeroSection .btn2:hover,
+.HeroSection .btn2:active { /*-----hero section Button  2 ---------*/
+                 border: none;
+       background-color: #F2707E;
+             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+
+}
+    .HeroSection .btn2 a,
+    .HeroSection .btn2 a:hover { /*-----hero section Button  2 when hover---------*/
+                  color: #ffffff;
+        
+    }
+
+ 
+/*-------------------------------------------------
+
+                 +++About Section++ 
+          ( For Front page  and About us page )
+
+--------------------------------------------------*/
+
+.about-section {                 
+                overflow: hidden; /*-----Not item can exit this section ( Left or right margin) ----------*/
+   }
+
+
+/*---------------------------------------------------------------
+
+                        main Row 
+             ( About Section -- available in 
+               Front Page and about us page )
+
+----------------------------------------------------------------*/						 
+               
+.about-section .g-5{ /*-----row style only if has  image-------------*/
+                 display: flex;
+         justify-content: center  ; 
+                 padding: 6vw 0pt;
+}
+
+/*---------------------------------------------------------------
+
+                       Main Column
+             ( About Section -- available in 
+               Front Page and about us page )
+
+----------------------------------------------------------------*/	
+
+.about-section .col-12:not(.img-block){ /*-----Column padding not for image-------------*/
+             padding-left: 4vw;
+}
+
+@media screen and (max-width: 1200px) { /*-----Media Quary for maximum 1200px but more than 768px start here---------*/
+
+.about-section .col-12:not(.img-block){ /*-----Colum padding not for image-------------*/
+              padding-top: clamp(10pt,3.5vw,50pt);
+            }
+}/*-----Media Quary for maximum 1200px but more than 768px End here---------*/
+
+
+/*---------------------------------------------------------------
+
+                Section Title and Text 
+      ( About Section -- available in Front Page 
+                 and about us page )
+
+----------------------------------------------------------------*/
+
+
+.about-section h4:not(.count-number) {   /*-----Title1-------------*/
+          text-transform: uppercase;  
+                   color: #3369e7;    
+             font-weight: normal;
+               font-size: clamp(10pt,2vw,11pt);
+             font-family: "Montserrat", sans-serif;
+               text-wrap: pretty;
+               
+             }
+
+.about-section h1:not(.count-number) {  /*-----Title2-------------*/
+               font-size: clamp(21pt,3vw,36pt);  
+          text-transform: capitalize;  
+                   color: #000000;    
+             font-weight: bolder;
+          padding-bottom: 1vw;
+               text-wrap: pretty;
+             }
+      
+      
+.about-section  p:not(.count-number) {  /*-----Text-------------*/    
+             font-weight: normal;
+               font-size: clamp(8pt,2vw,10pt);  
+                   color: #6a737b;
+               text-wrap: pretty;
+
+               }
+
+
+
+/*---------------------------------------------------------------
+
+                         Image
+             ( About Section -- available in Front Page 
+                   and about us page )
+
+----------------------------------------------------------------*/	
+
+.about-section  .img-block{ /*---- left column image holder or div-----*/
+                position: relative;
+                  height: clamp(250pt,60vh,420pt);
+
+        } 
+
+
+       
+.about-section img{ /*----- Image of left column-------------*/
+                  height: 85%;
+                   width: 80%;  
+                position: absolute;
+              object-fit: cover; 
+                     top: 15%;
+                    left: 15%;
+                  border: clamp(10pt,4vw,15pt) solid #F27280;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+     
+           }
+
+
+@media screen and (max-width: 768px) {  /*---Media Quary only for ( Small Screen->maximum 768px ) Start here-----------*/ 
+
+ .about-section img{ /*----- Image-------------*/
+                  height: 85%;
+                   width: 90%;  
+                     top: 10%;
+                    left: 10%;          
+            }
+
+}/*---Media Quary only for ( Small Screen->maximum 768px ) End here-----------*/ 
+
+
+
+/*---------------------------------------------------------------
+
+                Create a box behind the image
+         ( About Section -- available in Front Page 
+                     and about us page )
+
+----------------------------------------------------------------*/	
+ 
+.about-section   .box{   /*------rectangle behind the image|| Create a rectangle before the Image-------*/
+                     top: 3%;
+                  height: 110%;
+                   width: 50%; 
+        background-color: #3B9FE5; 
+                  border: clamp(10pt,4vw,15pt) solid    #0748A7; 
+                position: absolute;  
+                 z-index: -1;   
+
+}
+
+
+@media screen and (max-width: 768px) {  /*---Media Quary only for ( Small Screen->maximum 768px ) Start here-----------*/ 
+.about-section   .box{
+                  height: 100%;
+                   width: 50%;
+                    left: -1%;
+
+   }
+}/*---Media Quary only for ( Small Screen->maximum 768px ) End here-----------*/ 
+
+
+
+
+/*---------------------------------------------------------------
+
+                        About Button
+           ( About Section -- available only in Front Page  )
+
+----------------------------------------------------------------*/
+
+.about-section .btn {
+            margin-top: 1vw;
+               padding: clamp(4pt,1vw,10pt) clamp(15pt,3vw,30pt);
+                border: none;
+         border-radius: 30px;
+      background-color: #F2707E;
+                 color: #ffffff;
+  
+             font-size: clamp(8pt,2vw,11pt);
+        text-transform: uppercase;
+           font-weight: bolder;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+}
+
+.about-section .btn:hover,
+.about-section .btn:active {
+                 color: #ffffff;
+      background-color: #F2707E;
+}
+
+/*---------------------------------------------------------------
+
+                 Count number Row
+       ( About Section -- available in Front Page 
+                 and about us page )
+
+----------------------------------------------------------------*/
+
+                                  /*----------------------------
+                                      Number Counter Row
+                                  ------------------------------*/
+
+.about-section .g-5 .row{               
+                        display: flex;
+                        display: -webkit-flex;
+                justify-content: center;
+        -webkit-justify-content: center;
+                     margin-top: 20pt;
+                     text-align: center;
+
+}
+
+
+/*---------------------------------------------------------------
+
+              Count Number
+( About Section -- available in Front Page 
+           and about us page )
+
+----------------------------------------------------------------*/
+
+                                 /*----------------------------
+                                      Number Counter Digit
+                                  ------------------------------*/
+.about-section .count-number .count {
+                      font-size: clamp(16pt,3vw,21pt);
+                     text-align: center;
+                          color: #0647A6;
+                    font-weight: bolder;
+                    
+}
+
+
+
+/*---------------------------------------------------------------
+
+              Count Number Title
+( About Section -- available in Front Page 
+           and about us page )
+
+----------------------------------------------------------------*/
+
+                                  /*----------------------------
+                                      Number Counter Title
+                                  ------------------------------*/
+.about-section .count-number .text {
+                      font-size: clamp(8pt,2vw,10pt);
+                 text-transform: capitalize;
+                     text-align: center;
+                          color: #3796D9;
+                    font-family: "Montserrat", sans-serif;
+                      text-wrap: pretty;
+}
+
+
+
+/*-----------------------------------------------
+
+         +++ offer-section ( Front Page)+++
+
+-------------------------------------------------*/
+
+   .offer-section {
+                      overflow: hidden; /*------Section Item Cant exit left and right Margin------------*/
+         }
+  
+
+
+  @media screen and (min-width: 768px) { /*---Media Quary start here---------*/
+  
+   .offer-section {              /*----in Big screen ( Minimum width 768px ) all text will stay in cente-----*/
+                    text-align: center;  /*----in small screen ( Maximi width 768px ) all text will stay in cente-------*/
+       }
+  
+  } /*---Media Quary end here---------*/
+  
+  
+  /*---------------------------------------------------------------
+  
+                         Section Title 
+           ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+
+  .offer-section .section-title1 { /*-----Section Title1-------------*/
+                  text-transform: uppercase;  
+                           color: #3369e7;    
+                     font-weight: normal;
+                       font-size: clamp(10pt,2vw,11pt);
+                     font-family: "Montserrat", sans-serif;
+                       text-wrap: pretty;
+                          
+     
+  }
+  
+  .offer-section .section-title2 { /*-----section Title2-------------*/
+                       font-size: clamp(21pt,3vw,36pt);  
+                  text-transform: capitalize;  
+                           color: #000000;    
+                     font-weight: bolder;
+                  padding-bottom: 1vw;
+                       text-wrap: pretty;
+     
+  }
+
+
+/*---------------------------------------------------------------
+  
+                            Section Text
+           ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+
+
+  .offer-section .section-text { /*-----Section text-------------*/
+                     font-weight: normal;
+                       font-size: clamp(9pt,2vw,10pt);  
+                           color: #6a737b; 
+                  padding-bottom: 1vw;
+                       text-wrap: pretty;
+  }
+  
+  @media screen and (min-width: 768px) { /*----on minimum width 768px  all text will stay in center-------*/
+  .offer-section .section-text {
+                           width: clamp(180pt,80%,612pt);
+                         display: block; 
+                          margin: auto;
+                        }
+  
+  }
+
+
+  /*---------------------------------------------------------------
+  
+                       Section main Row
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  
+  .offer-section .row { /*-----all item under Row will take center position------------*/
+                        display: flex;
+                        display: -webkit-flex;
+                    align-items: center;
+            -webkit-align-items: center;
+                justify-content: center;
+        -webkit-justify-content: center;
+                    padding-top: 4vw;
+  }
+
+/*---------------------------------------------------------------
+  
+                  Section main Column
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/ 
+      .offer-section .col-12 {
+                       position: relative;
+                       overflow: hidden;
+                     transition: all 0.5s;
+                     min-height: clamp(300pt,65vh,350pt);
+                      max-width: 250pt; 
+                  border-radius: 20px;
+         border-top-left-radius: 70px;
+                         margin: 10pt;
+               background-color: #F2707E;
+      }
+  
+  
+
+  /*---------------------------------------------------------------
+  
+                           Card
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section .card{
+                         border: none !important;
+                     border-top: none !important;
+                       position: absolute;
+                          inset: 10px;
+                  border-radius: 10px;
+               background-color: #0748A7;           
+  }
+  
+  
+  
+  /*---------------------------------------------------------------
+  
+                           Icon Holder
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section .icon-box {
+                       position: absolute;
+                            top: 0;
+                           left: 0;
+     border-bottom-right-radius: 50%;
+                         height: 140px;
+                          width: 140px;   
+               background-color: #F2707E;      
+  }
+
+
+  
+  .offer-section .icon-box::before { /*-----Before Card Icon---------*/
+                        content: '';
+                       position: absolute;
+                         bottom: -30px;
+                           left: 0;
+                         height: 30px;
+                          width: 30px;
+         border-top-left-radius: 30px;
+                     background: transparent;
+                     box-shadow: -5px -5px 0 5px #F2707E;
+      
+  }
+  
+
+  
+  
+  .offer-section .icon-box::after { /*-----After Card Icon---------*/
+                        content: '';
+                       position: absolute;
+                          right: -30px;
+                            top: 0;
+                         height: 30px;
+                          width: 30px;
+         border-top-left-radius: 30px;
+                     background: transparent;
+                     box-shadow: -5px -5px 0 5px #F2707E;
+      
+  }
+  
+  
+
+
+
+  /*---------------------------------------------------------------
+  
+                            Icon 
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section .icon {
+                       position: absolute;
+                          inset: 10px;
+                  border-radius: 10px;
+         border-top-left-radius: 50%;
+     border-bottom-right-radius: 50%;
+                        display: flex;
+                justify-content: center;
+                    align-items: center;
+                      font-size: clamp(42pt,3vw,60pt);
+                     transition: 1s;
+               background-color: #0748A7;
+                          color: #F2707E; 
+  }
+  
+  
+  /*---------------------------------------------------------------
+  
+                            Icon  when hover
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section .card :hover .icon {/*-----Col1  Icon holder when hover---------*/
+                background-color: #F2707E;
+                           color: #ffffff;
+  }
+  
+  
+  /*---------------------------------------------------------------
+  
+                            Card Body
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section .card-body {
+                       position: absolute;
+                            top: 150px;
+                        padding: 20px;
+                     text-align: center;
+                        display: flex;
+                justify-content: center;
+                 flex-direction: column;
+                          color: #FFFFFF;
+  }
+  
+  .offer-section .card-title {
+                      font-size: clamp(12pt,2vw,14pt);  
+                    font-weight: bolder;
+                 letter-spacing: 2px;
+                 text-transform: uppercase;
+  
+  }
+  .offer-section .card-text {
+                       font-size: clamp(8pt,2vw,10pt);
+                           color:#0dd3ff;
+                       text-wrap: pretty;
+  }
+  
+  
+  /*---------------------------------------------------------------
+  
+                            Offer Button
+          ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+  
+  .offer-section a {
+                        display: inline-flex;
+                     align-self: center;
+                        padding: 10px 25px;
+                text-decoration: none;
+                 text-transform: uppercase;
+                      font-size: clamp(8pt,2vw,11pt);
+                    font-weight: 600;
+                  border-radius: 30px;
+                     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+                         border: 2px solid #F2707E;
+               background-color: #F2707E ;
+                          color: #ffffff; 
+                  margin-bottom: 10pt; 
+  }
+  
+
+/*---------------------------------------------
+
+                 *Presentation Section*
+                available in Front page 
+-----------------------------------------------*/
+
+.presentation-section {/*-----Background Style-------------*/
+              background-image: url(../img/presentation.jpg); 
+           background-position: center center; 
+         background-attachment: fixed; 
+             background-repeat: no-repeat; 
+               background-size: cover; 
+              background-color: rgba(51, 82, 56,0.55); 
+         background-blend-mode: multiply;
+                    object-fit: cover;    
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+                        margin: 2vw ;
+                        border: 10px solid #ffffff;
+                      overflow: hidden;
+                      position:relative;
+                       padding: 8vw 0pt;
+}
+
+
+    /*---------------------------------------------------------------
+  
+                       Section main Row
+          ( presentation-section -- available in Front page )
+  
+----------------------------------------------------------------*/
+    .presentation-section .row { /*-----Row Style-------------*/
+                       display: flex;
+                       display: -webkit-flex;
+                   align-items: center;
+           -webkit-align-items: center;
+               justify-content: center;
+       -webkit-justify-content: center;
+    }
+
+
+/*---------------------------------------------------------------
+  
+                       Section Column
+          ( presentation-section -- available in Front page )
+  
+----------------------------------------------------------------*/
+
+
+.presentation-section .col-12{/*-----Column Style-------------*/
+                 margin-bottom: 1vw;
+}
+
+.presentation-section .offer-col {
+                    text-align: right;
+}
+.presentation-section .presentation-col {
+                    text-align: left;
+}
+
+    .presentation-section .video-col {
+                       display: flex;
+                       display: -webkit-flex;
+                   align-items: center;
+           -webkit-align-items: center;
+               justify-content: center;
+       -webkit-justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) { /*-----Media Quary Start-------*/
+        .presentation-section .presentation-col {
+                    text-align: center;
+                   padding-top:20pt;
+    }
+}
+
+    .presentation-section h2 { /*-----Title left side  Style-------------*/
+          font-size: clamp(11pt,3vw,21pt);
+              color: #ffffff;
+        font-weight: bolder;
+     padding-bottom: 1vw;
+          text-wrap: pretty;
+     text-transform: capitalize;
+     letter-spacing: 1pt;
+       word-spacing: 3pt;
+    }
+
+    .presentation-section p { /*-----Text right side  Style-------------*/
+        text-transform: initial;
+             font-size: clamp(9pt,2vw,14pt);
+                 color: #ffffff;
+    }
+
+    .presentation-section .video {
+              position: absolute;
+                  left: 0;
+                   top: 0;
+             min-width: 100%;
+            min-height: 100%;
+    }
+
+    .presentation-section .video{
+               display: none;
+                height: 100%;
+                 width: 100%;
+            object-fit: cover;
+    }
+
+    .presentation-section .play-btn { /*-----Video display button--------*/
+                   width: clamp(40pt,5vw,100pt);
+                  height: clamp(40pt,5vw,100pt);
+        background-color: #F2707E;
+           border-radius: 50%;
+                position: relative;
+                 display: block;
+                  margin: auto;
+              box-shadow: 0px 0px 25px 3px rgba(255, 235, 255, 0.8);
+    }
+
+        .presentation-section .play-btn::after { /* create triangle */
+                 content: "";
+                position: absolute;
+                    left: 50%;
+                     top: 50%;
+       -webkit-transform: translateX(-40%) translateY(-50%);
+               transform: translateX(-50%) translateY(-50%);
+        transform-origin: center center;
+                   width: 0;
+                  height: 0;
+              border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent;
+             border-left: 25px solid #fff;
+                 z-index: 100;
+      -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+              transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+
+        .presentation-section .play-btn:before { /* pulse wave */
+                           content: "";
+                          position: absolute;
+                             width: 150%;
+                            height: 150%;
+           -webkit-animation-delay: 0s;
+                   animation-delay: 0s;
+                 -webkit-animation: pulse_animate 2s;
+                         animation: pulse_animate 2s;
+ -webkit-animation-iteration-count: infinite;
+         animation-iteration-count: infinite;
+                           opacity: 1;
+                     border-radius: 50%;
+                            border: 5px solid rgba(255, 255, 255, .75);
+                               top: -25%;
+                              left: -25%;
+                        background: rgba(121, 96, 254,.08);
+        }
+
+
+
+    /*-------------------------------------------------
+
+                 +++Team section++ 
+                 ( For Front page)
+
+--------------------------------------------------*/
+
+
+    /*--------------------------------
+                                      Team section  
+                                  ------------------------------------*/
+    .team-section {
+        padding: 2vw 0pt; /*---------Team Section Top and Bottom have some padding-----------------*/
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 768px) {
+        .team-section {
+            text-align: center; /*----in Big screen ( Minimum width 768px ) all text will stay in cente-----*/
+        }
+    }
+
+    /*-------------------------------------------
+
+        Row and Column ( Team section )
+           available in Front page
+---------------------------------------------*/
+    .team-section .main-row {
+        margin-top: 4vw;
+    }
+
+    .team-section .row { /*-------all item under row will take center position------------*/
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+
+    .team-section .col-12 {
+        margin-bottom: 1.5vw; /*------All column bottom has some margin---------*/
+    }
+
+
+
+    /*------------------------------------------------------------
+
+        Top position Title and text ( Team section )
+              available in Front page
+------------------------------------------------------------*/
+
+
+    .team-section .section-title1 { /*-----Section Title1-------------*/
+        text-transform: uppercase;
+        color: #1A8DFF;
+        font-weight: normal;
+        font-size: clamp(10pt,2vw,11pt);
+        font-family: "Montserrat", sans-serif;
+        text-wrap: pretty;
+    }
+
+    .team-section .section-title2 { /*-----section Title2-------------*/
+        font-size: clamp(21pt,3vw,36pt);
+        text-transform: capitalize;
+        color: #000000;
+        font-weight: bolder;
+        padding-bottom: 1vw;
+        text-wrap: pretty;
+    }
+
+    .team-section .section-text { /*-----Section text-------------*/
+        font-weight: normal;
+        font-size: clamp(9pt,2vw,10pt);
+        color: #6a737b;
+        padding-bottom: 1vw;
+        text-wrap: pretty;
+    }
+
+    @media screen and (min-width: 768px) {
+        .team-section .section-text {
+            width: clamp(180pt,80%,612pt);
+            display: block;
+            margin: auto;
+        }
+    }
+
+
+    /*----------------------------------------------
+
+          Profile Card ( Team section )
+           available in Front page
+
+-----------------------------------------------*/
+
+
+    .team-section .g-0 { /*------Profle Card--------*/
+        color: #ffffff;
+        border: clamp(10pt,4vw,15pt) solid #F27280;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        border-radius: 5pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #0045A6;
+        overflow: hidden;
+        padding: 10pt 5pt;
+    }
+
+        .team-section .g-0 .col-lg-12 {
+            padding: clamp(15pt,2vw,30pt) 0pt;
+        }
+
+    .team-section img { /*------team member photo-----------*/
+        /*---Photo Height----*/
+        width: 150pt; /*------Photo width---------*/
+        height: 150pt;
+        object-fit: cover; /*--------Photo adjust height and width-------------*/
+        border-radius: 50%;
+    }
+
+
+
+    .team-section .reponsibility { /*-----Staff's Deignation | Title -------------*/
+        text-transform: uppercase;
+        color: #13B2D4;
+        font-weight: normal;
+        font-size: clamp(7pt,2vw,9pt);
+        padding-top: 20pt;
+    }
+
+
+    .team-section .card-title { /*----Team member name--------*/
+        font-size: clamp(19pt,2vw,21pt);
+        font-weight: bolder;
+        text-transform: uppercase;
+        text-align: center;
+        color: #ffffff;
+        padding-bottom: 5pt;
+    }
+
+
+
+
+
+
+    .team-section .card-text { /*------About Team member || Information about team member------*/
+        font-size: clamp(8pt,2vw,10pt);
+        color: #ffffff;
+        text-wrap: pretty;
+        padding: 0.5vw;
+    }
+
+
+
+
+    .team-section .btn { /*-----Team member 'See Profile' Button---------*/
+        margin-top: 1vw;
+        padding: clamp(10pt,1vw,20pt) clamp(15pt,3vw,20pt);
+        border: none;
+        border-radius: 30px;
+        background-color: #F2707E;
+        color: #ffffff;
+        font-size: clamp(8pt,2vw,11pt);
+        text-transform: uppercase;
+        font-weight: bolder;
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+    }
+
+
+    /*--------------------------------------------------------------
+
+                  * testimonial-section *
+
+--------------------------------------------------------------*/
+
+    .testimonial-section {
+        padding-top: 10pt;
+        overflow: hidden; /*----No item can exit this section-----*/
+    }
+
+        .testimonial-section .row { /*-----testimonial section main Row---------*/
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+
+        /*------------Column  left side Title1 (Testimonial)----------------------*/
+
+        .testimonial-section .section-title1 { /*-----Section Title1-------------*/
+            text-transform: uppercase;
+            color: #1A8DFF;
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            font-family: "Montserrat", sans-serif;
+            text-wrap: pretty;
+        }
+
+        /*------------Column  left side Title2 (What our client say)----------------------*/
+        .testimonial-section .section-title2 { /*-----section Title2-------------*/
+            font-size: clamp(18pt,3vw,32pt);
+            text-transform: capitalize;
+            color: #000000;
+            font-weight: bolder;
+            padding-bottom: 1vw;
+            text-wrap: pretty;
+        }
+
+        /*------------Column  left side slide change button----------------------*/
+
+        .testimonial-section .carousel-item {
+            padding: 0 10pt;
+        }
+
+        .testimonial-section .carousel .carousel-indicators { /*------Slide  Page  ||  where page is selected-----*/
+            all: unset;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            list-style: none;
+        }
+
+            .testimonial-section .carousel .carousel-indicators li { /*------Slide  Page  Item || Page selection Button-----*/
+                background-color: #0748A7;
+                height: clamp(4pt,1vw,8pt);
+                width: clamp(4pt,1vw,8pt);
+                border-radius: 50%;
+            }
+
+
+            /*------------Column  left side active slide change button----------------------*/
+            .testimonial-section .carousel .carousel-indicators .active {
+                height: clamp(10pt,2vw,13pt);
+                width: clamp(10pt,2vw,13pt);
+            }
+
+        .testimonial-section .quote-wrapper p { /*-------Quote of customer ||  Customer Comments------------*/
+            font-size: clamp(8pt,2vw,10pt);
+            color: #0c3866;
+            min-height: 6vw;
+            text-wrap: balance;
+        }
+
+
+            .testimonial-section .quote-wrapper p::before { /*-------Double Quote before customer comments-------------*/
+                content: '\275D';
+                font-size: clamp(42pt,4vw,72pt);
+                display: block;
+                color: #3693D5;
+                margin-bottom: -1.5vw;
+            }
+
+            .testimonial-section .quote-wrapper p::after { /*-------Double Quote after customer comments-------------*/
+                content: '\275E';
+                font-size: clamp(42pt,4vw,72pt);
+                color: #3693D5;
+                display: flex;
+                justify-content: end;
+                margin-top: -1.5vw;
+            }
+
+
+
+
+        .testimonial-section .quote-wrapper span { /*-----Customer Name  ||  Who comment this text------*/
+            display: block;
+            padding-top: 10pt;
+            font-size: clamp(15pt,2vw,16pt);
+            font-weight: bolder;
+            text-transform: capitalize;
+            color: #F2707E;
+        }
+
+
+
+        /*------------Column  right side----------------------*/
+
+        .testimonial-section .img-container { /*-----right side column|| Colum of circle ||  Clent Image column---------*/
+
+            padding: clamp(30pt,3vw,50pt) 0pt;
+        }
+
+    @media screen and (max-width: 768px) {
+
+        .testimonial-section .img-container {
+            width: 100%;
+        }
+    }
+
+    .testimonial-section .circle-container { /*-------------Circle area  ||   Indicate   Cirle boundary that can't be exit---------------*/
+        margin: 0px auto;
+        width: clamp(280pt,40vw,480pt);
+        height: clamp(280pt,40vw,480pt);
+        position: relative;
+    }
+
+
+
+
+    .testimonial-section .circle1 { /*-------Big Circle || Outer Circle---------*/
+
+        height: 100%;
+        width: 100%;
+        border: 10px solid #F2707E;
+        outline: 10px solid #0748A7;
+        border-radius: 50%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        animation: Rotate 20s linear infinite;
+        -webkit-animation: Rotate 20s linear infinite;
+    }
+
+
+
+    .testimonial-section .circle2 { /*-------small Circle || 2nd  Circle---------*/
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        -webkit-transform: translate(-50%, -50%) rotate(45deg);
+        width: 80%;
+        height: 80%;
+        border: 10px solid #F2707E;
+        border-radius: 50%;
+        outline: 10px solid #0748A7;
+        animation: circle-rotate 20s linear infinite;
+        -webkit-animation: circle-rotate 20s linear infinite;
+    }
+
+
+    .testimonial-section .img-block { /*----Image Div ||  div that contain image ( client photo )-------*/
+        position: absolute;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+
+        .testimonial-section .img-block img { /*----Image || Client Photo------*/
+            width: clamp(40pt,6vw,60pt);
+            height: clamp(40pt,6vw,60pt);
+            object-fit: cover;
+            border: clamp(5pt,0.6vw,10pt) solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation: Rotate-reverse 20s linear infinite;
+            -webkit-animation: Rotate-reverse 20s linear infinite;
+        }
+
+
+    .testimonial-section .circle-container .active img { /*---client photo that is selected-----*/
+        border: clamp(5pt,0.6vw,10pt) solid #00aeff;
+    }
+
+    /*-----------------------------------------
+
+                               Every circle have 4 image (client photo)
+                                 
+                             -----------------------------------------*/
+
+    .testimonial-section .img-block:first-child { /*---Client-1 Photo for both Circle1 and circle2--------*/
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+
+    .testimonial-section .img-block:nth-child(2) { /*---Client-2 Photo for both Circle1 and circle2--------*/
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        -webkit-transform: translate(50%, -50%);
+    }
+
+    .testimonial-section .img-block:nth-child(3) { /*---Client-3 Photo for both Circle1 and circle2--------*/
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        -webkit-transform: translate(-50%, 50%);
+    }
+
+    .testimonial-section .img-block:nth-child(4) { /*---Client-4 Photo for both Circle1 and circle2--------*/
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+
+
+    .testimonial-section .circle2 .img-block img { /*--Animation for only circle2----*/
+
+        animation: img-rotate 20s linear infinite;
+        -webkit-animation: img-rotate 20s linear infinite;
+    }
+
+    /*------------------------------
+            Center Circle
+-------------------------------*/
+
+    .testimonial-section .center-circle { /*-------Circle take center position------------*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        width: 240px;
+        height: 240px;
+    }
+
+
+        .testimonial-section .center-circle :nth-child(1) { /*-----Center most circle ----------*/
+            background: #F2707E;
+            border-radius: 50%;
+            box-shadow: 0px 3px 7px .7px rgba(0, 0, 0, .5);
+            box-sizing: content-box;
+            height: 78px;
+            width: 78px;
+            position: absolute;
+            top: 35%;
+            left: 35%;
+        }
+
+
+            .testimonial-section .center-circle :nth-child(1):before {
+                content: "";
+                background: rgba(0, 0, 0, 0.07);
+                position: absolute;
+                width: 168px;
+                height: 2px;
+                left: -60%;
+                top: 50%;
+                transform: rotate(45deg);
+                z-index: -2;
+            }
+
+
+
+        .testimonial-section .center-circle :nth-child(2) {
+            border: 15px solid;
+            border-color: rgba(105, 138, 172, 0.8) rgba(105, 138, 172, 0.8) transparent transparent;
+            border-radius: 50%;
+            box-sizing: content-box;
+            height: 98px;
+            width: 98px;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            z-index: -1;
+            animation: circle-move 10s ease infinite;
+        }
+
+        .testimonial-section .center-circle :nth-child(3) {
+            background: rgba(0,0,0,.017);
+            border: 25px solid;
+            border-color: #74d2e7 transparent transparent;
+            border-radius: 50%;
+            box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.65);
+            box-sizing: content-box;
+            height: 90px;
+            width: 90px;
+            position: absolute;
+            top: 22%;
+            left: 22%;
+            z-index: -2;
+            animation: circle-move 14s ease infinite;
+        }
+
+        .testimonial-section .center-circle :nth-child(4) {
+            background: rgba(0,0,0,.012);
+            border: 2px solid;
+            border-color: #0085ad transparent;
+            border-radius: 50%;
+            box-sizing: content-box;
+            height: 168px;
+            width: 168px;
+            position: absolute;
+            z-index: -3;
+            top: 15%;
+            left: 15%;
+            animation: circle-move 15s ease infinite;
+        }
+
+        /* This is the thin line to centre */
+        .testimonial-section .center-circle :nth-child(5):before {
+            content: "";
+            background: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            width: 220px;
+            height: 2px;
+            left: 0%;
+            top: 50%;
+            transform: rotate(-45deg);
+            z-index: -2;
+        }
+
+        .testimonial-section .center-circle :nth-child(5) {
+            background: rgba(0,0,0,.012);
+            border: 10px solid;
+            border-color: #146eb4 #8aa4be;
+            border-radius: 50%;
+            box-sizing: content-box;
+            height: 220px;
+            width: 220px;
+            position: absolute;
+            z-index: -3;
+            top: 1%;
+            left: 1%;
+            animation: circle-spin 10s ease infinite;
+        }
+
+        .testimonial-section .center-circle :nth-child(6) {
+            background: rgba(0,0,0,.012);
+            border: 4px dotted;
+            border-color: #2c3e50 #8aa4be;
+            border-radius: 50%;
+            box-sizing: content-box;
+            height: 203px;
+            width: 203px;
+            position: absolute;
+            z-index: -3;
+            top: 7%;
+            left: 7%;
+            animation: circle-spin 15s linear infinite;
+        }
+
+        .testimonial-section .center-circle :nth-child(7) {
+            background: rgba(0,0,0,.012);
+            border: 1px none;
+            border-radius: 50%;
+            box-sizing: content-box;
+            height: 249px;
+            width: 249px;
+            position: absolute;
+            z-index: -3;
+            top: -1%;
+            left: -1%;
+            box-shadow: 0px 10px 20px 0.7px rgba(0, 0, 0, 0.4);
+        }
+
+
+
+    /*---------------------------------------------
+
+                 *pricing-section*
+
+-----------------------------------------------*/
+
+
+
+    @media screen and (min-width: 768px) {
+        .pricing-section { /*----in Big screen ( Minimum width 768px ) all text will stay in cente-----*/
+            text-align: center; /*----in small screen ( Maximum width 768px ) all text will stay in cente-------*/
+        }
+    }
+
+
+    /*------------------------------------------------
+  
+          top section title and text 
+  
+  --------------------------------------------------*/
+
+    .pricing-section .section-title1 { /*-----Section Title1 || Top center title1----------- --*/
+        text-transform: uppercase;
+        color: #1A8DFF;
+        font-weight: normal;
+        font-size: clamp(10pt,2vw,11pt);
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .pricing-section .section-title2 { /*-----section Title2 || Top center title2-------------*/
+        font-size: clamp(21pt,3vw,36pt);
+        text-transform: capitalize;
+        color: #000000;
+        font-weight: bolder;
+        padding-bottom: 1vw;
+    }
+
+    .pricing-section .section-text { /*-----Section text-|| Top center text------------*/
+        font-weight: normal;
+        font-size: clamp(9pt,2vw,10pt);
+        color: #6a737b;
+        padding-bottom: 1vw;
+        text-wrap: pretty;
+    }
+
+    @media screen and (min-width: 768px) { /*----on minimum width 768px  Section text-|| Top center text will stay in center-------*/
+        .pricing-section .section-text {
+            width: clamp(180pt,80%,612pt);
+            display: block;
+            margin: auto;
+        }
+    }
+
+
+
+    /*------------------------------------------------
+  
+          section row and column
+  
+  --------------------------------------------------*/
+    .pricing-section .row { /*-----Row Style || all item under row will  take center position-------------*/
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        padding-top: clamp(70pt,10vw,90pt);
+    }
+
+
+    .pricing-section .col-12 { /*------all colum's  margin and width--------*/
+        margin-bottom: clamp(80pt,10vw,90pt);
+        max-width: 450pt;
+    }
+
+
+    /*------------------------------------------------
+  
+         Pricing table || every column table
+  
+  --------------------------------------------------*/
+
+    .pricing-section .pricing-table {
+        background-color: #0045A6;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        padding-top: 20px;
+        margin: 0 30px 0;
+    }
+
+        .pricing-section .pricing-table:after {
+            content: " ";
+            background-color: #0045A6;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transform: skew(0deg, -7deg);
+            transform-origin: left bottom 0;
+            z-index: -1;
+        }
+
+
+        /*------------------------------------------------
+  
+            Pricing header
+  
+  --------------------------------------------------*/
+        .pricing-section .pricing-table .pricing-header {
+            margin: 0 -10px;
+            padding: 15pt 0;
+            position: relative;
+        }
+
+
+            .pricing-section .pricing-table .pricing-header:before,
+            .pricing-section .pricing-table .pricing-header:after {
+                content: "";
+                height: 100%;
+                left: -20px;
+                position: absolute;
+                top: 50%;
+                width: 30px;
+                z-index: -1;
+            }
+
+            .pricing-section .pricing-table .pricing-header:after {
+                left: auto;
+                right: -20px;
+            }
+
+
+    .pricing-section .pricing-header,
+    .pricing-section .pricing-header::before,
+    .pricing-section .pricing-header::after { /*-----Pricing Table-1 title background color---*/
+        background-color: #F2707E;
+    }
+
+
+
+
+    /*------------------------------------------------
+  
+      Offer list || a list of different condition
+  
+  --------------------------------------------------*/
+    .pricing-section .pricing-content { /*-----Pricing content || offer detials || all option------*/
+
+        font-size: clamp(8pt,2vw,10pt);
+        color: #fff;
+        letter-spacing: 1px;
+        line-height: clamp(30pt, 4vw,50pt);
+        text-wrap: pretty;
+    }
+
+        .pricing-section .pricing-content ul { /*----remove list style '.'----*/
+            list-style-type: none;
+            margin: 30pt 0pt 0pt 0pt;
+            padding: 0;
+            background-color: #0045A6;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+            .pricing-section .pricing-content ul li { /*---every list item bottom have border----*/
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+                .pricing-section .pricing-content ul li:last-child { /*---remove last list item bottom  border----*/
+                    border-bottom: none;
+                }
+
+
+
+    /*---------------------------------
+  
+       Pricing Table Plan Name
+  
+  -----------------------------------*/
+    .pricing-section .pricing-table .title { /*----Plan Nmae-----*/
+        position: relative;
+        font-size: clamp(12pt,2vw,16pt);
+        margin: 0;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+
+        .pricing-section .pricing-table .title:before,
+        .pricing-section .pricing-table .title:after {
+            border-bottom: 28px solid transparent;
+            border-left: 10px solid #fff;
+            border-top: 28px solid transparent;
+            top: 50%;
+            content: "";
+            left: -20px;
+            position: absolute;
+        }
+
+        .pricing-section .pricing-table .title:after {
+            border-left: medium none;
+            border-right: 10px solid #fff;
+            left: auto;
+            right: -20px;
+        }
+
+
+    /*---------------------------------
+  
+  Pricing Table Offer Price
+  
+  -----------------------------------*/
+    .pricing-section .price-value { /*------Offer Price--------*/
+
+        padding: 10pt 0pt;
+        position: relative;
+        font-size: clamp(16pt,3vw,28pt);
+    }
+
+
+
+        .pricing-section .price-value:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -12px;
+            border-top: 12px solid rgba(0,0,0,0.6);
+            border-left: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+        }
+
+    .pricing-section .pricing-table .price-value:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -12px;
+        border-top: 12px solid rgba(0,0,0,0.6);
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    }
+
+
+    .pricing-section .price-value sup {
+        font-size: clamp(10pt,2vw,12pt);
+        color: #fff;
+        text-transform: capitalize;
+        display: block;
+        margin: auto;
+        padding-top: 10pt;
+    }
+
+
+
+
+
+    /*---------------------------------
+  
+  Pricing Table submit || order button
+  
+  -----------------------------------*/
+
+
+    .pricing-section .pricing-table .pricingTable-Sign-Up {
+        background-color: #F2707E;
+        padding: 20px 0 20px;
+        position: relative;
+    }
+
+
+
+        .pricing-section .pricing-table .pricingTable-Sign-Up:before {
+            content: " ";
+            background-color: #F2707E;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            transform: skew(0deg, 7deg);
+            transform-origin: left bottom 0;
+            z-index: -1;
+        }
+
+
+
+
+
+        .pricing-section .pricing-table .pricingTable-Sign-Up a {
+            display: inline-block;
+            font-size: clamp(12pt,2vw,16pt);
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            color: #fff;
+            position: relative;
+            padding: 0.5vw 2vw;
+            transition: all 0.3s ease 0s;
+        }
+
+
+
+            .pricing-section .pricing-table .pricingTable-Sign-Up a:before,
+            .pricing-section .pricing-table .pricingTable-Sign-Up a:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                height: 2px;
+                width: 0;
+                transition: all 0.3s ease 0s;
+            }
+
+            .pricing-section .pricing-table .pricingTable-Sign-Up a:after {
+                top: auto;
+                bottom: 0;
+                right: 0;
+                left: auto;
+            }
+
+    .pricing-section .pricing-table:hover .pricingTable-Sign-Up a {
+        letter-spacing: 3px;
+    }
+
+        .pricing-section .pricing-table:hover .pricingTable-Sign-Up a:before,
+        .pricing-section .pricing-table:hover .pricingTable-Sign-Up a:after {
+            width: 100%;
+        }
+
+
+
+
+    /*--------------------------------------------------------------
+                    # sponsor
+  --------------------------------------------------------------*/
+
+    .sponsor-section {
+        padding: 2vw 0pt;
+    }
+
+
+        .sponsor-section .section-title { /*-----Section Title1-------------*/
+            text-transform: capitalize;
+            color: #1A8DFF;
+            font-weight: normal;
+            font-size: clamp(16pt,2vw,21pt);
+            padding-bottom: 1vw;
+        }
+
+
+        .sponsor-section .col-4 {
+            min-height: 4vw;
+            margin-bottom: 10pt;
+        }
+
+
+
+        .sponsor-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: clamp(6px,1vw,10px) solid #F27280;
+            box-shadow: 0 3px 6px #DFDFDF, 0 3px 6px #DFDFDF;
+            border-radius: 50% 10%;
+        }
+
+        .sponsor-section i {
+            color: #F2707E;
+            font-size: clamp(21pt,3vw,32pt);
+        }
+
+        .sponsor-section .carousel-control-prev i {
+            margin-left: -20vw;
+        }
+
+        .sponsor-section .carousel-control-next i {
+            margin-right: -20vw;
+        }
+
+
+
+    /*-------------------------------------------------
+
+                 +++ Other Page +++ 
+         
+--------------------------------------------------*/
+
+
+    /*-------------------------------------------------
+
+                 +++other Hero Section++ 
+              Applicable for all other page
+                   except Front page
+
+              ( Hero section of other page )
+
+--------------------------------------------------*/
+
+    .other-hero-section {
+        height: clamp(250pt,60vw,550pt); /*---- hero background Image total height -----*/
+        width: 100%; /*--Hero Background Image total Width---*/
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+    }
+
+        /*------------------------------------------------------------
+
+                 +++++Background Image++++++ 
+    ( other Hero Section--> Hero section of other page )
+
+--------------------------------------------------------------*/
+
+        .other-hero-section img { /*---Background Image-----------*/
+            width: 100%; /*----Backround Image will take 100% width of total background width-----*/
+            height: 100%; /*----Backround Image will take 100% height of total background height-----*/
+            position: absolute; /*-----Backround Image will be fixed  in his position----------*/
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        /*------------------------------------------------------------
+
+            +++++overlay over Background Image++++++ 
+    ( other Hero Section--> Hero section of other page )
+
+--------------------------------------------------------------*/
+
+        .other-hero-section .img-bg::after { /*------Hero section Background  color over background image---------*/
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0,0.5);
+            background-blend-mode: multiply;
+        }
+
+
+        /*------------------------------------------------------------
+
+                 +++++ Page Title ++++++ 
+    ( other Hero Section--> Hero section of other page )
+
+--------------------------------------------------------------*/
+
+
+        .other-hero-section .section-title { /*----Page Title holder position ----*/
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+        }
+
+            .other-hero-section .section-title h1 { /*----Page Title  ----*/
+
+                font-size: clamp(16pt,5vw,42pt);
+                text-align: center;
+                color: #ffffff;
+                text-transform: capitalize;
+                font-weight: bolder;
+            }
+
+            .other-hero-section .section-title p { /*-----Section text-------*/
+                font-weight: normal;
+                font-size: clamp(9pt,2vw,11pt);
+                color: #cccccc;
+                width: clamp(212pt,65%,800pt);
+                display: block;
+                margin: auto;
+                padding: 1vw 0;
+                text-wrap: pretty;
+            }
+
+    /*------------------------------------------------------
+
+     Goal section ( available in about page )
+
+-------------------------------------------------------*/
+    .goal-section {
+        padding-top: 4vw; /*-----Section Top side padding-----*/
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 768px) { /*---Media Quary start here---------*/
+
+        .goal-section { /*----in Big screen ( Minimum width 768px ) all text will stay in cente-----*/
+            text-align: center; /*----in small screen ( Maximi width 768px ) all text will stay in cente-------*/
+        }
+    }
+    /*---Media Quary end here---------*/
+
+
+    /*---------------------------------------------------------------
+
+                  Section Title & Text
+         ( Goal-section -- available in About page )
+
+----------------------------------------------------------------*/
+    .goal-section .section-title1 { /*-----Section Title1-------------*/
+        text-transform: uppercase;
+        color: #3369e7;
+        font-weight: normal;
+        font-size: clamp(10pt,2vw,11pt);
+        font-family: "Montserrat", sans-serif;
+        text-wrap: pretty;
+    }
+
+    .goal-section .section-title2 { /*-----section Title2-------------*/
+        font-size: clamp(21pt,3vw,36pt);
+        text-transform: capitalize;
+        color: #000000;
+        font-weight: bolder;
+        padding-bottom: 1vw;
+        text-wrap: pretty;
+    }
+
+
+
+
+    .goal-section .section-text { /*-----Section text-------------*/
+        font-weight: normal;
+        font-size: clamp(8pt,2vw,10pt);
+        color: #6a737b;
+        padding-bottom: 1vw;
+        text-wrap: pretty;
+    }
+
+    @media screen and (min-width: 768px) { /*----on minimum width 768px  all text will stay in center-------*/
+        .goal-section .section-text {
+            width: clamp(180pt,80%,612pt);
+            display: block;
+            margin: auto;
+        }
+    }
+
+
+
+
+    /*---------------------------------------------------------------
+  
+                       Section main Row
+           ( Goal-section -- available in About page )
+
+  
+  ----------------------------------------------------------------*/
+
+
+    .goal-section .row { /*-----all item under Row will take center position------------*/
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        padding-top: 4vw;
+    }
+
+    /*---------------------------------------------------------------
+
+             Section main Column
+    ( Goal-section -- available in About page )
+
+----------------------------------------------------------------*/
+    .goal-section .col-12 {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s;
+        min-height: clamp(250pt,55vh,400pt);
+        max-width: 250pt;
+        border-radius: 20px;
+        border-top-left-radius: 70px;
+        margin: 10pt;
+        background-color: #F2707E;
+    }
+
+
+
+    /*---------------------------------------------------------------
+
+       Card
+ ( Goal-section -- available in About page )
+
+
+----------------------------------------------------------------*/
+
+    .goal-section .card {
+        border: none !important;
+        border-top: none !important;
+        position: absolute;
+        inset: 10px;
+        border-radius: 10px;
+        background-color: #0748A7;
+    }
+
+
+
+    /*---------------------------------------------------------------
+
+                 Icon Holder
+       ( Goal-section -- available in About page )
+
+
+----------------------------------------------------------------*/
+
+    .goal-section .icon-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom-right-radius: 50%;
+        height: 140px;
+        width: 140px;
+        background-color: #F2707E;
+    }
+
+
+
+        .goal-section .icon-box::before { /*-----Before Card Icon---------*/
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            border-top-left-radius: 30px;
+            background: transparent;
+            box-shadow: -5px -5px 0 5px #F2707E;
+        }
+
+
+
+
+        .goal-section .icon-box::after { /*-----After Card Icon---------*/
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            height: 30px;
+            width: 30px;
+            border-top-left-radius: 30px;
+            background: transparent;
+            box-shadow: -5px -5px 0 5px #F2707E;
+        }
+
+
+
+
+
+    /*---------------------------------------------------------------
+
+                             Icon 
+         ( Goal-section -- available in About page )
+
+
+----------------------------------------------------------------*/
+
+    .goal-section .icon {
+        position: absolute;
+        inset: 10px;
+        border-radius: 10px;
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(42pt,3vw,60pt);
+        transition: 1s;
+        background-color: #0748A7;
+        color: #F2707E;
+    }
+
+
+    /*---------------------------------------------------------------
+
+                     Icon  when hover
+           ( Goal-section -- available in About page )
+
+----------------------------------------------------------------*/
+
+    .goal-section .card :hover .icon { /*-----Col1  Icon holder when hover---------*/
+        background-color: #F2707E;
+        color: #ffffff;
+    }
+
+
+    /*---------------------------------------------------------------
+
+                         Card Body
+            ( Goal-section -- available in About page )
+
+
+----------------------------------------------------------------*/
+
+    .goal-section .card-body {
+        position: absolute;
+        top: 150px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        color: #FFFFFF;
+    }
+
+
+
+
+    .goal-section .card-title {
+        font-size: clamp(12pt,2vw,14pt);
+        font-weight: bolder;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .goal-section .card-text {
+        font-size: clamp(8pt,2vw,10pt);
+        color: #0dd3ff;
+        text-wrap: pretty;
+    }
+
+
+    /*---------------------------------------------
+
+          +++founder-section ( About Page)+++
+
+-----------------------------------------------*/
+    .founder-section {
+        overflow: hidden;
+        padding: 6vw 0pt 8vw 0pt; /*------Top and bottom will take some margin------*/
+    }
+
+        .founder-section .row { /*-------All item under row will take center position-----------*/
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+
+
+
+        /*---------------------------------------------------------------
+
+                Section Title and Text on Top
+         ( founder Section -- available in about us page )
+
+----------------------------------------------------------------*/
+
+
+        .founder-section h4 { /*-----Title1-------------*/
+            text-transform: uppercase;
+            color: #3369e7;
+            font-weight: normal;
+            font-size: clamp(10pt,2vw,11pt);
+            font-family: "Montserrat", sans-serif;
+        }
+
+
+
+        .founder-section h1 { /*-----Title2-------------*/
+            font-size: clamp(21pt,3vw,36pt);
+            text-transform: capitalize;
+            color: #000000;
+            font-weight: bolder;
+            padding-bottom: 1vw;
+            text-wrap: pretty;
+        }
+
+
+
+
+        .founder-section h5 { /*-----Title2-------------*/
+            font-size: clamp(12pt,2vw,16pt);
+            text-transform: capitalize;
+            color: #F27280;
+            padding-top: 1vw;
+            text-wrap: pretty;
+        }
+
+
+        .founder-section p { /*-----Text-------------*/
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            text-wrap: pretty;
+            color: #6a737b;
+        }
+
+
+
+
+        /*---------------------------------------------------------------
+
+                           Image
+         ( founder-section -- available in Front Page 
+                     and about us page )
+
+----------------------------------------------------------------*/
+
+        .founder-section .img-block { /*---- left column image holder or div-----*/
+            position: relative;
+            height: clamp(250pt,60vh,420pt);
+        }
+
+
+
+        .founder-section img { /*----- Image of left column-------------*/
+            height: 85%;
+            width: 80%;
+            position: absolute;
+            object-fit: cover;
+            top: 15%;
+            right: 15%;
+            border: clamp(10pt,4vw,15pt) solid #F27280;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+
+
+    @media screen and (max-width: 768px) { /*---Media Quary only for ( Small Screen->maximum 768px ) Start here-----------*/
+
+        .founder-section img { /*----- Image-------------*/
+            height: 85%;
+            width: 90%;
+            top: 10%;
+            right: 10%;
+        }
+    }
+    /*---Media Quary only for ( Small Screen->maximum 768px ) End here-----------*/
+
+    /*---------------------------------------------------------------
+
+Create a box behind the image
+( founder-section -- available in Front Page 
+   and about us page )
+
+----------------------------------------------------------------*/
+
+    .founder-section .box { /*------rectangle behind the image|| Create a rectangle before the Image-------*/
+        top: 3%;
+        right: 5%;
+        height: 110%;
+        width: 50%;
+        background-color: #3B9FE5;
+        border: clamp(10pt,4vw,15pt) solid #0748A7;
+        position: absolute;
+        z-index: -1;
+    }
+
+
+    @media screen and (max-width: 768px) { /*---Media Quary only for ( Small Screen->maximum 768px ) Start here-----------*/
+        .founder-section .box {
+            height: 100%;
+            width: 50%;
+            right: 2%;
+        }
+    }
+    /*---Media Quary only for ( Small Screen->maximum 768px ) End here-----------*/
+
+
+
+
+
+
+    /*-----------------------------------------------------------
+
+                           Our Team Page
+          +++team profile Section ( our team Page)++++
+
+--------------------------------------------------------------*/
+
+    .team-profile-section { /*-----Team profile  section will take some padding on Top and bottom--------*/
+        padding-top: 7vw;
+    }
+
+        .team-profile-section .g-0 { /*-------Team Profile Card---------*/
+            border: clamp(10pt,4vw,15pt) solid #F27280; /*----Make a border for Card--------*/
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /*-----A shadow for card----------*/
+        }
+
+        .team-profile-section .profile { /*----all Profile card  column bottom margin || all main column bottom margin------*/
+            margin-bottom: 1.5vw;
+        }
+
+
+
+        .team-profile-section img { /*----Staff Photo------*/
+            width: clamp(50pt,100%,150pt); /*---Avator Image width-------------*/
+            height: 150pt; /*----Avator image height---------*/
+            border-radius: 50%; /*----Rounded corner || make a image like circle------*/
+            object-fit: cover;
+            display: block;
+            margin: 10pt auto;
+        }
+
+
+
+        /*-----------------------------------------------------------
+
++++profile left side  ( team profile Section)++++
+
+--------------------------------------------------------------*/
+
+
+        .team-profile-section .profile-left {
+            background: #0748A7; /*---------Profile Card left side background color------------------*/
+        }
+
+        .team-profile-section .d-inline-flex { /*------List item make center || Icon and Text || contact Info, Social, Hobby-------*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10pt 20pt 0pt 20pt;
+        }
+
+        .team-profile-section .profile-left .d-inline-flex .text { /*------Text of Icon || contact Info, Social, Hobby----------*/
+            font-weight: normal;
+            font-size: clamp(9pt,2vw,10pt);
+            color: #ffffff;
+        }
+
+        .team-profile-section .profile-left .badge { /*--------Icon----------*/
+            width: 30px; /*-----Icon background width-------*/
+            height: 30px; /*-----Icon background height-------*/
+            background: #fff; /*-----Icon background Color-------*/
+            font-size: clamp(9pt,2vw,10pt); /*-----Icon size-------*/
+            color: #0748A7; /*-----Icon Color-------*/
+            border-radius: 50%; /*-----circle background of Icon------*/
+            margin-right: 15px; /*-----make a margin right side of Icon -------*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .team-profile-section .profile-left .title { /*---Profile Card left side Title || 'Social' , 'Hobby'-----------*/
+            text-transform: capitalize;
+            color: #ffffff;
+            font-weight: normal;
+            font-size: clamp(11pt,2vw,14pt);
+            padding: 30pt 0pt 0pt 20pt;
+        }
+
+
+        /*-----------------------------------------------------------
+
+              
++++profile Right side  ( team profile Section)++++
+
+--------------------------------------------------------------*/
+
+        .team-profile-section .reponsibility { /*-----Staff's Deignation || Profile Card Right Side-------------*/
+            text-transform: uppercase;
+            color: #1A8DFF;
+            font-weight: normal;
+            font-size: clamp(10pt,2vw,11pt);
+            padding-top: 20pt;
+        }
+
+        .team-profile-section .name { /*-----Staff's Name || Profile Card Right Side-------------*/
+            font-size: clamp(21pt,3vw,36pt);
+            text-transform: capitalize;
+            color: #000000;
+            font-weight: bolder;
+            padding-bottom: 1vw;
+        }
+
+
+        .team-profile-section .details { /*-----Staff's details || Profile Card Right Side-------------*/
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            color: #6a737b;
+            text-wrap: pretty;
+            text-align: justify;
+        }
+
+        .team-profile-section .profile-right .title {
+            font-size: clamp(11pt,2vw,14pt);
+            color: #1A8DFF;
+            text-transform: capitalize;
+            position: relative;
+            padding-top: 20pt;
+        }
+
+        .team-profile-section .profile-right .avator-text {
+            border-left: 1px solid #F2707E;
+            padding-left: 20px;
+            font-size: clamp(8pt,2vw,10pt);
+        }
+
+        .team-profile-section .profile-right .title::after {
+            content: '';
+            width: 5pt;
+            height: 5pt;
+            border-radius: 50%;
+            background-color: #F2707E;
+            display: block;
+            margin-top: 20pt;
+            margin-left: -2pt;
+            margin-bottom: -3pt;
+        }
+
+
+
+
+    /*---------------------------------------------
+
+          +++faq-section ( Faq Page)+++
+
+-----------------------------------------------*/
+    .faq-section {
+        margin: 10vw 0pt; /*------Top and bottom will take some margin------*/
+        overflow: hidden;
+    }
+
+
+
+        .faq-section .row { /*-------All item under row will take center position-----------*/
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+        /*---------------------------------------------------------------
+
+                  Left side image
+         ( Faq section -- available in Faq page )
+
+----------------------------------------------------------------*/
+        .faq-section img {
+            width: 100%; /*-----Image will take 100%  of the column----*/
+            object-fit: cover; /*-----All size of Image will be adjusted-----*/
+        }
+
+
+        /*---------------------------------------------------------------
+
+                  Faq Card   Background
+         ( Faq section -- available in Faq page )
+
+----------------------------------------------------------------*/
+
+
+
+        .faq-section .faq { /*-----Faq box || Question box or Card-----*/
+            border: clamp(10pt,4vw,15pt) solid #F27280;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 2vw;
+            background-color: #0748A7;
+        }
+
+
+        .faq-section .accordion-item {
+            /*-----Make a gap between two item------*/
+            border: 0.5pt solid rgba(0, 0, 0, .25); /*------Item border-------*/
+        }
+
+        .faq-section .accordion-body, /*-----Answers || text that show as a answer------*/
+        .faq-section .accordion-button { /*----Questions || Title that show as a question-----*/
+
+            text-wrap: pretty;
+            border-radius: 0 !important;
+        }
+
+        .faq-section .accordion-button {
+            font-size: clamp(11pt,2vw,12pt);
+            color: #0748A7;
+        }
+
+
+        .faq-section .accordion-body {
+            font-size: clamp(9pt,2vw,11pt);
+            color: #3896DA
+        }
+
+        .faq-section .accordion-button:not(.collapsed) { /*----item  Title or question  when it show the answer-----*/
+            color: #ffffff;
+            background-color: #F27280;
+            text-transform: capitalize;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-section .accordion-button:focus { /*---Remove item hover border || Box Shadow----*/
+            z-index: 3;
+            border: none;
+            outline: 0 !important;
+            box-shadow: none;
+        }
+
+
+        /*---------------------------------------------------------------
+
+                Up and Down Arrow
+         ( Faq section -- available in Faq page )
+
+----------------------------------------------------------------*/
+
+        .faq-section .accordion-button::after { /*------Arrow down color||from %23103AD1 '103AD1' (%23 || 3179C3) is Color Code-------*/
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23103AD1'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+        }
+
+        .faq-section .accordion-button:not(.collapsed)::after { /*------Arrow Up color||from %23ffffff 'ffffff' (%23 || ffffff) is Color Code-------*/
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+        }
+
+
+
+    /*---------------------------------------------------------------
+
+                
+        ( service Section -- available in Service page )
+
+----------------------------------------------------------------*/
+
+    .service-section {
+        overflow: hidden;
+        text-align: center;
+        padding-top: 8vw;
+    }
+
+        /*---------------------------------------------------------------
+
+         Section main Row
+( service-section -- available in service page )
+
+----------------------------------------------------------------*/
+
+
+        .service-section .row { /*-----all item under Row will take center position------------*/
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            padding-top: 4vw;
+        }
+
+        /*---------------------------------------------------------------
+
+    Section main Column
+( service-section -- available in service page )
+
+----------------------------------------------------------------*/
+        .service-section .col-12 {
+            max-width: 350pt;
+            margin-bottom: 2vw;
+        }
+
+
+
+        /*---------------------------------------------------------------
+
+             Card
+( service-section -- available in service page )
+
+----------------------------------------------------------------*/
+
+        .service-section .card {
+            border-radius: 20pt;
+            background-color: #0748A7;
+            width: 100%;
+            min-height: 400px;
+            padding: 30px 10px;
+            border: 10px solid #F2707E;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+        }
+
+
+
+
+
+        /*---------------------------------------------------------------
+
+              Card Body
+( service-section -- available in service page )
+
+----------------------------------------------------------------*/
+
+
+        .service-section .card-title {
+            font-size: clamp(12pt,2vw,16pt);
+            font-weight: 700;
+            text-transform: capitalize;
+            text-align: center;
+            color: #ffffff;
+            text-wrap: pretty;
+        }
+
+
+        .service-section .card-text {
+            font-size: clamp(9pt,2vw,10pt);
+            color: #c4dff6;
+            text-align: left;
+            text-wrap: pretty;
+        }
+
+
+        .service-section img {
+            width: 100%;
+            height: 150pt;
+            margin: 10pt 0 20pt 0;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+        }
+
+
+        /*---------------------------------------------------------------
+
+              Offer Button
+( service-section -- available in Front page )
+
+----------------------------------------------------------------*/
+
+        .service-section a {
+            display: inline-flex;
+            align-self: center;
+            padding: 10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: clamp(8pt,2vw,11pt);
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+            border: 2px solid #F2707E;
+            background-color: #F2707E;
+            color: #ffffff;
+        }
+
+
+
+
+    /*---------------------------------------------
+
+                 *PortFolio  Section*
+
+-----------------------------------------------*/
+
+    .portfolio-section {
+        margin: 8vw 0;
+    }
+
+        .portfolio-section #container {
+            margin: auto;
+        }
+
+
+
+        /*--------------------------------------------------
+
+               *Filter ( gallery  Section )*
+       where image is selected according to
+                 their name or title
+              
+--------------------------------------------------*/
+
+        .portfolio-section .filters { /*----Item Choose section------*/
+            width: 100%;
+            text-align: center;
+            padding: 1vw 0;
+        }
+
+            .portfolio-section .filters ul { /*-----Item filter area where we can change background color-------*/
+                list-style: none;
+                padding: 5pt 10pt;
+                margin: 0 4vw;
+            }
+
+            .portfolio-section .filters li {
+                display: inline-block;
+                padding: 10pt 5pt;
+                cursor: pointer;
+            }
+
+                .portfolio-section .filters li a { /*-----Filter Item normal font------*/
+                    color: #3586FF;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    font-size: clamp(10pt,2vw,12pt);
+                    transition: 0.65s;
+                }
+
+                    .portfolio-section .filters li a:hover,
+                    .portfolio-section .filters .active a { /*-----Filter Item when hover and active------*/
+                        color: #ff4c4c;
+                        letter-spacing: 0.5pt;
+                    }
+
+
+        /*--------------------------------------------------
+
+               *Filter ( gallery  Image )*
+       
+
+--------------------------------------------------*/
+
+
+        .portfolio-section .grid-item {
+            display: inline-block;
+            height: 259px;
+            overflow: hidden;
+            text-align: center;
+            width: 400px;
+            border: clamp(10pt,4vw,15pt) solid #F27280;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin: 5pt;
+        }
+
+            .portfolio-section .grid-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+
+        /*--------------------------------------------------
+
+               *Filter ( gallery  Image overlay )*
+       
+
+--------------------------------------------------*/
+        .portfolio-section .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #0748A7;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .1s ease;
+            color: #ffffff;
+            text-transform: capitalize;
+            font-size: clamp(12pt,2vw,14pt);
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+        .portfolio-section .grid-item:hover .overlay {
+            width: 100%;
+        }
+
+        .portfolio-section .overlay .text {
+            padding: 10pt 20pt;
+            text-align: left;
+        }
+
+        .portfolio-section .overlay h4 {
+            font-size: clamp(11pt,2vw,13pt);
+            color: #FFFFFF;
+        }
+
+        .portfolio-section .overlay p {
+            font-size: clamp(8pt,2vw,10pt);
+            color: #0dd3ff;
+            text-wrap: pretty;
+        }
+
+        /*--------------------------------------------------
+
+               *Filter ( gallery  pager )*
+       
+
+--------------------------------------------------*/
+        .portfolio-section .isotope-pager .pager {
+            display: inline-block;
+        }
+
+
+        .portfolio-section .isotope-pager a {
+            margin: 6px 10px;
+            display: inline-block;
+            line-height: 31px;
+            color: #3586FF;
+            text-transform: capitalize;
+            font-size: clamp(10pt,2vw,12pt);
+            font-weight: bolder;
+            transition: 0.3s;
+        }
+
+            .portfolio-section .isotope-pager a:hover,
+            .portfolio-section .isotope-pager a:is(.active) {
+                color: #ff4c4c;
+            }
+
+
+            .portfolio-section .isotope-pager a::before,
+            .portfolio-section .isotope-pager a:after {
+                content: "";
+                position: absolute;
+                border-top: 30px solid transparent;
+                border-bottom: 30px solid transparent;
+            }
+
+
+
+    /*-----------------------------------------------------------
+
+                 +++Blog Section++++
+
+--------------------------------------------------------------*/
+    .blog-section {
+        margin: 10vw 0pt 15vw 0pt;
+    }
+
+
+
+        .blog-section .row:has(.blog) { /*-----Row Style || all item under row will  take center position-------------*/
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+
+
+
+
+        .blog-section .blog { /*------all colum's  margin and width--------*/
+            margin-bottom: 10pt;
+            max-width: 450pt;
+        }
+
+
+        /*------------------------------------
+           Blog Background
+    -------------------------------------*/
+        .blog-section .card {
+            width: 100%;
+            background-color: #0748A7;
+            border: 10px solid #F2707E;
+            border-radius: 10pt;
+            height: 100%;
+        }
+
+
+        /*------------------------------------------------
+         Blog Content creator || Author|| post creator
+    -------------------------------------------------*/
+        .blog-section .blog-author {
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            color: #D0EFFF;
+            padding-top: 5pt;
+            text-transform: capitalize;
+        }
+
+
+        /*------------------------------------
+           Blog feature Image
+    -------------------------------------*/
+        .blog-section .blog img {
+            height: 150pt;
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 10pt;
+        }
+
+
+        /*------------------------------------
+           Blog Category
+    -------------------------------------*/
+
+        .blog-section .category a,
+        .blog-section .category a:hover {
+            text-transform: uppercase;
+            color: #F2707E;
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            font-family: "Montserrat", sans-serif;
+        }
+
+
+
+        /*------------------------------------
+           Blog Title
+    -------------------------------------*/
+        .blog-section .blog-title a,
+        .blog-section .blog-title a:hover { /*-----section Title2 || Top center title2-------------*/
+            font-size: clamp(8pt,2vw,12pt);
+            text-transform: capitalize;
+            color: #ffffff;
+            font-weight: bolder;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
+
+        /*------------------------------------
+           Blog text
+    -------------------------------------*/
+        .blog-section .blog-text { /*-----Section text-|| Top center text------------*/
+            font-size: clamp(8pt,2vw,12pt);
+            color: #0dd3ff;
+            text-wrap: balance;
+            font-weight: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+
+        .blog-section .card-body:has(img ) .blog-text { /*-----Section text-|| Top center text------------*/
+
+            -webkit-line-clamp: 3; /* number of lines to show */
+        }
+
+
+
+        .blog-section .card-body:not(:has(img)) .blog-text { /*-----Section text-|| Top center text------------*/
+
+            -webkit-line-clamp: 8; /* number of lines to show */
+        }
+
+
+
+        /*------------------------------------
+           Blog Read More Button
+    -------------------------------------*/
+        .blog-section .btn { /*----- section Button---------*/
+            display: inline-flex;
+            align-self: center;
+            padding: 10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: clamp(8pt,2vw,11pt);
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+            border: 2px solid #F2707E;
+            background-color: #F2707E;
+            color: #ffffff;
+        }
+
+
+
+
+        /*------------------------------------
+           Blog all Tags
+    -------------------------------------*/
+        .blog-section .tag {
+            font-weight: normal;
+            font-size: clamp(8pt,2vw,10pt);
+            color: #D0EFFF;
+            padding-top: 15pt;
+            text-transform: capitalize;
+        }
+
+
+            /*------------------------------------
+           Blog tag Title
+    -------------------------------------*/
+            .blog-section .tag b {
+                color: #F7ADAD;
+            }
+
+
+        /*------------------------------------
+           Blog sidebar
+  -------------------------------------*/
+
+
+        /*------------------------------------
+           Blog sidebar  Title 
+  -------------------------------------*/
+
+        .blog-section .side-bar h4 { /*--------Sidebar Title---------------*/
+            font-size: clamp(11pt,2vw,16pt);
+            text-transform: capitalize;
+            color: #0748A7;
+            font-weight: bolder;
+            margin: 15pt 0 10pt 0;
+        }
+
+
+        /*------------------------------------
+           Blog sidebar list item
+  -------------------------------------*/
+
+        .blog-section .side-bar ul {
+            list-style: none;
+        }
+
+            .blog-section .side-bar ul li {
+                counter-increment: index;
+                margin-bottom: 5pt;
+                font-size: clamp(8pt,2vw,10pt);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1; /* number of lines to show */
+            }
+
+                .blog-section .side-bar ul li:before {
+                    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+                    background-color: #3793D6;
+                    color: #ffffff;
+                    margin-right: 5px;
+                    padding: 1pt 5pt;
+                    content: counter(index, decimal);
+                    border-radius: 50%;
+                }
+
+
+        /*------------------------------------
+           Blog sidebar post
+  -------------------------------------*/
+
+
+
+        .blog-section .side-bar .row { /*-------Sidebar Post Row--------------*/
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            margin-bottom: 2.5pt;
+        }
+
+        .blog-section .side-bar .col-7 { /*-------Sidebar Post rightside text--------------*/
+            padding: 0 5pt;
+        }
+
+
+        .blog-section .side-bar img { /*-------Post Image--------------*/
+            width: 100%;
+            height: 80pt;
+            object-fit: cover;
+        }
+
+        .blog-section .side-bar h5 { /*-------Sidebar Post Title-------------*/
+
+            text-wrap: balance;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            font-size: clamp(9pt,2vw,10pt);
+            text-transform: capitalize;
+            font-weight: bolder;
+            color: #12171B;
+        }
+
+        .blog-section .side-bar .author { /*-------Sidebar Post author-------------*/
+            font-size: clamp(8pt,2vw,9pt);
+            color: #F2707E;
+        }
+
+        .blog-section .side-bar .cat { /*-------Sidebar Post Category-------------*/
+            font-size: clamp(8pt,2vw,10pt);
+            color: #3691D2;
+            text-transform: capitalize;
+            line-height: 0.5pt;
+        }
+
+    /*-----------------------------------------------------------
+
+                 +++Contact Section++++
+
+--------------------------------------------------------------*/
+    .contact-section {
+        margin: 10vw 0pt 15vw 0pt;
+    }
+
+
+
+        /*------------------------------------------------
+
+        section row and column
+
+--------------------------------------------------*/
+        .contact-section .row { /*-----Row Style || all item under row will  take center position-------------*/
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+
+        .contact-section .col-12 { /*------all colum's  margin and width--------*/
+            margin-bottom: 0pt;
+        }
+
+
+
+        .contact-section .section-title { /*-----section Title2-------------*/
+            font-size: clamp(21pt,3vw,36pt);
+            text-transform: capitalize;
+            color: #000000;
+            font-weight: bolder;
+            padding-bottom: 1vw;
+            text-wrap: pretty;
+        }
+
+
+        /*---------------------------------------------------------------
+  
+                            Section Text
+           ( offer-section -- available in Front page )
+  
+  ----------------------------------------------------------------*/
+
+
+        .contact-section .section-text { /*-----Section text-------------*/
+            font-weight: normal;
+            font-size: clamp(9pt,2vw,10pt);
+            color: #6a737b;
+            padding-bottom: 1vw;
+            text-wrap: pretty;
+        }
+
+
+
+
+        /*-------------------------------------
+        Contact information
+---------------------------------------*/
+
+        .contact-section .d-inline-flex { /*------List item make center-------*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10pt 0pt 0pt 0pt;
+        }
+
+            .contact-section .d-inline-flex .text {
+                font-weight: normal;
+                font-size: clamp(10pt,2vw,12pt);
+                color: #3586FF;
+                margin-left: 10pt;
+            }
+
+
+            /*-------------------------------------
+        Contact information Title
+---------------------------------------*/
+
+            .contact-section .d-inline-flex h4 { /*--------Contact info Title----------*/
+                font-size: clamp(10pt,2vw,18pt);
+                text-transform: capitalize;
+                color: #0748A7;
+                font-weight: bolder;
+            }
+
+
+            /*-------------------------------------
+        Contact information Text
+---------------------------------------*/
+            .contact-section .d-inline-flex p { /*--------Contact info Text----------*/
+                font-weight: normal;
+                font-size: clamp(8pt,2vw,10pt);
+                color: #098CD2;
+            }
+
+
+
+        /*-------------------------------------
+        Contact info icon
+---------------------------------------*/
+
+
+        .contact-section .badge { /*--------Contact info icon---------*/
+            width: clamp(30pt,5vw,80pt);
+            height: clamp(30pt,5vw,80pt);
+            background: #ffffff;
+            color: #F97381;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: clamp(10pt,2vw,32pt);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            border: 5pt solid #F97381;
+        }
+
+
+            .contact-section .badge:hover {
+                background: #F97381;
+                color: #ffffff;
+            }
+
+
+        /*----------------------------------
+      Contact Form
+-----------------------------------*/
+
+        .contact-section form {
+            padding: 5vw;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            border: 10px solid #F2707E;
+            border-radius: 10pt;
+            background-color: #0748A7;
+            margin: 0 5pt 10pt 5pt;
+        }
+
+        /*-------------------------------------------
+      Contact Form Input Place holder
+----------------------------------------------*/
+        .contact-section input::placeholder {
+            color: gray;
+        }
+
+
+        /*-------------------------------------------
+      Contact Form Input 
+----------------------------------------------*/
+        .contact-section input {
+            background: #ecf0f3;
+            padding: 5px;
+            padding-left: 20px;
+            height: 50px;
+            font-size: clamp(8pt,2vw,10pt);
+            border-radius: 50px;
+            box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+        }
+
+
+        /*-------------------------------------------
+      Contact Form Comment Background
+----------------------------------------------*/
+
+        .contact-section textarea {
+            background: #ecf0f3;
+            font-size: clamp(8pt,2vw,10pt);
+            border-radius: 10px;
+            box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+        }
+
+
+        /*-------------------------------------------
+      Contact Form Label
+----------------------------------------------*/
+        .contact-section label {
+            font-size: clamp(11pt,2vw,16pt);
+            text-transform: capitalize;
+            color: #ffffff;
+            font-weight: bolder;
+            padding-bottom: 10pt;
+        }
+
+
+        /*-------------------------------------------
+      Contact Form Button
+----------------------------------------------*/
+        .contact-section .btn,
+        .contact-section .btn:hover {
+            display: inline-flex;
+            align-self: center;
+            padding: 10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: clamp(8pt,2vw,11pt);
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.15) inset, 6px 6px 12px rgba(255, 255, 255, 0.25) inset, -6px -6px 12px rgba(255, 255, 255, 0.05);
+            border: 2px solid #F2707E;
+            background-color: #F2707E;
+            color: #ffffff;
+        }
+
+
+
+        .contact-section #messages_content p {
+            color: #00FFFF;
+            margin-top: 1vw;
+            font-size: clamp(7pt,2vw,9pt);
+        }
+
+
+
+        .contact-section .invalid-feedback {
+            color: #F2707E;
+            font-size: clamp(7pt,2vw,9pt);
+        }
+
+
+        /*-------------------------------------------
+      Google Map
+----------------------------------------------*/
+
+        .contact-section .map {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 5pt;
+            border-radius: 5pt;
+        }
+
+
+    /*-----------------------------------------------------------
+
+                 +++Footer Section++++
+
+--------------------------------------------------------------*/
+    .footer-section {
+        margin-top: 120pt;
+        position: relative;
+        width: 100%;
+        background: #0E0E57;
+        padding: 20px 50px;
+    }
+
+        .footer-section .copntainer {
+            overflow: hidden;
+        }
+
+        .footer-section .row { /*----Footer Row-----*/
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-section .col-12 {
+            padding: 3vw 0.5vw;
+        }
+
+
+
+
+        .footer-section h4,
+        .footer-section h3, /*------Footer title------------*/
+        .footer-section h2,
+        .footer-section h1 {
+            font-size: clamp(14pt,2vw,18pt);
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bolder;
+            padding-bottom: 5pt;
+        }
+
+        .footer-section p, /*------Footer Text----------*/
+        .footer-section a,
+        .footer-section a:hover,
+        .footer-section .nav-link,
+        .footer-section .nav-link:hover {
+            font-size: clamp(11pt,2vw,12pt);
+            text-wrap: balance;
+        }
+
+            .footer-section p, /*------Footer Text----------*/
+            .footer-section a,
+            .footer-section a:hover,
+            .footer-section .contact .badge i,
+            .footer-section .d-inline-flex .text,
+            .footer-section .nav-link,
+            .footer-section .nav-link:hover {
+                color: #D0EFFF;
+            }
+
+
+        .footer-section .nav-link {
+            margin-left: 10pt;
+        }
+
+        .footer-section .logo { /*-------Footer logo-----------------*/
+            width: clamp(50pt,15vw,70pt);
+            padding-bottom: 10pt;
+            object-fit: cover;
+        }
+
+    @media screen and (min-width: 768px) {
+        .footer-section .logo {
+            display: block;
+            margin: 0 auto 10pt auto;
+        }
+    }
+
+    /*-----------------------------------------------------------
+
+          +++Subscribe form  ( Footer Section)++++
+
+--------------------------------------------------------------*/
+    .footer-section .subscribe-form {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .footer-section .subscribe-form input { /*---Input box where input the e-mail address to subscribe----*/
+            width: 100%;
+            padding: 14px 28px;
+            background: #dbebfa;
+            border: 1px solid #dbebfa;
+            color: #0E0E57;
+        }
+
+        .footer-section .subscribe-form button { /*---submit button where enter the e-mail address to subscribe----*/
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #0E0E57;
+            padding: 13px 20px;
+            border: 1px solid #ffffff;
+        }
+
+            .footer-section .subscribe-form button i { /*---submit button icon|| submit button's right side icon  ----*/
+                color: #fff;
+                font-size: 22px;
+                transform: rotate(-6deg);
+            }
+
+
+
+
+    /*-----------------------------------------------------------
+
+          +++Contact information  ( Footer Section)++++
+
+--------------------------------------------------------------*/
+
+    .footer-section .contact .d-inline-flex { /*------List item make center-------*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10pt 0pt 0pt 0pt;
+    }
+
+        .footer-section .contact .d-inline-flex .text {
+            font-weight: normal;
+            font-size: clamp(9pt,2vw,11pt);
+            text-wrap: pretty;
+        }
+
+    .footer-section .contact .badge {
+        width: 30pt;
+        height: 30pt;
+        margin-right: 15px;
+        font-size: clamp(14pt,2vw,18pt);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+    /*-----------------------------------------------------------
+
+          +++Social media  ( Footer Section)++++
+
+--------------------------------------------------------------*/
+
+    .footer-section .social-links .btn-square { /*-----Social Icon  Background-------*/
+        border: 2px solid #ffffff; /*-----Social Icon border------*/
+        transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955); /*-------Social button transform on click animation---------*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30pt;
+        height: 30pt;
+        margin-right: 5pt;
+        margin-bottom: 10pt;
+    }
+
+
+
+    .footer-section .social-links i { /*-----Social Icon -------*/
+        font-size: clamp(9pt,2vw,11pt); /*-------Social Icon font size---------*/
+        color: #ffffff; /*----Social Icon Color--------*/
+    }
+
+
+    .footer-section .social-links .btn-square:hover { /*-----Social Icon  Background when hover-------*/
+        background-color: #ffffff; /*-----Social button background color on hover------*/
+    }
+
+        .footer-section .social-links .btn-square:hover i { /*------Social icon color on hover------------*/
+            color: #0E0E57;
+        }
+
+    /*-----------------------------------------------------------
+
+          +++Wave animation  ( Footer Section)++++
+                Create some wave animation
+
+--------------------------------------------------------------*/
+
+    .footer-section .wave { /*-------all wave have same behavior-------------*/
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('../img/wave.png');
+        background-size: 1000px 100px;
+    }
+
+
+    /*----Create wave (Wave_Water) and reverse wave (Reverse_Wave_Water) animtion in animate.css-----*/
+
+    .footer-section .waves :nth-child(1) { /*-----Wave1-------*/
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: Wave_Water 4s linear infinite;
+    }
+
+    .footer-section .waves :nth-child(2) { /*----Wave2-----*/
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: Reverse_Wave_Water 4s linear infinite;
+    }
+
+
+    .footer-section .waves :nth-child(3) { /*-----Wave3---------*/
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 0;
+        animation: Wave_Water 3s linear infinite;
+    }
+
+
+    .footer-section .waves :nth-child(4) { /*------Wave4--------*/
+        z-index: 999;
+        opacity: 0.7;
+        bottom: 20px;
+        animation: Reverse_Wave_Water 3s linear infinite;
+    }
+
+
+
+
+
+    /*-----------------------------------------------------------
+
+          +++Bubble  ( Footer Section)++++
+             create a bubble animation
+
+--------------------------------------------------------------*/
+
+    .footer-section .dots div { /*----for all bubble div-----*/
+        height: clamp(25pt,4vw,30pt);
+        width: clamp(25pt,4vw,30pt);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 50px;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    .footer-section .dot { /*-------create buble icon---------*/
+        height: 10px;
+        width: 10px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 20%;
+        right: 20%;
+    }
+
+    .footer-section .dots div:nth-child(1) {
+        top: 20%;
+        left: 20%;
+        animation: bubble 8s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(2) {
+        top: 60%;
+        left: 80%;
+        animation: bubble 10s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(3) {
+        top: 40%;
+        left: 40%;
+        animation: bubble 3s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(4) {
+        top: 66%;
+        left: 30%;
+        animation: bubble 7s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(5) {
+        top: 90%;
+        left: 10%;
+        animation: bubble 9s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(6) {
+        top: 30%;
+        left: 60%;
+        animation: bubble 5s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(7) {
+        top: 70%;
+        left: 20%;
+        animation: bubble 8s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(8) {
+        top: 75%;
+        left: 60%;
+        animation: bubble 10s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(9) {
+        top: 50%;
+        left: 50%;
+        animation: bubble 6s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(10) {
+        top: 45%;
+        left: 20%;
+        animation: bubble 10s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(11) {
+        top: 10%;
+        left: 90%;
+        animation: bubble 9s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(12) {
+        top: 20%;
+        left: 70%;
+        animation: bubble 7s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(13) {
+        top: 20%;
+        left: 20%;
+        animation: bubble 8s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(14) {
+        top: 60%;
+        left: 5%;
+        animation: bubble 6s linear infinite;
+    }
+
+    .footer-section .dots div:nth-child(15) {
+        top: 90%;
+        left: 80%;
+        animation: bubble 9s linear infinite;
+    }
+
+
+
+    /*-----------------------------------------------------------
+
+                    +++ Copyright++++
+
+--------------------------------------------------------------*/
+
+    .copyright {
+        background: #0E0E57; /*----Copyright Background Color-----*/
+        border: 1px solid #0E0E57; /*------Copyright border color :: It should be same as background color -----------*/
+    }
+
+
+
+        .copyright .container {
+            border-top: 1px solid rgba(255, 255, 255, .25);
+            padding: 5pt 0;
+        }
+
+        .copyright p { /*-----Copyright Text-----*/
+            font-size: clamp(10pt,2vw,12pt);
+            text-transform: capitalize;
+            text-align: center;
+            color: #c4dff6;
+            padding: 15pt 0pt 3pt 0pt;
+        }
+
+        .copyright span {
+            color: #F87381; /*-----Copyright highlighted Text-----*/
+        }

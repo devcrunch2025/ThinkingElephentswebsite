@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ARSD-a business website template</title>
+    <link rel="shortcut icon" type="image/png" href="asset/img/favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS  Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup -->
+    <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.2.0/dist/jquery.magnific-popup.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/magnific-popup@1.2.0/dist/magnific-popup.min.css" rel="stylesheet">
+
+    <!-- Isotope -->
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Custom Jquery -->
+    <script src="asset/js/scroll.js"></script>
+    <script src="asset/js/MobileViewBtn.js"></script>
+    <script src="asset/js/gallery.js"></script>
+    <script src="asset/js/testimonial-active-item.js"></script>
+
+    <link rel="stylesheet" href="asset/css/aos.css">
+    <link rel="stylesheet" href="asset/css/animate.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+
+    <style>
+        /* ================================
+           FULL BODY BACKGROUND VIDEO
+           ================================ */
+        .body-video-bg {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .body-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Optional dark overlay */
+        .body-video-bg::after {
+            content: "";
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4); /* increase/decrease for readability */
+            z-index: 1;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- ================================
+         BACKGROUND VIDEO
+         ================================ -->
+    
+    <!-- Your Existing Website -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top px-4 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <img src="asset/img/logo.png" alt="logo" class="m-0 logo">
+        </a>
+
+        <span class="navbar-toggler">
+            <span class="open" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><i class="fas fa-bars"></i></span>
+            <span class="close" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><i class="fas fa-times"></i></span>
+        </span>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="navbar-nav mx-auto pe-4 py-3 py-lg-0">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="service.html" data-bs-toggle="dropdown">about</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">about us</a></li>
+                            <li><a class="dropdown-item" href="team.html">our team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="h-100 d-lg-inline-flex align-items-center d-none">
+                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square rounded-circle" href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+<style>
+    .hero-video-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero-video-section video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        width: 90%;
+        z-index: 2;
+    }
+
+    .text-box h1 {
+        font-size: 60px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .text-box h4 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 22px;
+    }
+
+    .text-box p {
+        font-size: 18px;
+        margin: 15px auto;
+        max-width: 700px;
+    }
+
+    .btn1 a,
+    .btn2 a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btn1, .btn2 {
+        margin-top: 15px;
+    }
+</style>
+
+
+
+<!-- START: Video Hero Section -->
+<div class="hero-video-section">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline>
+        <source src="home.mp4" type="video/mp4">
+    </video>
+
+    <!-- Text Content (same as your slider text) -->
+    <div class="text-box">
+        <h4 data-aos="zoom-out">static and interactive</h4>
+        <h1 data-aos="zoom-in">welcome to ARSD</h1>
+        <p data-aos="zoom-in">
+            Websites are typically dedicated to a particular topic or purpose,
+            such as news, education, commerce, entertainment, or social media.
+            Hyperlinking between web pages guides the navigation of the site.
+        </p>
+
+        <span class="btn btn-lg btn1 me-2">
+            <a href="#">view all</a>
+        </span>
+
+        <span class="btn btn-lg btn2">
+            <a href="#">search</a>
+        </span>
+    </div>
+
+</div>
+<!-- END: Video Hero Section -->
+
+
+        <!--About Section-->
+       
+        <div class="about-section"><!-- About section -->
+            <div class="container"><!--Container-->
+                <div class="row g-5 align-items-center"><!--Main Row -->
+
+
+                    <div class="col-lg-6 col-12 img-block "><!--Col-1-->
+                        <div class="box" data-aos="fade-right"> </div><!--Box :: create a rectangle behind the image-->
+                        <img src="asset/img/about.jpg" alt="about" data-aos="zoom-out" >
+                    </div> <!--End of Col-1-->
+
+
+                    <div class="col-lg-6 col-12"><!--Col-2-->
+                        <h4 data-aos="fade-down">Who Are We?</h4>
+                        <h1 data-aos="fade-left">power of creative strategy.</h1>
+                        <p data-aos="flip-left">Web pages each have a URL or address, which is how a page is found, and is different for every page. When a webpage is part of a larger group of pages managed by a company, person, or organization, it is part of a website. </p>
+                        <a href="about.html" class="btn btn-lg " data-aos="fade-up"> read more</a>
+
+                        <div class="row count-number pt-3" data-aos="slide-up"><!--Count row-->
+
+                            <div class="col"><!--Count number1-->
+                                <span class="count" data-number="20"></span>
+                                <h3 class="text">yera of experience</h3>
+                            </div><!--End of Count number1-->
+
+                            <div class="col"><!--Count number2-->
+                                <span class="count" data-number="256"></span>
+                                <h3 class="text">projects</h3>
+                            </div><!--End of Count number2-->
+
+                            <div class="col"><!--Count number3-->
+                                <span class="count" data-number="500"></span>
+                                <h3 class="text">happy clients</h3>
+                            </div><!--end of Count number3-->
+                           
+                        </div><!--End of Count row-->
+                    </div><!--End of Col-2-->
+
+
+                </div><!--End of Main Row -->
+            </div><!--End of  Container -->
+        </div>	<!-- End of About section -->
+
+
+
+
+
+        <!--offer-section-->
+
+        <div class="offer-section"> <!--offer-section-->
+            <div class="container "><!--Container-->
+
+                <h4 class="section-title1 " data-aos="fade-down">offer</h4>
+                <h3 class="section-title2 " data-aos="zoom-out">what can we do</h3>
+                <p class="section-text " data-aos="zoom-in">A website typically consists of many web pages linked together under a common domain name. The term "web page" is thus a metaphor of paper pages bound together into a book. </p>
+
+
+                <div class="row "><!--Row-->
+
+                    <div class="col-12  col-md-6 col-xl-4 col-xxl-3 " data-aos="slide-up" data-aos-delay="0"><!--Col1 -->
+                        <div class=" card"><!--Card-->
+                            <div class="icon-box"><!--Icon-box-->
+                                <div class="icon"><!--Icon-->
+                                    <i class="fa-solid fa-solar-panel"></i>
+                                </div><!--End of Icon-box-->
+                            </div><!--End of Icon-->
+                            <div class="card-body"><!--Card-body-->
+                                <h2 class="card-title">Quality services</h2>
+                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <a href="service.html">Read More</a>
+                            </div><!--end of Card-body-->
+                        </div><!--end of Card-->
+                    </div><!--End of Col1 -->
+
+
+                    <div class="col-12   col-md-6  col-xl-4 col-xxl-3 " data-aos="slide-up" data-aos-delay="100"><!--Col2 -->
+                        <div class="card"><!--Card-->
+                            <div class="icon-box"><!--Icon-box-->
+                                <div class="icon"><!--Icon-->
+                                    <i class="fa-solid fa-computer"></i>
+                                </div><!--End of Icon-->
+                            </div><!--End of Icon-box-->
+                            <div class="card-body"><!--Card-body-->
+                                <h2 class="card-title">Flexibility</h2>
+                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <a href="service.html">Read More</a>
+                            </div><!--end of Card-body-->
+                        </div><!--end of Card-->
+                    </div><!--End of Col2 -->
+
+                    <div class="col-12  col-md-6 col-xl-4 col-xxl-3 " data-aos="slide-up" data-aos-delay="200"><!--Col3-->
+                        <div class="card"><!--Card--> 
+                            <div class="icon-box"><!--Icon-box-->
+                                <div class="icon"><!--Icon-->
+                                    <i class="fa-solid fa-rocket"></i>
+                                </div><!--End of Icon-->
+                            </div><!--End of Icon-box-->
+                            <div class="card-body"><!--Card-body-->
+                                <h2 class="card-title">suitable offer</h2>
+                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <a href="service.html">Read More</a>
+                            </div><!--end of Card-body-->
+                        </div><!--end of Card-->
+                    </div><!--End of Col3 -->
+
+                    <div class="col-12   col-md-6  col-xl-4 col-xxl-3 " data-aos="slide-up" data-aos-delay="300"><!--Col4-->
+                        <div class="card"><!--Card--> 
+                            <div class="icon-box"><!--Icon-box-->
+                                <div class="icon"><!--Icon-->
+                                    <i class="fa-solid fa-sack-dollar"></i>
+                                </div><!--End of Icon-->
+                            </div><!--End of Icon-box-->
+                            <div class="card-body"><!--Card-body-->
+                                <h2 class="card-title">cheap rate</h2>
+                                <p class="card-text">We have a supreme team who works rigorously to grown businesses beyond client’s expectations.</p>
+                                <a href="service.html">Read More</a>
+                            </div><!--end of Card-body-->
+                        </div><!--end of Card-->
+                    </div><!--End of Col4 -->
+
+
+                </div><!--end of Row-->
+            </div><!--End of Container-->
+        </div><!--End of offer-section-->
+
+
+        <!--Presentation-section-->
+
+        <div class="presentation-section ">
+            <!--presentation-section-->
+           
+            <video class="w-100 video" autoplay loop muted>
+                <source src="asset/video/arsd.mp4" type="video/mp4" />           
+              </video>
+
+            <div class="container ">
+                <!--Container-->
+
+                <div class="row ">
+                    <!--Row-->
+
+                    <div class="col-12   col-md-5 offer-col">
+                        <!--Col1 -->
+                        <h2 data-aos="zoom-out"> Whether you are looking for answers, would like to solve any business problem</h2>
+                    </div><!--End of Col1 -->
+
+                    <div class="col-12   col-md-2  video-col">
+                        <!--Col2 -->
+                        <h4 class="play-btn"></h4>
+                    </div><!--End of Col2 -->
+
+                    <div class="col-12   col-md-5 presentation-col">
+                        <!--Col3 -->
+                        <p data-aos="slide-left">video presentation</p>
+                    </div><!--End of Col3 -->
+
+
+                </div><!--end of Row-->
+                <!-- Aspect ratio 16:9 -->
+
+            </div><!--End of Container-->
+
+
+        </div><!--End of Offer-section-->
+
+
+           <script>
+               $(document).ready(function () {
+                   $('.presentation-section .play-btn').click(function () {
+                       $(".presentation-section .video").toggle();
+                       $(".presentation-section h2").toggle();
+                       $(".presentation-section p").toggle();
+                   });
+
+                  
+
+
+
+               });
+
+               
+
+
+           </script>
+
+
+        <!--Team section-->
+
+        <div class="team-section"><!--Team Section-->
+            <div class="container"><!--Container-->
+
+                <h4 class="section-title1 " data-aos="fade-down">staff</h4>
+                <h3 class="section-title2 " data-aos="zoom-out">meet our team</h3>
+                <p class="section-text " data-aos="zoom-in">We take a customised approach to tackle the most urgent issues we agree on and take it from there, unlike others who only have a single starting place. </p>
+
+                <div class="row main-row"><!--Main Row-->
+
+                    <div class="col-12 col-md-6  " data-aos="slide-up" data-aos-delay="0"><!--Main Col1-->
+                        <div class="row g-0 "> <!--Profile row-->
+                            <div class="col-lg-12 col-xl-5 " ><!--Inner Col1-->
+                                <img src="asset/img/team1.jpg" alt="Card image">
+                            </div><!--End of Inner col1-->
+                            <div class="col-lg-12 col-xl-7 "><!--Inner Col2-->
+                                <div class="content-text" >
+                                    <!--Content Text-->
+                                    <h5 class="reponsibility ">ceo</h5> <!--Staf's position ||  Designation-->
+                                    <h4 class="card-title">Joseph</h4>
+                                    <p class="card-text">provides administrative support to top management and senior executives like directors, presidents, CEOs, and chairpersons.</p>
+                                    <a href="team.html#id1" class="btn ">See Profile</a>
+                                </div><!--End of Content Text-->
+                            </div><!--End of Inner col2-->
+                        </div><!--End of profile row-->
+                    </div><!--End of Main Col1-->
+
+                    <div class="col-12 col-md-6 " data-aos="slide-up" data-aos-delay="100"><!--Main Col2-->
+                        <div class="row g-0 "><!--Profile row-->
+                            <div class="col-lg-12 col-xl-5"><!--Inner Col1-->
+                                <img src="asset/img/team2.jpg" alt="Card image">
+                            </div><!--End of Inner col1-->
+                            <div class="col-lg-12 col-xl-7 "><!--Inner Col2-->
+                                <div class="content-text"><!--Content Text-->
+                                    <h5 class="reponsibility ">developer</h5> <!--Staf's position ||  Designation-->
+                                    <h4 class="card-title">mark</h4>
+                                    <p class="card-text">provides administrative support to top management and senior executives like directors, presidents, CEOs, and chairpersons.</p>
+                                    <a href="team.html#id2" class="btn ">See Profile</a>
+                                </div><!--End of Content Text-->
+                            </div><!--End of Inner col2-->
+                        </div><!--End of Profile row-->
+                    </div><!--End of Main Col2-->
+
+
+                    <div class="col-12 col-md-6 " data-aos="slide-up" data-aos-delay="200"><!--Main Col3-->
+                        <div class="row g-0 "> <!--Profile row-->
+                            <div class="col-lg-12 col-xl-5"><!--Inner Col1-->
+                                <img src="asset/img/team3.jpg" alt="Card image">
+                            </div><!--End of Inner col1-->
+                            <div class="col-lg-12 col-xl-7"><!--Inner Col2-->
+                                <div class="content-text"><!--Content Text-->
+                                    <h5 class="reponsibility ">developer</h5> <!--Staf's position ||  Designation-->
+                                    <h4 class="card-title">Jax</h4>
+                                    <p class="card-text">provides administrative support to top management and senior executives like directors, presidents, CEOs, and chairpersons.</p>
+                                    <a href="team.html#id3" class="btn ">See Profile</a>
+                                </div><!--End of Content Text-->
+                            </div><!--End of Inner col2-->
+                        </div><!--End of Profile row-->
+                    </div><!--End of Main Col3-->
+
+                    <div class="col-12 col-md-6 " data-aos="slide-up" data-aos-delay="300"><!--Main Col4-->
+                        <div class="row g-0 "><!--Profile row-->
+                            <div class="col-lg-12 col-xl-5"> <!--Inner Col1-->
+                                <img src="asset/img/team4.jpg" alt="Card image">
+                            </div><!--End of Inner col1-->
+                            <div class="col-lg-12 col-xl-7">
+                                <!--Inner Col2-->
+                                <div class="content-text">
+                                    <!--Content Text-->
+                                    <h5 class="reponsibility ">developer</h5> <!--Staf's position ||  Designation-->
+                                    <h4 class="card-title">andy</h4>
+                                    <p class="card-text">provides administrative support to top management and senior executives like directors, presidents, CEOs, and chairpersons.</p>
+                                    <a href="team.html#id4" class="btn ">See Profile</a>
+                                </div><!--End of Content Text-->
+                            </div><!--End of Inner col2-->
+                        </div><!--End of Profile row-->
+                    </div><!--End of Main Col4-->
+
+
+                </div><!--End of Main Row-->
+            </div><!--End of Container-->
+        </div><!--End of Team Section-->
+
+
+
+
+        <!--testimonial section-->
+
+        <div class="testimonial-section "><!--Testimonial section-->
+            <div class="container"> <!--Container-->
+                <div class="row "> <!--Row-->
+
+                    <div class="col-12 col-lg-6"><!--col1-->
+                        <div id="ClientReview" data-interval="false" class="carousel slide" data-ride="carousel"><!--Carousel-->
+                            <h3 class="section-title1 " data-aos="fade-down">testimonials</h3>
+                            <h1 class="section-title2 " data-aos="slide-right"> what our clients say </h1>
+                            <div class="carousel-inner" data-aos="zoom-out"><!--carousel-inner-->
+                                <div class="carousel-item active"><!--item1-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I had an amazing experience with this company! The customer service was top-notch, and the product exceeded my expectations. I highly recommend them to anyone looking for quality products and excellent service.<span>jhon </span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item1-->
+                                <div class="carousel-item "><!--item2-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I am a repeat customer of this business, and they never disappoint. The team is always friendly and helpful, and their products are outstanding. I’ve recommended them to all my friends and family, and I will continue to do so!<span>smith</span></p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item2-->
+                                <div class="carousel-item "><!--item3-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>After trying several other companies, I finally found the perfect fit with this one. Their attention to detail and commitment to customer satisfaction is unparalleled. I will definitely be using their services again in the future.<span>david</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item3-->
+
+                                <div class="carousel-item "><!--item4-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I can’t say enough good things about this business. From the moment I contacted them, they were responsive and accommodating. The quality of their work is exceptional, and I couldn’t be happier with the final result.<span>Ijack</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item4-->
+
+                                <div class="carousel-item "> <!--item5-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I’ve been a loyal customer for years, and I continue to be impressed with this company. Their team is dedicated to providing the best service possible, and it shows in every interaction. I highly recommend them to anyone in need of their services.<span>mark</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item3-->
+
+                                <div class="carousel-item "> <!--item6-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I recently made a purchase from this business, and I am extremely satisfied with the entire process. The website was user-friendly, the ordering process was seamless, and the product arrived on time and in perfect condition. Thank you for a fantastic experience!<span>Liman</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item6-->
+
+                                <div class="carousel-item "><!--item7-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I had some concerns before making my purchase, but the customer support team was incredibly helpful and answered all my questions promptly. The product itself is of excellent quality, and I couldn’t be happier with my decision to buy from this company.<span>Jadd</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item7-->
+
+                                <div class="carousel-item "><!--item8-->
+                                    <div class="quote-wrapper"><!--Quote-->
+                                        <p>I was blown away by the level of professionalism and expertise displayed by this company. They went above and beyond to ensure my satisfaction, and I can confidently say that they have earned a lifelong customer.<span>roberto</span> </p>
+                                    </div><!--End of Quote-->
+                                </div><!--end of item8-->
+
+
+                            </div><!--end of carousel-inner-->
+                            <ol class="carousel-indicators indicators">
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="3"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="4"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="5"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="6"></li>
+                                <li data-bs-target="#ClientReview" data-bs-slide-to="7"></li>
+                            </ol>
+                        </div><!--end of Carousel-->
+
+                    </div>  <!--end of col1-->
+
+
+                    <div class="col-12 col-lg-6 img-container"> <!--col2-->
+
+                        <div class=" circle-container" data-aos="zoom-out"><!--circle container-->
+
+
+                            <div class=" circle1"> <!--Outer circle || Circle1 || The big circle-->
+
+                                <div class="img-block active" data-bs-target="#ClientReview" data-bs-slide-to="0"> <!--image1-->
+                                    <img src="asset/img/customer1.jpg" alt="customer1">
+                                </div><!--End of image1-->
+
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="1"><!--image2-->
+                                    <img src="asset/img/customer2.jpg" alt="customer2">
+                                </div><!--End of image2-->
+
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="2"> <!--image3-->
+                                    <img src="asset/img/customer3.jpg" alt="customer3">
+                                </div><!--End of image3-->
+
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="3"><!--image4-->
+                                    <img src="asset/img/customer4.jpg" alt="customer4">
+                                </div><!--End of image4-->
+
+                            </div><!--end of Outer circle || Circle1 || The big circle-->
+
+
+                            <div class=" circle2">
+                                <!--inner circle || Circle2 || small circle-->
+
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="4"><!--image5-->
+                                    <img src="asset/img/customer5.jpg" alt="customer5">
+                                </div><!--End of image5-->
+
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="5"> <!--image6-->
+                                    <img src="asset/img/customer6.jpg" alt="cutomer6">
+                                </div><!--End of image6-->
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="6"><!--image7-->
+                                    <img src="asset/img/customer7.jpg" alt="customer7">
+                                </div><!--End of image7-->
+                                <div class="img-block" data-bs-target="#ClientReview" data-bs-slide-to="7"><!--image8-->
+                                    <img src="asset/img/customer8.jpg" alt="customer8">
+                                </div><!--End of image8-->
+
+
+                            </div> <!--end of inner circle || Circle2 || small circle-->
+
+
+
+                            <div class="center-circle"><!--Center Circle || Wheel-->
+                                <div class="circle"></div><!--Circle1-->
+                                <div class="circle"></div><!--Circle2-->
+                                <div class="circle"></div><!--Circle3-->
+                                <div class="circle"></div><!--Circle4-->
+                                <div class="circle"></div><!--Circle5-->
+                                <div class="circle"></div><!--Circle6-->
+                                <div class="circle"></div><!--Circle7-->
+                            </div><!--end of Center Circle || Wheel-->
+
+
+
+
+                        </div><!--end of circle container-->
+
+                    </div>  <!--end of col2-->
+
+
+                </div><!--end of Row-->
+            </div><!--end of Container-->
+        </div><!--end of Testimonial section-->
+
+
+
+
+
+        <!--pricing section-->
+
+        <div class="pricing-section"><!--pricing section-->
+
+            <div class="container "><!--Container-->
+
+                <h4 class="section-title1" data-aos="fade-down">pricing</h4>
+                <h3 class="section-title2 " data-aos="zoom-out">select your option</h3>
+                <p class="section-text " data-aos="zoom-in">Corporations, in contrast with sole proprietors and partnerships, are a separate legal entity and provide limited liability for their owners/members. </p>
+
+
+                <div class="row g-5"><!--Row-->
+
+                    <div class="col-12 col-md-6 col-xl-4" data-aos="slide-up" data-aos-delay="0"><!--col1-->
+                        <div class="pricing-table"><!--Pricing Table-->
+                            <div class="pricing-header "><!--pricing-header-->
+                                <h3 class="title">basic</h3> <!--Plan Name-->
+                            </div><!--end of pricing-header-->
+                            <div class="price-value"><!--price-value-->
+                                <span class="amount">$15 <sup>/ mo</sup></span><!--Offer Price-->
+                            </div><!--end of price-value-->
+                            <div class="pricing-content"><!--pricing-content-->
+                                <ul>
+                                    <li>8GB Disk Space</li>
+                                    <li>5 Email Accounts</li>
+                                    <li>10GB Monthly Bandwidth</li>
+                                    <li>15 Subdomains</li>
+                                    <li>2 Domains</li>
+                                </ul>
+                            </div><!--end of pricing-content-->
+                            <div class="pricingTable-Sign-Up" data-aos="slide-up" data-aos-delay="100"><!--order button-->
+                                <a href="">Order Now</a>
+                            </div><!--end of order button-->
+                        </div><!--end of Pricing Table-->
+                    </div><!--end of col1-->
+
+                    <div class="col-12 col-md-6 col-xl-4" data-aos="slide-up"><!--col2-->
+                        <div class="pricing-table"><!--Pricing Table-->
+                            <div class="pricing-header "><!--pricing-header-->
+                                <h3 class="title">standard</h3> <!--Plan Name-->
+                            </div><!--end of pricing-header-->
+                            <div class="price-value"><!--price-value-->
+                                <span class="amount">$30 <sup>/ mo</sup></span><!--Offer Price-->
+                            </div><!--end of price-value-->
+                            <div class="pricing-content"> <!--pricing-content-->
+                                <ul>
+                                    <li>20GB Disk Space</li>
+                                    <li>50 Email Accounts</li>
+                                    <li>20GB Monthly Bandwidth</li>
+                                    <li>20 Subdomains</li>
+                                    <li>5 Domains</li>
+                                </ul>
+                            </div><!--end of pricing-content-->
+                            <div class="pricingTable-Sign-Up"><!--order button-->
+                                <a href="">Order Now</a>
+                            </div><!--end of order button-->
+                        </div><!--end of Pricing Table-->
+                    </div><!--end of col2-->
+
+                    <div class="col-12 col-md-6 col-xl-4" data-aos="slide-up" data-aos-delay="200"><!--col3-->
+                        <div class="pricing-table"><!--Pricing Table-->
+                            <div class="pricing-header "><!--pricing-header-->
+                                <h3 class="title">premium</h3> <!--Plan Name-->
+                            </div><!--end of pricing-header-->
+                            <div class="price-value">
+                                <!--price-value-->
+                                <span class="amount">$200 <sup>/ yr</sup></span><!--Offer Price-->
+                            </div><!--end of price-value-->
+                            <div class="pricing-content">
+                                <!--pricing-content-->
+                                <ul>
+                                    <li>80GB Disk Space</li>
+                                    <li>50 Email Accounts</li>
+                                    <li>60GB Monthly Bandwidth</li>
+                                    <li>25 Subdomains</li>
+                                    <li>6 Domains</li>
+                                </ul>
+                            </div><!--end of pricing-content-->
+                            <div class="pricingTable-Sign-Up">
+                                <!--order button-->
+                                <a href="">Order Now</a>
+                            </div><!--end of order button-->
+                        </div><!--end of Pricing Table-->
+                    </div><!--end of col3-->
+
+                </div><!--end of Row-->
+
+            </div><!--End of Container-->
+        </div><!--End of Pricing-section-->
+
+
+        <!--sponsor section-->
+
+        <div class="sponsor-section"> <!--Sponsor section-->
+            <div class="container"><!--container-->
+
+                <h3 class="section-title" data-aos="slide-down">our partner</h3>
+
+                
+                <div id="sponsor" class="carousel slide" data-bs-ride="carousel"><!-- The slideshow/carousel -->
+
+                    <div class="carousel-inner" data-aos="zoom-out"><!--carousel-inner-->
+                        
+                        <div class="carousel-item active"><!--item1-->
+                            
+                            <div class="row "><!--Row-->
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor1.jpg" alt="sponsor1"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor2.jpg" alt="sponsor2"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor3.jpg" alt="sponsor3"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor4.jpg" alt="sponsor4"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor5.jpg" alt="sponsor5"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor6.jpg" alt="sponsor6"></div>
+                            </div><!--end of Row-->
+
+                        </div><!--end of item1-->
+
+                        <div class="carousel-item"><!--item2-->
+                            
+                            <div class="row "> <!--Row-->
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor7.jpg" alt="sponsor7"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor8.jpg" alt="sponsor8"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor9.jpg" alt="sponsor9"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor10.jpg" alt="sponsor10"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor11.jpg" alt="sponsor11"></div>
+                                <div class="col-4  col-lg-2 "><img src="asset/img/sponsor12.jpg" alt="sponsor12"></div>
+                            </div><!--end of Row-->
+
+                        </div><!--end of item12-->
+
+                        <div class="carousel-item"> <!--item3-->
+                           
+                            <div class="row "><!--Row-->
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor13.jpg" alt="sponsor13"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor14.jpg" alt="sponsor14"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor15.jpg" alt="sponsor15"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor16.jpg" alt="sponsor16"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor17.jpg" alt="sponsor17"></div>
+                                <div class="col-4 col-lg-2 "><img src="asset/img/sponsor18.jpg" alt="sponsor18"></div>
+                            </div><!--end of Row-->
+
+                        </div><!--end of item3-->
+
+                    </div><!--End of carousel-inner-->
+
+
+                    <!--Previous and next button-->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#sponsor" data-bs-slide="prev">
+                        <span  aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#sponsor" data-bs-slide="next">
+                        <span  aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div><!--End of carousel-->
+
+            </div><!-- End of Caontainer -->
+        </div><!--end of Sponsor section-->
+
+
+
+        <!-- Footer section -->
+
+        <div class="footer-section"><!--footer section-->
+            <div class="container"><!--Container-->
+
+                <div class="waves"><!--Wave section-->
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div><!--End of Wave section-->
+
+
+                <div class="row "><!--Row-->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3"><!---Col1-->
+                        <img src="asset/img/logo-footer.png" class="logo" alt="footer logo">
+                        <p>Sales are activity related to selling or the number of goods or services sold in a given time period. Sales are often integrated with all lines of business and are key to a companies' success.</p>     
+                    </div><!--end of Col1-->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3"><!--Col2 | Useful Links-->
+                        <h3 class="footer-title">Useful Links</h3>
+                        <ul class="nav flex-column ">
+                            <li class="nav-item"><a class="nav-link" href="index.html"> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html"> about</a></li>
+                            <li class="nav-item"><a class="nav-link" href="portfolio.html"> portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html"> services</a></li>
+                        </ul>
+                    </div><!--end of Col2 | Useful Links-->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 contact"><!--Col3 | Contact-->
+                        <h3 class="footer-title">contact us</h3>
+
+                        <div class="d-inline-flex "><!--address-->
+                            <div><span class="badge"><i class="fa-solid fa-location-dot"></i></span></div><!--Icon-->
+                            <div class="text">A108 Adam Street New York, NY 535022 United States</div><!--Text-->
+                        </div><!--end of address-->
+
+                        <div class="d-inline-flex "><!--phone-->
+                            <div><span class="badge"><i class="fa-solid fa-mobile-retro"></i></span></div><!--Icon-->
+                            <div class="text">+8801564564</div><!--Text-->
+                        </div><!--end of phone-->
+                        <div class="d-inline-flex "><!--e-mail-->
+                            <div><span class="badge"><i class="fa-regular fa-paper-plane"></i></span></div><!--Icon-->
+                            <div class="text">sample@example.com</div><!--Text-->
+                        </div><!--end of e-mail-->
+
+                    </div><!--end of Col3|Contact-->
+
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 footer-widget"><!--Col4|Subscribe-->
+
+                        <h3>Subscribe</h3>
+                        <div class="footer-text mb-25"><!--Form text-->
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div><!--End of Form text-->
+
+                        <div class="subscribe-form"><!--Form-->
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fa-solid fa-at"></i></button>
+                            </form>
+                        </div><!--End of Form-->
+                        
+                        <!--Social Link-->
+                        <div class="social-links mt-4 d-inline-flex align-items-center"><!--Social Link-->
+                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-facebook-f "></i></a>
+                            <a class="btn btn-square rounded-circle  " href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square rounded-circle  " href="#"><i class="fab fa-instagram"></i></a>
+                        </div><!--End of Social Link-->
+
+                    </div><!--end of Col4|Subscribe-->
+
+
+                </div><!--End of Row-->
+
+
+               <!-- ++Create  some bubble++ 
+                            for animation -->
+
+                <div class="dots"><!--bubble-->
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                    <div><span class="dot"></span></div>
+                </div><!--end of bubble-->
+
+
+
+            </div><!--End of Container-->
+        </div><!--End of Footer section-->
+
+
+ <!--  ***Copyright***  -->
+
+        <div class="copyright"><!--Copyright-->
+            <div class="container" ><!--Container-->
+                <p>&copy; Copyright <strong><span>ARSD</span></strong>. All Rights Reserved</p>
+            </div><!--End of Container-->
+        </div><!--End of Copyright-->
+
+
+        <script src="asset/js/count-timer.js"></script>
+        <script src="asset/js/aos.js"></script>
+        <script>
+          AOS.init(
+          {
+            offset: 150, // offset (in px) from the original trigger point
+             delay: 0, // values from 0 to 3000, with step 50ms
+          duration: 1000
+        
+          }
+          );
+        </script>     
+
+       
+
+    </body>
+</html>
+
+
+

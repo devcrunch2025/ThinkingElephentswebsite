@@ -1,0 +1,266 @@
+
+
+/*--------------------------------------------------------------
+
+  +++  pulse animation ||  A Wave comes from a circle +++
+
+---------------------------------------------------------------*/
+
+
+@keyframes pulse_animate {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: none;
+
+  }
+}
+
+
+/*--------------------------------------------------------------
+
+  +++  Zoom  animation ||  Increase size on animate +++
+
+---------------------------------------------------------------*/
+
+@keyframes zoom {
+  0%{
+    transform: scale(1, 1);
+  }
+  
+  100%{
+    transform: scale(1.5, 1.5);
+  }
+
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+
+  +++  Fade  animation ||  Percentage of any item visibility +++
+
+---------------------------------------------------------------*/
+@keyframes fade {
+           0% { opacity: 0.2 } 
+          50% { opacity: 1 }
+          100%{ opacity: 0.2 }
+    }
+
+
+/*----------------------------------------------
+
+             Wave animation || Water Wave
+
+-----------------------------------------------*/
+
+
+    @keyframes  Wave_Water {
+      0%{
+        background-position-x: 1000px; 
+      }
+      100%{
+        background-position-x: 0px; 
+      }
+    }
+
+
+    @keyframes Reverse_Wave_Water {
+      0%{
+        background-position-x: 0px; 
+      }
+      100%{
+        background-position-x: 1000px; 
+      }
+    }
+
+
+/*------------------------------------------
+
+       bubble animation
+
+-------------------------------------------*/ 
+
+@keyframes bubble {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1) translateY(-100px) rotate(360deg);
+  }
+}
+
+
+
+
+/*------------------------------------------
+
+       Rotate animation
+       
+-------------------------------------------*/ 
+
+@keyframes Rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes Rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+/*------------------------------------------
+
+       Reverse Rotate animation
+       
+-------------------------------------------*/ 
+
+@keyframes Rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes Rotate-reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+
+/*------------------------------------------
+
+       Circle Rotate animation
+       
+-------------------------------------------*/ 
+
+@keyframes circle-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@-webkit-keyframes circle-rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+
+
+/*------------------------------------------
+
+       Image Rotate animation
+       
+-------------------------------------------*/ 
+@keyframes img-rotate {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(-405deg);
+  }
+}
+
+@-webkit-keyframes img-rotate {
+  from {
+    -webkit-transform: rotate(-45deg);
+  }
+  to {
+    -webkit-transform: rotate(-405deg);
+  }
+}
+
+
+
+/*------------------------------------------
+
+        Animation for center circle
+       
+-------------------------------------------*/ 
+
+
+@keyframes circle-move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    70% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes circle-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*------------------------------------------
+
+         Image slide
+       
+-------------------------------------------*/
+@keyframes img-slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-60rem);
+    }
+}
+
