@@ -31,6 +31,8 @@ html {
 
           body {
                 font-family: 'Open Sans', sans-serif; /*---Basic Font family------*/              
+                background-color: #ffffff; /* global page background */
+                color: #000000; /* regular font color */
                }
 
 
@@ -42,6 +44,40 @@ html {
                               a, a:hover {
                                      text-decoration: none; /*---Link underline remove------*/
                                       }
+
+/* Professional section separators on white background */
+.about-section,
+.philosophy-section,
+.goal-section,
+.mission-section,
+.founder-section,
+.offer-section,
+.presentation-section,
+.team-section,
+.team-profile-section,
+.testimonial-section,
+.sponsor-section,
+.blog-section,
+.portfolio-section,
+.contact-section,
+.faq-section,
+.social-section,
+.pricing-section,
+.service-section,
+.services-section {
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #f4f4f4;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+/* Force white hero backgrounds across pages */
+.other-hero-section,
+.portfolio-hero,
+.services-hero {
+    background: #ffffff !important;
+    background-image: none !important;
+}
 
 
 /*----------------------------------------
@@ -74,7 +110,7 @@ html {
 .navbar,  /*--Menu Background Color--*/
 .navbar .dropdown-menu, /*--dropdown menu Background---*/
 .navbar .dropdown-menu a:hover { /*---dropdown Menu item background color when hover -----*/
-    background-color: rgba(14,14,87,0.9) !important; /*----Menu Background Color (default)-----------*/
+    background-color: #ffffff !important; /*----Menu Background Color (default)-----------*/
 }
 
 
@@ -98,7 +134,7 @@ html {
              .navbar { /*----Menu  (on big Screen)-----------*/
             padding: 0.8vw 0pt; /* reduced vertical padding to lower header height on desktop */
         border-bottom: 1px solid rgba(255,255,255,0.2); /*------Menu  Bottom  Border (on Big Screen)-------*/
-        background: rgba(14,14,87,0.9); /* solid header background on desktop */
+            background: #ffffff; /* solid header background on desktop */
         box-shadow: 0 6px 24px rgba(0,0,0,0.18);
                 }
 
@@ -134,7 +170,7 @@ html {
                                   width: 100%; /*-----On Small screen menu will take full width ------*/
 						            top: 0;/*----on small screen menu will be fixed on Top-----*/
 					         text-align: center; /*--On small screen menu item will be in center position--*/
-			           background-color: #0E0E57 !important; /*----On small screen menu Background Color-----*/
+		       background-color: #ffffff !important; /*----On small screen menu Background Color-----*/
                             padding: 2vw; /* reduced padding to lower header height on mobile */
                           margin-bottom: 5vw;  
 						  }
@@ -156,7 +192,7 @@ html {
               .navbar:is(.scrolled),           /*----Menu Background color when scrolled |scrolled  class is defined in j-query -----------*/ 
               .navbar:is(.scrolled) .dropdown-menu, /*---- dropdown Menu Background and border when scroll-----------*/ 
               .navbar:is(.scrolled) .dropdown-menu a:hover {
-                                      background-color:#0E0E57 !important; /*-----on scrolled background color---*/
+                                      background-color:#ffffff !important; /*-----on scrolled background color---*/
                                                 border:none; /*----on scrolled remove border ------*/
                                 }             
 						  
@@ -181,7 +217,7 @@ html {
                                      display:flex;
                                      align-items:center;
                                      justify-content:center;
-                                     background: #f7d64a; /* logo yellow */
+                                     background: #FFF; /* logo yellow */
                                      padding: 6px 10px;
                                      border-radius: 12px;
                                      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -198,7 +234,7 @@ html {
 .navbar a,
 .navbar .dropdown .show {
                      font-size: clamp(10pt,2vw,11pt); /*----Menu font size-----*/
-                          color: #ffffff; /* default text color */
+                          color: #0E0E57; /* default text color */
               text-transform: capitalize; /*----Menu font style----*/
                   font-weight: 700; /* bolder for visibility */
               letter-spacing: 0.5pt; /*---Menu font letter spacing----*/
@@ -218,8 +254,8 @@ html {
 
     .navbar a:hover,
     .navbar a:focus {
-                color: #ffffff;
-                background: rgba(247,214,74,0.25); /* subtle logo yellow tint on hover */
+                 color: #0E0E57;
+                 background: rgba(247,214,74,0.35); /* subtle logo yellow tint on hover */
                 box-shadow: 0 6px 16px rgba(0,0,0,0.18);
                 transform: translateY(-1px);
            }
@@ -295,8 +331,8 @@ html {
 
 
 .navbar .btn-square { 
-                border: 2px solid rgba(255,255,255,0.6); /* softer border */
-			             color: #ffffff; /* default fallback */
+            border: 2px solid rgba(14,14,87,0.2); /* softer border */
+		             color: #0E0E57; /* default fallback */
                     transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) ;/*-------Social button transform on click animation---------*/
                        display: flex;
                justify-content: center;
@@ -307,7 +343,7 @@ html {
 						 }
 						 
     .navbar .btn-square:hover {
-              background-color: rgba(255,255,255,0.15); /* subtle hover */
+          background-color: rgba(14,14,87,0.08); /* subtle hover */
 			                   color: inherit;/* keep brand color */
 						 }						 
 
@@ -576,7 +612,7 @@ html {
 
 .about-section h4:not(.count-number) {   /*-----Title1-------------*/
           text-transform: uppercase;  
-                   color: #ffffff;    
+                                     color: #000000;    
              font-weight: normal;
                font-size: clamp(10pt,2vw,11pt);
              font-family: "Montserrat", sans-serif;
@@ -587,7 +623,7 @@ html {
 .about-section h1:not(.count-number) {  /*-----Title2-------------*/
                font-size: clamp(21pt,3vw,36pt);  
           text-transform: capitalize;  
-                   color: #ffffff;    
+                color: #000000;    
              font-weight: bolder;
           padding-bottom: 1vw;
                text-wrap: pretty;
@@ -597,10 +633,44 @@ html {
 .about-section  p:not(.count-number) {  /*-----Text-------------*/    
              font-weight: normal;
                font-size: clamp(8pt,2vw,10pt);  
-                   color: #f0f0f0;
+                                     color: #000000;
                text-wrap: pretty;
 
                }
+
+/* About intro (new first section on About page) */
+.about-intro-section {
+    padding: 6vw 0;
+}
+
+.about-intro-section h4 {
+    margin-top: 1.5rem;
+}
+
+.about-story-image {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    min-height: 450px;
+}
+
+.about-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-intro-section .about-list {
+    padding-left: 1.2rem;
+    margin: 0.8rem 0 1.5rem 0;
+}
+
+.about-intro-section .about-list li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
 
 
 
@@ -5601,3 +5671,63 @@ Create a box behind the image
         @media (max-width: 767px) {
           .nav-video-overlay { display: none !important; }
         }
+
+/* Force white backgrounds for all main sections across pages */
+.about-section,
+.philosophy-section,
+.goal-section,
+.mission-section,
+.founder-section,
+.offer-section,
+.presentation-section,
+.team-section,
+.team-profile-section,
+.testimonial-section,
+.sponsor-section,
+.blog-section,
+.portfolio-section,
+.contact-section,
+.faq-section,
+.social-section,
+.pricing-section,
+.service-section,
+.services-section,
+.other-hero-section,
+.portfolio-hero,
+.services-hero {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    background: #ffffff !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+/* 3px section separators with alternating navy/gold */
+.about-section,
+.goal-section,
+.founder-section,
+.presentation-section,
+.testimonial-section,
+.blog-section,
+.contact-section,
+.social-section,
+.service-section,
+.other-hero-section {
+    border-top: 3px solid #0E0E57;
+    border-bottom: 3px solid #0E0E57;
+}
+
+.philosophy-section,
+.mission-section,
+.offer-section,
+.team-section,
+.team-profile-section,
+.sponsor-section,
+.portfolio-section,
+.faq-section,
+.pricing-section,
+.services-section,
+.portfolio-hero,
+.services-hero {
+    border-top: 3px solid #f7d64a;
+    border-bottom: 3px solid #f7d64a;
+}

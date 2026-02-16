@@ -87,6 +87,48 @@
             background: rgba(0,0,0,0.4); /* increase/decrease for readability */
             z-index: 1;
         }
+
+        /* Initial state: navbar hidden */
+        .navbar {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        /* Show navbar after 10 seconds */
+        .navbar.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Additional content below hero initially hidden */
+        .about-section,
+        .portfolio-section,
+        .testimonial-section,
+        .services-section,
+        .count-section,
+        .why-choose-us,
+        .blog-section,
+        .faq-section,
+        .contact-banner {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        /* Show content after 10 seconds */
+        .about-section.show,
+        .portfolio-section.show,
+        .testimonial-section.show,
+        .services-section.show,
+        .count-section.show,
+        .why-choose-us.show,
+        .blog-section.show,
+        .faq-section.show,
+        .contact-banner.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 
 </head>
@@ -111,12 +153,12 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <div class="navbar-nav mx-auto pe-4 py-3 py-lg-0">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="social.html">social</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html" data-no-nav-video="true">home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-no-nav-video="true">about</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html" data-no-nav-video="true">services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html" data-no-nav-video="true">portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social.html" data-no-nav-video="true">social</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-no-nav-video="true">Contact</a></li>
                 </ul>
             </div>
 
@@ -138,6 +180,10 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
+        background-image: url('asset/img/home-banner.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .hero-video-section video {
@@ -145,39 +191,107 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        opacity: 1;
+        transition: opacity 0.8s ease;
+    }
+
+    .hero-video-section video.hide-video {
+        opacity: 0;
+        pointer-events: none;
     }
 
     .text-box {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
         color: #fff;
-        width: 90%;
         z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .text-box.show {
+        opacity: 1;
+        visibility: visible;
     }
 
     .text-box h1 {
-        font-size: 60px;
-        font-weight: bold;
-        text-transform: uppercase;
+        display: none !important;
     }
 
     .text-box h4 {
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 22px;
+        margin: 0;
+        margin-top: 120px;
     }
 
     .text-box p {
-        font-size: 18px;
-        margin: 15px auto;
-        max-width: 700px;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 12px 20px;
-        border-radius: 8px;
-        display: block;
+        display: none;
+    }
+
+    .text-box-buttons {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding-left: 40px;
+    }
+
+    /* Banner Center Play Button */
+    .banner-play-btn {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(76, 175, 80, 0.9);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        cursor: pointer;
+        display: none !important;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        z-index: 15 !important;
+        pointer-events: auto !important;
+    }
+
+    .banner-play-btn:hover {
+        background: rgba(76, 175, 80, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+    }
+
+    .banner-play-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    @media (max-width: 768px) {
+        .banner-play-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 28px;
+        }
+    }
     }
 
     .btn1 a,
@@ -272,6 +386,120 @@
         25% { transform: rotate(-10deg); }
         75% { transform: rotate(10deg); }
     }
+
+    /* Skip Video Button */
+    .skip-video-btn {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(247, 214, 74, 0.9);
+        color: #0E0E57;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .skip-video-btn:hover {
+        background: rgba(247, 214, 74, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6);
+    }
+
+    .skip-video-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    /* Pause Video Button */
+    .pause-video-btn {
+        position: absolute;
+        right: 30px;
+        top: calc(50% + 80px);
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(247, 214, 74, 0.9);
+        color: #0E0E57;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .pause-video-btn:hover {
+        background: rgba(247, 214, 74, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6);
+    }
+
+    .pause-video-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    /* Play Video Button */
+    .play-video-btn {
+        position: absolute;
+        right: 30px;
+        top: calc(50% + 80px);
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(76, 175, 80, 0.9);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-video-btn:hover {
+        background: rgba(76, 175, 80, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+    }
+
+    .play-video-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    @media (max-width: 768px) {
+        .play-video-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            right: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skip-video-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            right: 20px;
+        }
+    }
 </style>
 
 
@@ -284,19 +512,41 @@
         <source src="home.mp4" type="video/mp4">
     </video>
 
+    <!-- Skip Video Button -->
+    <button class="skip-video-btn" id="skipVideoBtn" title="Skip Video">
+        <i class="fa-solid fa-forward"></i>
+    </button>
+
+    <!-- Pause Video Button -->
+    <button class="pause-video-btn" id="pauseVideoBtn" title="Pause Video">
+        <i class="fa-solid fa-pause"></i>
+    </button>
+
+    <!-- Play Video Button -->
+    <button class="play-video-btn" id="playVideoBtn" title="Replay Video">
+        <i class="fa-solid fa-play"></i>
+    </button>
+
+    <!-- Banner Play Button -->
+    <button class="banner-play-btn" id="bannerPlayBtn" title="Replay Video" onclick="location.reload();">
+        <i class="fa-solid fa-play"></i>
+    </button>
+
     <!-- Text Content (same as your slider text) -->
     <div class="text-box">
         <h4 data-aos="zoom-out"><i class="fa-solid fa-ear-listen"></i> Big Ears. Bigger Ideas.</h4>
         <h1 data-aos="zoom-in"><i class="fa-solid fa-elephant"></i> Thinking Elephants</h1>
         <p data-aos="zoom-in">We listen loudly. Most agencies start by talking. We start by listening. Strategic ad films that drive measurable results for brands worldwide.</p>
 
-        <span class="btn btn-lg btn1 me-2 pulse-btn">
-            <a href="portfolio.html"><i class="fa-solid fa-play-circle"></i> our work</a>
-        </span>
+        <div class="text-box-buttons">
+            <span class="btn btn-lg btn1 me-2 pulse-btn">
+                <a href="portfolio.html"><i class="fa-solid fa-play-circle"></i> our work</a>
+            </span>
 
-        <span class="btn btn-lg btn2 pulse-btn">
-            <a href="contact.html"><i class="fa-solid fa-paper-plane"></i> request a quote</a>
-        </span>
+            <span class="btn btn-lg btn2 pulse-btn">
+                <a href="contact.html"><i class="fa-solid fa-paper-plane"></i> request a quote</a>
+            </span>
+        </div>
     </div>
 
 </div>
@@ -974,6 +1224,109 @@
           }
           );
         </script>     
+
+        <!-- Script to show navbar after 20s and banner after 60s -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const navbar = document.querySelector('.navbar');
+                const textBox = document.querySelector('.text-box');
+                const video = document.querySelector('.hero-video-section video');
+                const skipBtn = document.getElementById('skipVideoBtn');
+                let timeoutIds = [];
+                
+                // Function to show banner and all content
+                function revealContent() {
+                    // Hide video and show background image
+                    if (video) {
+                        video.classList.add('hide-video');
+                    }
+                    
+                    // Show banner/text-box
+                    if (textBox) {
+                        textBox.classList.add('show');
+                    }
+
+                    // Show banner play button
+                    const bannerPlayBtn = document.getElementById('bannerPlayBtn');
+                    if (bannerPlayBtn) {
+                        bannerPlayBtn.style.setProperty('display', 'flex', 'important');
+                    }
+                    
+                    // Show all sections
+                    const sections = document.querySelectorAll('.about-section, .portfolio-section, .testimonial-section, .services-section, .count-section, .why-choose-us, .blog-section, .faq-section, .contact-banner');
+                    sections.forEach(function(section) {
+                        section.classList.add('show');
+                    });
+                }
+                
+                // Show navbar after 20 seconds
+                timeoutIds.push(setTimeout(function() {
+                    if (navbar) {
+                        navbar.classList.add('show');
+                    }
+                }, 20000)); // 20 seconds
+                
+                // Show banner and page content after 60 seconds
+                timeoutIds.push(setTimeout(function() {
+                    revealContent();
+                }, 60000)); // 60 seconds
+                
+                // Skip video button functionality
+                if (skipBtn) {
+                    skipBtn.addEventListener('click', function() {
+                        // Clear all pending timeouts
+                        timeoutIds.forEach(function(id) {
+                            clearTimeout(id);
+                        });
+                        
+                        // Show navbar immediately
+                        if (navbar) {
+                            navbar.classList.add('show');
+                        }
+                        
+                        // Reveal all content immediately
+                        revealContent();
+                        
+                        // Hide skip and pause buttons, show play button
+                        skipBtn.style.display = 'none';
+                        const pauseBtn = document.getElementById('pauseVideoBtn');
+                        if (pauseBtn) pauseBtn.style.display = 'none';
+                        playBtn.style.display = 'flex';
+                    });
+                }
+
+                // Pause video button functionality
+                const pauseBtn = document.getElementById('pauseVideoBtn');
+                if (pauseBtn && video) {
+                    pauseBtn.addEventListener('click', function() {
+                        video.pause();
+                    });
+                }
+
+                // Play video button functionality - reload page
+                if (playBtn) {
+                    playBtn.addEventListener('click', function() {
+                        location.reload();
+                    });
+
+                    // Initially, show skip and pause buttons, hide play button
+                    playBtn.style.display = 'none';
+                    if (pauseBtn) pauseBtn.style.display = 'flex';
+                    if (skipBtn) skipBtn.style.display = 'flex';
+
+                    // When video ends, hide skip and pause, show play button
+                    if (video) {
+                        video.addEventListener('ended', function() {
+                            if (skipBtn) skipBtn.style.display = 'none';
+                            if (pauseBtn) pauseBtn.style.display = 'none';
+                            playBtn.style.display = 'flex';
+                        });
+                    }
+                }
+
+                // Banner play button functionality - inline onclick handler
+            });
+        </script>
 
         <script src="asset/js/nav-video-transition.js"></script>
 

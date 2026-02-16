@@ -66,6 +66,10 @@
     $(document).on('click', 'a[href]:not([target="_blank"]):not([data-no-nav-video])', function(e){
       const href = $(this).attr('href');
       if (!href) return;
+      
+      // Exclude navbar links
+      if ($(this).closest('.navbar').length > 0) return;
+      
       // Ignore hash links, protocols, mailto, tel
       if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.match(/^[a-zA-Z]+:/)) return;
       const resolved = new URL(href, location.href);
