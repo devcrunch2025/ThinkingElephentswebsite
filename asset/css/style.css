@@ -1,3 +1,32 @@
+/* Adjust space between centered logo and nav links */
+.navbar-nav > .nav-item.menu-logo {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar-nav > .nav-item.menu-logo + .nav-item {
+    margin-left: 16px;
+}
+.navbar-nav > .nav-item:not(.menu-logo):not(:first-child):not(:last-child) {
+    margin-right: 8px;
+}
+/* Centered logo in navbar menu */
+.navbar-logo-center img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.navbar-nav .navbar-logo-center {
+    pointer-events: none; /* Prevents tab/hover/focus, logo is decorative in menu */
+}
 
 /*------------------------
 

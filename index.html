@@ -141,9 +141,9 @@
     <!-- Your Existing Website -->
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg fixed-top px-4 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <!-- <a href="index.html" class="navbar-brand d-flex align-items-center">
             <img src="asset/img/logo.png" alt="logo" class="m-0 logo">
-        </a>
+        </a> -->
 
         <span class="navbar-toggler">
             <span class="open" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><i class="fas fa-bars"></i></span>
@@ -156,6 +156,12 @@
                     <li class="nav-item"><a class="nav-link active" href="index.html" data-no-nav-video="true">home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html" data-no-nav-video="true">about</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html" data-no-nav-video="true">services</a></li>
+                    <!-- Centered logo in menu -->
+                    <li class="nav-item d-flex align-items-center justify-content-center px-2 menu-logo">
+                        <a href="index.html" class="navbar-logo-center" tabindex="-1" aria-label="Home">
+                            <img src="asset/img/logo.png" alt="logo" style="height:40px; width:auto; display:block; margin:0 auto;">
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html" data-no-nav-video="true">portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="social.html" data-no-nav-video="true">social</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" data-no-nav-video="true">Contact</a></li>
@@ -291,7 +297,6 @@
             height: 70px;
             font-size: 28px;
         }
-    }
     }
 
     .btn1 a,

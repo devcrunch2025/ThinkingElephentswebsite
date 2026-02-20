@@ -23,7 +23,7 @@
     <!-- Navbar (copied from templates) -->
     <nav class="navbar navbar-expand-lg  fixed-top px-4 px-lg-5 ">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <img src="asset/img/logo.png" alt="logo" class="m-0 logo">
+            <img src="asset/img/logo.png" alt="logo" class="m-0 logo d-none">
         </a>
 
         <span class="navbar-toggler">
@@ -37,6 +37,12 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>
+                    <!-- Centered logo in menu -->
+                    <li class="nav-item d-flex align-items-center justify-content-center px-2 menu-logo" data-aos="zoom-in">
+                        <a href="index.html" class="navbar-logo-center" tabindex="-1" aria-label="Home">
+                            <img src="asset/img/logo.png" alt="logo" style="height:40px; width:auto; display:block; margin:0 auto;">
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
                     <li class="nav-item"><a class="nav-link active" href="social.html">social</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
