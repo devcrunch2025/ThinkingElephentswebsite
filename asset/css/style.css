@@ -293,11 +293,12 @@ html {
 .navbar a,
 .navbar .dropdown .show {
                      font-size: clamp(10pt,2vw,11pt); /*----Menu font size-----*/
-                          color: #0E0E57; /* default text color */
+                          color: black; /* default text color */
               text-transform: capitalize; /*----Menu font style----*/
                   font-weight: 700; /* bolder for visibility */
               letter-spacing: 0.5pt; /*---Menu font letter spacing----*/
-              padding: 10px 16px; /* button-like padding */
+              padding: -10px; /* button-like padding */
+              margin:auto;
               border-radius: 999px; /* pill shape */
               background: transparent; /* default: no fill */
               box-shadow: none;
@@ -4567,7 +4568,8 @@ Create a box behind the image
         margin-top: 120pt;
         position: relative;
         width: 100%;
-        background: #0E0E57;
+        /* background: #0E0E57; */
+        background: #f18c35;
         padding: 20px 50px;
     }
 
