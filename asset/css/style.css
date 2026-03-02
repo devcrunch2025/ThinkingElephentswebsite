@@ -307,7 +307,7 @@ html {
 /* add breathing room between menu buttons */
 .navbar .navbar-nav .nav-item {
     margin: 0 6px;
-    width: 90px;
+    width: 120px;
     text-align: center;
 }
 
@@ -2100,7 +2100,7 @@ html {
 
         height: 100%;
         width: 100%;
-        border: 10px solid #e75d3c;
+        border: 10px solid #65a69c;
         outline: 10px solid #ffc43f;
         border-radius: 50%;
         display: flex;
@@ -2111,6 +2111,7 @@ html {
         -webkit-justify-content: center;
         animation: Rotate 20s linear infinite;
         -webkit-animation: Rotate 20s linear infinite;
+        box-shadow: 0 0 0 20px #e75d3c; /* Added new color (teal) as outer ring */
     }
 
 
@@ -2124,8 +2125,10 @@ html {
         -webkit-transform: translate(-50%, -50%) rotate(45deg);
         width: 80%;
         height: 80%;
-       border: 10px solid #e75d3c;
+       border: 10px solid #65a69c;
         outline: 10px solid #ffc43f;
+                box-shadow: 0 0 0 20px #e75d3c; /* Added new color (teal) as outer ring */
+
         border-radius: 50%;
         
         animation: circle-rotate 20s linear infinite;
