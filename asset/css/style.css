@@ -1,3 +1,33 @@
+/* Custom borders for specific about images using logo colors */
+.about-section img[src*="about.jpg"] {
+    
+    border: clamp(10pt, 4vw, 15pt) solid #e75d3c;
+    /* box-shadow: 0 0 0 6px #0E0E57, 0 0 0 12px #fff; */
+    border-radius: 18px;
+}
+.about-section img[src*="presentation.jpg"] {
+
+    border: clamp(10pt, 4vw, 15pt) solid #fec23f;
+    /* box-shadow: 0 0 0 6px #0E0E57, 0 0 0 12px #fff; */
+    border-radius: 18px;
+}
+.about-section img[src*="founder.jpg"] {
+
+    border: clamp(10pt, 4vw, 15pt) solid #65a69c;
+    /* box-shadow: 0 0 0 6px #0E0E57, 0 0 0 12px #fff; */
+    border-radius: 18px;
+}
+/* About section image border using logo colors */
+
+.about-section p
+{
+font-size: 20px;;
+}
+.about-section img {
+    border: 4px solid #f7d64a; /* logo yellow */
+    box-shadow: 0 0 0 6px #0E0E57, 0 0 0 12px #fff; /* dark blue, then white */
+    border-radius: 18px;
+}
 /* Adjust space between centered logo and nav links */
 .navbar-nav > .nav-item.menu-logo {
     width: 200px;
@@ -283,7 +313,7 @@ html {
 
     .navbar a:hover,
     .navbar a:focus {
-                 color: #0E0E57;
+                 color: #050505;
                  background: rgba(247,214,74,0.35); /* subtle logo yellow tint on hover */
                 box-shadow: 0 6px 16px rgba(0,0,0,0.18);
                 transform: translateY(-1px);
@@ -291,7 +321,7 @@ html {
 
 
 .navbar .active:not(.dropdown-toggle) {
-                    color: #0E0E57; /* dark text on yellow */
+                    color: #050505;  /* dark text on yellow */
                     background: #f7d64a; /* logo yellow when selected */
                     box-shadow: 0 10px 24px rgba(247,214,74,0.35);
                     }
@@ -383,7 +413,7 @@ html {
 
     /* brand colors for header social icons */
     .navbar .btn-square .fa-facebook-f { color:#1877F2; }
-    .navbar .btn-square .fa-x-twitter { color:#000000; }
+    .navbar .btn-square .fa-x-twitter { color:#000000; } 
     .navbar .btn-square .fa-linkedin-in { color:#0A66C2; }
     .navbar .btn-square .fa-instagram { color:#E1306C; }
     .navbar .btn-square .fa-youtube { color:#FF0000; }
@@ -661,7 +691,7 @@ html {
       
 .about-section  p:not(.count-number) {  /*-----Text-------------*/    
              font-weight: normal;
-               font-size: clamp(8pt,2vw,10pt);  
+               font-size: 20px;  
                                      color: #000000;
                text-wrap: pretty;
 
@@ -677,11 +707,12 @@ html {
 }
 
 .about-story-image {
-    border-radius: 18px;
+    border-radius: 0px;
     overflow: hidden;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.06);
+   /* box-shadow: 0 14px 30px rgba(0,0,0,0.12);*/
+    border: 0 px solid rgba(0,0,0,0.06);
     min-height: 450px;
+    
 }
 
 .about-story-image img {
@@ -2069,8 +2100,8 @@ html {
 
         height: 100%;
         width: 100%;
-        border: 10px solid #F2707E;
-        outline: 10px solid #0748A7;
+        border: 10px solid #e75d3c;
+        outline: 10px solid #ffc43f;
         border-radius: 50%;
         display: flex;
         display: -webkit-flex;
@@ -2093,9 +2124,10 @@ html {
         -webkit-transform: translate(-50%, -50%) rotate(45deg);
         width: 80%;
         height: 80%;
-        border: 10px solid #F2707E;
+       border: 10px solid #e75d3c;
+        outline: 10px solid #ffc43f;
         border-radius: 50%;
-        outline: 10px solid #0748A7;
+        
         animation: circle-rotate 20s linear infinite;
         -webkit-animation: circle-rotate 20s linear infinite;
     }
@@ -2954,7 +2986,7 @@ html {
             width: 30px;
             border-top-left-radius: 30px;
             background: transparent;
-            box-shadow: -5px -5px 0 5px #F2707E;
+            /* box-shadow: -5px -5px 0 5px #F2707E; */
         }
 
 
@@ -2969,7 +3001,7 @@ html {
             width: 30px;
             border-top-left-radius: 30px;
             background: transparent;
-            box-shadow: -5px -5px 0 5px #F2707E;
+            /* box-shadow: -5px -5px 0 5px #F2707E; */
         }
 
 
@@ -4148,6 +4180,8 @@ Create a box behind the image
       Contact Form Comment Background - UPDATED IN NEW SECTION BELOW
 ----------------------------------------------*/
 
+
+
         .contact-section textarea {
             /* Styles moved to new contact styling section below */
         }
@@ -4972,7 +5006,7 @@ Create a box behind the image
 .service-subtitle {
     font-size: clamp(14pt, 2vw, 18pt);
     font-weight: 700;
-    color: #FF5252;
+    color: #ef7d03;
     margin-bottom: 15px;
 }
 
@@ -5443,10 +5477,11 @@ Create a box behind the image
           height: 100vh; /* ensure overlay fills viewport vertically */
           width: 100vw;
           padding: 0;
-          background: rgba(0,0,0,1); /* black background */
+          background: #1c1a1abd; /* black background */
           z-index: 2147483647; /* very high to outrank other fixed elements */
           pointer-events: auto;
           box-sizing: border-box;
+           
         }
         .nav-video-overlay[aria-hidden="true"] { display: none; }
         /* absolutely center the video so it's always in the middle of the viewport */
@@ -5457,7 +5492,7 @@ Create a box behind the image
           transform: translate(-50%, -50%);
           display: block;
           max-width: 500px; /* increased to 500px as requested */
-          width: auto; /* preserve aspect ratio */
+          width: 200px; /* preserve aspect ratio */
           height: auto;
           max-height: 80vh;
           box-shadow: 0 8px 30px rgba(0,0,0,0.6);
