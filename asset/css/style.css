@@ -2886,7 +2886,7 @@ html {
 
     .goal-section .section-text { /*-----Section text-------------*/
         font-weight: normal;
-        font-size: clamp(8pt,2vw,10pt);
+        font-size:20px;
         color: #6a737b;
         padding-bottom: 1vw;
         text-wrap: pretty;
@@ -4569,7 +4569,7 @@ Create a box behind the image
         position: relative;
         width: 100%;
         /* background: #0E0E57; */
-        background: #f18c35;
+        background: #F77E2D;
         padding: 20px 50px;
     }
 
@@ -4628,7 +4628,7 @@ Create a box behind the image
             width: clamp(80pt,25vw,120pt);
             padding: 8px 12px;
             object-fit: contain;
-            background: #f7d64a;
+            background: #FFF;
             border-radius: 12px;
             box-shadow: 0 6px 16px rgba(0,0,0,0.15);
             display: block;
@@ -4655,8 +4655,8 @@ Create a box behind the image
         .footer-section .subscribe-form input { /*---Input box where input the e-mail address to subscribe----*/
             width: 100%;
             padding: 14px 28px;
-            background: #dbebfa;
-            border: 1px solid #dbebfa;
+            background: #F77E2D;
+            border: 1px solid #F77E2D;
             color: #0E0E57;
         }
 
