@@ -1,7 +1,19 @@
-.footer-widget .social-links a[aria-label="LinkedIn"] i { color: #181c4b !important; }
-.footer-widget .social-links a[aria-label="Instagram"] i { color: #e75d3c !important; }
-.footer-widget .social-links a[aria-label="YouTube"] i { color: #f1c40f !important; }
-.footer-widget .social-links a[aria-label="Facebook"] i { color: #181c4b !important; }
+.footer-widget .social-links a[aria-label="LinkedIn"] i,
+.footer-widget .social-links a[aria-label="LinkedIn"] {
+    color: #181c4b !important;
+}
+.footer-widget .social-links a[aria-label="Instagram"] i,
+.footer-widget .social-links a[aria-label="Instagram"] {
+    color: #e75d3c !important;
+}
+.footer-widget .social-links a[aria-label="YouTube"] i,
+.footer-widget .social-links a[aria-label="YouTube"] {
+    color: #f1c40f !important;
+}
+.footer-widget .social-links a[aria-label="Facebook"] i,
+.footer-widget .social-links a[aria-label="Facebook"] {
+    color: #181c4b !important;
+}
 /* Custom subscribe section styles for contact page footer */
 .footer-widget h3 {
     color: #fff;

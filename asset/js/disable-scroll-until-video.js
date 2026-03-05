@@ -21,23 +21,25 @@ $(document).ready(function() {
         scrollDisabled = false;
     }
 
-    disableScroll();
-
-    // Enable scroll when video ends
-    $video.on('ended', function() {
+    // If video is hidden (second visit), enable scroll immediately
+    if ($video.length && $video.css('display') === 'none') {
         enableScroll();
-    });
-
-    // Enable scroll if user skips video
-    $skipBtn.on('click', function() {
-        enableScroll();
-    });
-
-    // Enable scroll if user replays video (optional: only after replay ends)
-    $playBtn.on('click', function() {
-        // If you want to enable scroll immediately on replay, uncomment:
-        // enableScroll();
-    });
+    } else {
+        disableScroll();
+        // Enable scroll when video ends
+        $video.on('ended', function() {
+            enableScroll();
+        });
+        // Enable scroll if user skips video
+        $skipBtn.on('click', function() {
+            enableScroll();
+        });
+        // Enable scroll if user replays video (optional: only after replay ends)
+        $playBtn.on('click', function() {
+            // If you want to enable scroll immediately on replay, uncomment:
+            // enableScroll();
+        });
+    }
 
     // Fallback: enable scroll after 10 seconds if video is still playing
     setTimeout(function() {
