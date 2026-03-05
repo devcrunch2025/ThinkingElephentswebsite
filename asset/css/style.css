@@ -1,3 +1,77 @@
+.footer-widget .social-links a[aria-label="LinkedIn"] i { color: #181c4b !important; }
+.footer-widget .social-links a[aria-label="Instagram"] i { color: #e75d3c !important; }
+.footer-widget .social-links a[aria-label="YouTube"] i { color: #f1c40f !important; }
+.footer-widget .social-links a[aria-label="Facebook"] i { color: #181c4b !important; }
+/* Custom subscribe section styles for contact page footer */
+.footer-widget h3 {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.footer-widget .footer-text p {
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 18px;
+}
+.footer-widget .subscribe-form form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer-widget .subscribe-form input[type="text"] {
+    flex: 1;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding: 10px 16px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.1em;
+    outline: none;
+    margin-right: 0;
+}
+.footer-widget .subscribe-form input[type="text"]::placeholder {
+    color: #eee;
+    opacity: 1;
+}
+.footer-widget .subscribe-form button {
+    background: #181c4b;
+    border: none;
+    border-radius: 6px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transition: background 0.2s;
+}
+.footer-widget .subscribe-form button:hover {
+    background: #e75d3c;
+}
+.footer-widget .subscribe-form button i {
+    color: #fff;
+    font-size: 1.7em;
+}
+.footer-widget .social-links {
+    gap: 18px !important;
+    margin-top: 24px;
+}
+.footer-widget .social-links a {
+    background: #fff !important;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.footer-widget .social-links a[aria-label="LinkedIn"] { color: #181c4b !important; }
+.footer-widget .social-links a[aria-label="Instagram"] { color: #e75d3c !important; }
+.footer-widget .social-links a[aria-label="YouTube"] { color: #f1c40f !important; }
+.footer-widget .social-links a[aria-label="Facebook"] { color: #181c4b !important; }
 /* Custom borders for specific about images using logo colors */
 .about-section img[src*="about.jpg"] {
     
@@ -4705,6 +4779,7 @@ Create a box behind the image
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 50%;
     }
 
 
