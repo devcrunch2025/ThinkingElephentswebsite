@@ -78,12 +78,55 @@
     border-radius: 50%;
     font-size: 1.5em;
     transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: none;
+    border: 2px solid #e75d3c;
+    color: #181c4b !important;
 }
-.footer-widget .social-links a[aria-label="LinkedIn"] { color: #181c4b !important; }
-.footer-widget .social-links a[aria-label="Instagram"] { color: #e75d3c !important; }
-.footer-widget .social-links a[aria-label="YouTube"] { color: #f1c40f !important; }
-.footer-widget .social-links a[aria-label="Facebook"] { color: #181c4b !important; }
+.footer-widget .social-links a[aria-label="LinkedIn"] { background: #fff !important; color: #181c4b !important; }
+.footer-widget .social-links a[aria-label="Instagram"] { background: #fff !important; color: #e75d3c !important; }
+.footer-widget .social-links a[aria-label="YouTube"] { background: #fff !important; color: #f1c40f !important; }
+.footer-widget .social-links a[aria-label="Facebook"] { background: #fff !important; color: #181c4b !important; }
+
+/* Footer contact icon rows */
+.footer-section .contact .text,
+.footer-section .contact .text a {
+    color: #fff !important;
+}
+
+.footer-section .contact .badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e75d3c !important;
+}
+
+.footer-section .contact .badge i {
+    font-size: 1.15rem;
+    color: #fff !important;
+}
+
+.footer-section .contact .d-flex.align-items-center:nth-child(1) .badge {
+    background: #e75d3c !important;
+}
+
+.footer-section .contact .d-flex.align-items-center:nth-child(2) .badge {
+    background: #16a085 !important;
+}
+
+.footer-section .contact .d-flex.align-items-center:nth-child(3) .badge {
+    background: #f1c40f !important;
+}
+
+.footer-section .contact .d-flex.align-items-center:nth-child(4) .badge {
+    background: #34495e !important;
+}
+
+.footer-section .contact .d-flex.align-items-center {
+    gap: 10px;
+}
 /* Custom borders for specific about images using logo colors */
 .about-section img[src*="about.jpg"] {
     
@@ -4836,6 +4879,74 @@ Create a box behind the image
 
     /*-----------------------------------------------------------
 
+      +++Footer layout normalization++++
+      keep all footer sections aligned and typography consistent
+
+    --------------------------------------------------------------*/
+
+    .footer-section .container {
+        max-width: 1220px;
+    }
+
+    .footer-section .row {
+        align-items: flex-start;
+        row-gap: 14px;
+    }
+
+    .footer-section .row > [class*="col-"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .footer-section .footer-title,
+    .footer-section .footer-widget h3,
+    .footer-section h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-section p,
+    .footer-section .nav-link,
+    .footer-section .contact .text,
+    .footer-section .contact .text a,
+    .footer-section .footer-text p,
+    .footer-section .subscribe-form input[type="text"] {
+        font-size: 1rem !important;
+        line-height: 1.55;
+    }
+
+    .footer-section .nav-link {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        margin-left: 0;
+    }
+
+    .footer-section .contact .d-flex.align-items-center {
+        min-height: 50px;
+    }
+
+    .footer-section .social-links {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+        .footer-section {
+            padding: 18px 20px;
+        }
+
+        .footer-section .row > [class*="col-"] {
+            padding-top: 0.85rem;
+            padding-bottom: 0.85rem;
+        }
+    }
+
+    /*-----------------------------------------------------------
+
           +++Wave animation  ( Footer Section)++++
                 Create some wave animation
 
@@ -5536,8 +5647,8 @@ Create a box behind the image
 --------------------------------------------------------------*/
 
     .copyright {
-        background: #0E0E57; /*----Copyright Background Color-----*/
-        border: 1px solid #0E0E57; /*------Copyright border color :: It should be same as background color -----------*/
+        background: #F77E2D; /* same as footer background */
+        border: 1px solid #F77E2D;
     }
 
 
@@ -5551,12 +5662,12 @@ Create a box behind the image
             font-size: clamp(10pt,2vw,12pt);
             text-transform: capitalize;
             text-align: center;
-            color: #c4dff6;
+            color: #ffffff;
             padding: 15pt 0pt 3pt 0pt;
         }
 
         .copyright span {
-            color: #F87381; /*-----Copyright highlighted Text-----*/
+            color: #0E0E57;
         }
 
         /* Navigation video overlay */
