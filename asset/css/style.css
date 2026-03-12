@@ -838,14 +838,17 @@ html {
 
        
 .about-section img{ /*----- Image of left column-------------*/
-                  height: 85%;
-                   width: 80%;  
+                  height: 100%;
+                   width: 100%;  
                 position: absolute;
-              object-fit: cover; 
-                     top: 15%;
-                    left: 15%;
-                  border: clamp(10pt,4vw,15pt) solid #F27280;
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              object-fit: cover;
+                     top: 0%;
+                    left: 0%;
+                    border: none;
+                    padding: 0;
+                    border-radius: 0;
+                  /*border: clamp(10pt,4vw,15pt) solid #F27280;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
       
      
            }
@@ -4804,7 +4807,7 @@ Create a box behind the image
 --------------------------------------------------------------*/
 
     .footer-section .social-links .btn-square { /*-----Social Icon  Background-------*/
-        border: 2px solid #ffffff; /*-----Social Icon border------*/
+        border: 2px solid #e74c3c; /*-----Social Icon border------*/
         transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955); /*-------Social button transform on click animation---------*/
         display: flex;
         justify-content: center;
