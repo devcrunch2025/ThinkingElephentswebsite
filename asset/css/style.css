@@ -5132,6 +5132,14 @@ Create a box behind the image
         right: 20%;
     }
 
+    .footer-section .dots .elephant-float {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        opacity: 0.85;
+    }
+
     .footer-section .dots div:nth-child(1) {
         top: 20%;
         left: 20%;
