@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <title>Thinking Elephents Ad Fims â€” Contact</title>
+    <title>Thinking Elephents Ad Fims â€” Contact</title>
     <link rel="shortcut icon" type="image/png" href="asset/img/favicon.png">
     <meta charset="utf-8">
+    <meta name="description" content="Contact Thinking Elephents Ad Fims â€” request a quote for ad films, short films, or event coverage.">
     <meta name="description" content="Contact Thinking Elephents Ad Fims â€” request a quote for ad films, short films, or event coverage.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -132,13 +134,16 @@
         <div class="container"><!--Container-->
             <!-- Contact Info and Form Section -->
             <div class="row contact-content-row"><!--Row-->
+            <div class="row contact-content-row"><!--Row-->
 
+                <div class="col-12 col-md-6 mb-5 mb-md-0" data-aos="zoom-out"><!--Col1 - Address-->
                 <div class="col-12 col-md-6 mb-5 mb-md-0" data-aos="zoom-out"><!--Col1 - Address-->
                     <div class="contact-info-wrapper">
                         <h4 class="section-title1">Get In Touch</h4>
                         <p class="section-text">Let's discuss your project. Whether you need a commercial, brand film, or social content, our team is here to help bring your vision to life.</p>
 
                         <div class="contact-info-item"><!--address-->
+                            <div><span class="badge badge-location1" style="background-color: #f1c40f;"><i class="fas fa-map-marker-alt"></i></span></div><!--Icon-->
                             <div><span class="badge badge-location1" style="background-color: #f1c40f;"><i class="fas fa-map-marker-alt"></i></span></div><!--Icon-->
                             <div class="text"><!--Text-->
                                 <h5>Our Location</h5>
@@ -148,6 +153,7 @@
 
                         <div class="contact-info-item"><!--phone-->
                             <div><span class="badge badge-phone1" style="background-color: #e74c3c;"><i class="fas fa-phone"></i></span></div><!--Icon-->
+                            <div><span class="badge badge-phone1" style="background-color: #e74c3c;"><i class="fas fa-phone"></i></span></div><!--Icon-->
                             <div class="text"><!--Text-->
                                 <h5>Phone</h5>
                                 <p><a href="tel:+919059870455">+91 90598 70455</a></p>
@@ -155,6 +161,7 @@
                         </div><!--end of phone-->
 
                         <div class="contact-info-item"><!--e-mail-->
+                            <div><span class="badge badge-email1" style="background-color: #16a085;"><i class="fas fa-envelope"></i></span></div><!--Icon-->
                             <div><span class="badge badge-email1" style="background-color: #16a085;"><i class="fas fa-envelope"></i></span></div><!--Icon-->
                             <div class="text"><!--Text-->
                                 <h5>Email</h5>
@@ -170,6 +177,7 @@
                     <div class="contact-form-wrapper">
                         <h4 class="section-title1">Send Us a Message</h4>
                         <form action="send-contact.php" method="POST" id="form" novalidate> <!--Contact Form-->
+                        <form action="send-contact.php" method="POST" id="form" novalidate> <!--Contact Form-->
 
                             <div class="mb-3"><!--Name area-->
                                 <label for="name" class="form-label">Full Name</label>
@@ -184,10 +192,12 @@
                             <div class="mb-3 mt-3"><!--Phone area-->
                                 <label for="phone" class="form-label">Phone Number</label>
                                 <input type="tel" class="form-control form-control-lg" autocomplete="off" id="phone" placeholder="Your phone number" name="phone" required>
+                                <input type="tel" class="form-control form-control-lg" autocomplete="off" id="phone" placeholder="Your phone number" name="phone" required>
                             </div><!--end of Phone area-->
 
                             <div class="mb-3 mt-3"><!--Subject area-->
                                 <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control form-control-lg" autocomplete="off" id="subject" placeholder="Project subject" name="subject" required>
                                 <input type="text" class="form-control form-control-lg" autocomplete="off" id="subject" placeholder="Project subject" name="subject" required>
                             </div><!--end of Subject area-->
 
@@ -295,6 +305,8 @@
                     <div class="subscribe-form"><!--Form-->
                         <form action="subscribe.php" method="POST">
                             <input type="email" name="subscriber_email" placeholder="Email Address" required>
+                        <form action="subscribe.php" method="POST">
+                            <input type="email" name="subscriber_email" placeholder="Email Address" required>
                             <button><i class="fa-solid fa-at"></i></button>
                         </form>
                     </div><!--End of Form-->
@@ -360,6 +372,34 @@
 
             }
         );
+
+        (function () {
+            var form = document.getElementById('form');
+
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                });
+            }
+        })();
+
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var status = params.get('status');
+
+            if (status === 'success') {
+                alert('Thank you! Your message has been sent successfully.');
+            } else if (status === 'error') {
+                alert('Sorry, we could not send your message right now. Please try again.');
+            } else if (status === 'invalid') {
+                alert('Please fill all required fields with valid details.');
+            }
+        })();
 
         (function () {
             var form = document.getElementById('form');
