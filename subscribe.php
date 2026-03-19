@@ -47,11 +47,35 @@ if ($email === false) {
     redirect_with_alert('Please enter a valid email address.', $returnUrl);
 }
 
-$to = 'hello@thinkingelephants.com';
+$to = 'devcrunch2025@gmail.com';
 $subject = 'New Footer Subscription';
-$body = "A new user subscribed from the website footer.\n\n"
-    . "Email: {$email}\n"
-    . "Source page: {$returnUrl}\n";
+
+$logoUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://')
+        . ($_SERVER['HTTP_HOST'] ?? 'thinkingelephants.com') . '/asset/img/logo.png';
+$body = '<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head><body style="font-family:Arial,sans-serif;background:#f8f8f8;padding:0;margin:0;">
+<table width="100%" bgcolor="#f8f8f8" cellpadding="0" cellspacing="0" style="padding:30px 0;">
+    <tr>
+        <td align="center">
+            <table width="480" bgcolor="#fff" cellpadding="0" cellspacing="0" style="border-radius:8px;box-shadow:0 2px 8px #eee;overflow:hidden;">
+                <tr>
+                    <td align="center" style="padding:24px 0 12px 0;">
+                        <img src="' . $logoUrl . '" alt="Thinking Elephants Logo" width="80" style="display:block;margin:0 auto 8px auto;">
+                        <h2 style="margin:0;color:#333;font-size:22px;font-weight:600;">New Footer Subscription</h2>
+                    </td>
+                </tr>
+                <tr><td style="padding:0 32px 24px 32px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:16px;color:#222;">
+                        <tr><td style="padding:8px 0;font-weight:bold;width:120px;">Email:</td><td>' . htmlspecialchars($email) . '</td></tr>
+                        <tr><td style="padding:8px 0;font-weight:bold;">Source Page:</td><td>' . htmlspecialchars($returnUrl) . '</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td align="center" style="background:#f2f2f2;padding:16px 0;color:#888;font-size:13px;">This is an automated notification from Thinking Elephants.</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body></html>';
 
 $host = preg_replace('/[^a-zA-Z0-9.-]/', '', $_SERVER['HTTP_HOST'] ?? 'thinkingelephants.com');
 $from = 'noreply@' . ($host !== '' ? $host : 'thinkingelephants.com');
@@ -64,10 +88,11 @@ $headers = [
     'X-Mailer: PHP/' . phpversion(),
 ];
 
-$sent = @mail($to, $subject, $body, implode("\r\n", $headers));
 
+require_once __DIR__ . '/asset/php/smtp_mailer.php';
+
+$sent = send_smtp_mail($to, $subject, $body, $from);
 if ($sent) {
     redirect_with_alert('Thank you for subscribing.', $returnUrl);
 }
-
 redirect_with_alert('Sorry, subscription failed. Please try again.', $returnUrl);
