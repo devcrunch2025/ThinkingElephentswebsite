@@ -299,6 +299,7 @@ html {
 .navbar .dropdown-menu, /*--dropdown menu Background---*/
 .navbar .dropdown-menu a:hover { /*---dropdown Menu item background color when hover -----*/
     background-color: #ffffff !important; /*----Menu Background Color (default)-----------*/
+    z-index: 9999 !important;
 }
 
 

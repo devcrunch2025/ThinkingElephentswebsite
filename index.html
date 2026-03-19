@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Thinking Elephents Ad Fims  Ad films, short films & event video production</title>
+    <title>Thinking Elephents Ad Fims Ad films, short films & event video production</title>
     <link rel="shortcut icon" type="image/png" href="asset/img/favicon.png">
     <meta charset="utf-8">
     <meta name="description"
@@ -91,17 +91,27 @@
             z-index: 1;
         }
 
-        /* Initial state: navbar hidden */
-        .navbar {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+
+        /* Initial state: navbar hidden on desktop only */
+        @media (min-width: 992px) {
+            .navbar {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.8s ease, visibility 0.8s ease;
+            }
+
+            .navbar.show {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
-        /* Show navbar after 10 seconds */
-        .navbar.show {
-            opacity: 1;
-            visibility: visible;
+        @media (max-width: 991.98px) {
+            .navbar {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transition: none !important;
+            }
         }
 
         /* Additional content below hero initially hidden */
@@ -149,20 +159,28 @@
          ================================ -->
 
     <!-- Your Existing Website -->
+    <!-- Mobile Top Bar: Logo + Menu Button (visible only on mobile) -->
+
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg fixed-top px-4 px-lg-5">
-        <!-- <a href="index.html" class="navbar-brand d-flex align-items-center">
+    <nav class="navbar navbar-expand-lg fixed-top px-4 px-lg-5 show">
+        <div class="d-flex d-lg-none align-items-center justify-content-center w-100 px-3 py-2 position-relative"
+            style="background:#fff;z-index:1100;">
+            <button class="navbar-toggler position-absolute start-0 top-50 translate-middle-y collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar"
+                aria-expanded="false" aria-label="Toggle navigation"
+                style="border:none;background:transparent;outline:none;box-shadow:none;left:12px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img src="asset/img/logo.png" alt="Thinking Elephants Logo" class="mx-auto"
+                style="height:44px;width:auto;max-width:70vw;display:block;">
+        </div><!-- <a href="index.html" class="navbar-brand d-flex align-items-center">
             <img src="asset/img/logo.png" alt="logo" class="m-0 logo">
         </a> -->
 
-        <span class="navbar-toggler">
-            <span class="open" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><i
-                    class="fas fa-bars"></i></span>
-            <span class="close" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><i
-                    class="fas fa-times"></i></span>
-        </span>
 
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+        <div class="navbar-collapse collapse" id="collapsibleNavbar" style="">
             <div class="navbar-nav mx-auto pe-4 py-3 py-lg-0">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="index.html" data-no-nav-video="true">Home</a>
@@ -170,8 +188,8 @@
                     <li class="nav-item"><a class="nav-link" href="about.html" data-no-nav-video="true">About Us</a>
                     </li>
 
-                    <!-- Centered logo in menu -->
-                    <li class="nav-item d-flex align-items-center justify-content-center px-2 menu-logo">
+                    <!-- Centered logo in menu (hide on mobile) -->
+                    <li class="nav-item d-none d-lg-flex align-items-center justify-content-center px-2 menu-logo">
                         <a href="index.html" class="navbar-logo-center" tabindex="-1" aria-label="Home">
                             <img src="asset/img/logo.png" alt="logo"
                                 style="height:50px; width:auto; display:block; margin:0 auto;">
@@ -197,6 +215,7 @@
                     aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
             </div>
+        </div>
     </nav>
     <!-- Navbar End -->
 
@@ -476,23 +495,77 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        #playWithSoundBtn { background: #e75d3c; color: #fff; display: none; }
-        #playWithSoundBtn:hover { background: #d44e2e; transform: scale(1.1); }
-        .skip-video-btn { background: rgba(247, 214, 74, 0.9); color: #0E0E57; }
-        .skip-video-btn:hover { background: rgba(247, 214, 74, 1); transform: scale(1.1); box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6); }
-        .skip-video-btn:active { transform: scale(0.95); }
+        #playWithSoundBtn {
+            background: #e75d3c;
+            color: #fff;
+            display: none;
+        }
 
-        .pause-video-btn { background: rgba(247, 214, 74, 0.9); color: #0E0E57; display: none; }
-        .pause-video-btn:hover { background: rgba(247, 214, 74, 1); transform: scale(1.1); box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6); }
-        .pause-video-btn:active { transform: scale(0.95); }
+        #playWithSoundBtn:hover {
+            background: #d44e2e;
+            transform: scale(1.1);
+        }
 
-        .play-video-btn { background: rgba(76, 175, 80, 0.9); color: #fff; display: none; }
-        .play-video-btn:hover { background: rgba(76, 175, 80, 1); transform: scale(1.1); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6); }
-        .play-video-btn:active { transform: scale(0.95); }
+        .skip-video-btn {
+            background: rgba(247, 214, 74, 0.9);
+            color: #0E0E57;
+        }
+
+        .skip-video-btn:hover {
+            background: rgba(247, 214, 74, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6);
+        }
+
+        .skip-video-btn:active {
+            transform: scale(0.95);
+        }
+
+        .pause-video-btn {
+            background: rgba(247, 214, 74, 0.9);
+            color: #0E0E57;
+            display: none;
+        }
+
+        .pause-video-btn:hover {
+            background: rgba(247, 214, 74, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(247, 214, 74, 0.6);
+        }
+
+        .pause-video-btn:active {
+            transform: scale(0.95);
+        }
+
+        .play-video-btn {
+            background: rgba(76, 175, 80, 0.9);
+            color: #fff;
+            display: none;
+        }
+
+        .play-video-btn:hover {
+            background: rgba(76, 175, 80, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+        }
+
+        .play-video-btn:active {
+            transform: scale(0.95);
+        }
 
         @media (max-width: 768px) {
-            #videoControlsPanel { right: 15px; gap: 10px; }
-            .skip-video-btn, .pause-video-btn, .play-video-btn { width: 50px; height: 50px; font-size: 18px; }
+            #videoControlsPanel {
+                right: 15px;
+                gap: 10px;
+            }
+
+            .skip-video-btn,
+            .pause-video-btn,
+            .play-video-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
         }
     </style>
 
@@ -911,7 +984,9 @@
                         <div class="carousel-inner" data-aos="zoom-out"><!--carousel-inner-->
                             <div class="carousel-item active"><!--item1-->
                                 <div class="quote-wrapper"><!--Quote-->
-                                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Thinking Elephants transformed our brand narrative into a market-leading
+                                    <p
+                                        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                        Thinking Elephants transformed our brand narrative into a market-leading
                                         campaign. Their listening-first approach uncovered insights we hadn't
                                         considered, and the final film delivered a 300% uplift in
                                         engagement.<span>Marketing Director, Leading FMCG Brand</span> </p>
@@ -937,7 +1012,8 @@
                                 <div class="quote-wrapper"><!--Quote-->
                                     <p>I canâ€™t say enough good things about this business. From the moment I contacted
                                         them, they were responsive and accommodating. The quality of their work is
-                                        exceptional, and I couldnâ€™t be happier with the final result.<span>Ijack</span>
+                                        exceptional, and I couldnâ€™t be happier with the final
+                                        result.<span>Ijack</span>
                                     </p>
                                 </div><!--End of Quote-->
                             </div><!--end of item4-->
@@ -1224,12 +1300,25 @@
                     </div><!--End of Form-->
 
                     <!--Social Link-->
-                     <div class="social-links mt-4 d-flex justify-content-start align-items-center" style="gap:18px;">
-                        <a class="btn btn-square rounded-circle" style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" style="color:#181c4b;"></i></a>
-                        <a class="btn btn-square rounded-circle" style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;" href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" style="color:#e75d3c;"></i></a>
-                        <a class="btn btn-square rounded-circle" style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube" style="color:#f1c40f;"></i></a>
-                        <a class="btn btn-square rounded-circle" style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" style="color:#181c4b;"></i></a>
-                    </div><!--End of Social Link--> 
+                    <div class="social-links mt-4 d-flex justify-content-start align-items-center" style="gap:18px;">
+                        <a class="btn btn-square rounded-circle"
+                            style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;"
+                            href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in" style="color:#181c4b;"></i></a>
+                        <a class="btn btn-square rounded-circle"
+                            style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;"
+                            href="https://www.instagram.com/thinkingelephants?igsh=NTBzMnFpZjV1d293" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"
+                                style="color:#e75d3c;"></i></a>
+                        <a class="btn btn-square rounded-circle"
+                            style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;"
+                            href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i
+                                class="fab fa-youtube" style="color:#f1c40f;"></i></a>
+                        <a class="btn btn-square rounded-circle"
+                            style="background:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.5em;"
+                            href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i
+                                class="fab fa-facebook-f" style="color:#181c4b;"></i></a>
+                    </div><!--End of Social Link-->
 
                 </div><!--end of Col4|Subscribe-->
 
@@ -1240,7 +1329,7 @@
             <!-- ++Create  some bubble++ 
                             for animation -->
 
-                        <div class="dots"><!--bubble-->
+            <div class="dots"><!--bubble-->
                 <div><img src="asset/img/favicon.png" class="elephant-float" alt="floating elephant logo"></div>
                 <div><img src="asset/img/favicon.png" class="elephant-float" alt="floating elephant logo"></div>
                 <div><img src="asset/img/favicon.png" class="elephant-float" alt="floating elephant logo"></div>
@@ -1481,4 +1570,3 @@
 </body>
 
 </html>
-
